@@ -1,0 +1,12 @@
+disabled_rules:
+    - identifier_name
+    - line_length
+    - force_cast
+    - mark
+    - large_tuple
+    - type_body_length
+    - nesting
+    - file_length
+    - todo
+excluded:
+    - Submodules
