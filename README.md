@@ -2,10 +2,15 @@
 
 A Swift wrapper around the C POSIX Standard.
 
+A primary purpose of this library is to mke the POSIX functions feel like first class Swift objects.
+
 ## C Conventions
 All Types and functions are prefixed with SP
 
 ## POSIX Headers
+
+These headers have been taken from POSIXStandard.pdf chapter 13.
+
 - [ ] aio.h
 - [ ] arpa/inet.h
 - [ ] complex.h
@@ -13,7 +18,7 @@ All Types and functions are prefixed with SP
 - [ ] ctype.h
 - [ ] dirent.h
 - [ ] dlfcn.h
-- [ ] errno.h
+- [x] errno.h*
 - [ ] fcntl.h
 - [ ] fenv.h
 - [ ] float.h
@@ -85,3 +90,5 @@ All Types and functions are prefixed with SP
 - [ ] wchar.h
 - [ ] wctype.h
 - [ ] wordexp.h
+
+\* Convenience TODOs are present and need more implementaiton before being finished.

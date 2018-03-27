@@ -1,8 +1,8 @@
 //
-//  SwiftyPOSIX.h
+//  SwiftyPOSIX_C.h
 //  SwiftyPOSIX
 //
-//  Created by Braden Scothern on 2/9/18.
+//  Created by Braden Scothern on 3/26/18.
 //  Copyright © 2018 Braden Scothern. All rights reserved.
 //
 // The MIT License (MIT)
@@ -26,11 +26,9 @@
 // SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#ifndef SwiftyPOSIX_C_h
+#define SwiftyPOSIX_C_h
 
-//! Project version number for SwiftyPOSIX.
-FOUNDATION_EXPORT double SwiftyPOSIXVersionNumber;
+#include "dummy.h"
 
-//! Project version string for SwiftyPOSIX.
-FOUNDATION_EXPORT const unsigned char SwiftyPOSIXVersionString[];
-
+#endif /* SwiftyPOSIX_C_h */

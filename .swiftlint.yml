@@ -8,5 +8,8 @@ disabled_rules:
     - nesting
     - file_length
     - todo
+    - trailing_comma
+    - function_body_length
+    - cyclomatic_complexity
 excluded:
     - Submodules

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F8B1DBCB202EC11100EAC350"
-               BuildableName = "SwiftyPOSIX_macOS.framework"
+               BuildableName = "SwiftyPOSIX.framework"
                BlueprintName = "SwiftyPOSIX macOS"
                ReferencedContainer = "container:SwiftyPOSIX.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8B1DBCB202EC11100EAC350"
-            BuildableName = "SwiftyPOSIX_macOS.framework"
+            BuildableName = "SwiftyPOSIX.framework"
             BlueprintName = "SwiftyPOSIX macOS"
             ReferencedContainer = "container:SwiftyPOSIX.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8B1DBCB202EC11100EAC350"
-            BuildableName = "SwiftyPOSIX_macOS.framework"
+            BuildableName = "SwiftyPOSIX.framework"
             BlueprintName = "SwiftyPOSIX macOS"
             ReferencedContainer = "container:SwiftyPOSIX.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8B1DBCB202EC11100EAC350"
-            BuildableName = "SwiftyPOSIX_macOS.framework"
+            BuildableName = "SwiftyPOSIX.framework"
             BlueprintName = "SwiftyPOSIX macOS"
             ReferencedContainer = "container:SwiftyPOSIX.xcodeproj">
          </BuildableReference>

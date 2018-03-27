@@ -1,5 +1,5 @@
 //
-//  SwiftyPOSIX.h
+//  PThreadConditionAttribute.swift
 //  SwiftyPOSIX
 //
 //  Created by Braden Scothern on 2/9/18.
@@ -26,11 +26,4 @@
 // SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-
-//! Project version number for SwiftyPOSIX.
-FOUNDATION_EXPORT double SwiftyPOSIXVersionNumber;
-
-//! Project version string for SwiftyPOSIX.
-FOUNDATION_EXPORT const unsigned char SwiftyPOSIXVersionString[];
-
+import Foundation

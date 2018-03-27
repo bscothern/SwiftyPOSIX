@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F88914CF2069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
+		F88914D02069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
+		F88914D12069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
+		F88914D22069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
+		F88914D3206A00DF00892FE8 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F88914D4206A00E000892FE8 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F88914D5206A00E100892FE8 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F88914D6206A00E200892FE8 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F88914D8206A013200892FE8 /* SwifyPOSIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914D7206A013200892FE8 /* SwifyPOSIX.swift */; };
+		F88914D9206A013200892FE8 /* SwifyPOSIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914D7206A013200892FE8 /* SwifyPOSIX.swift */; };
+		F88914DA206A013200892FE8 /* SwifyPOSIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914D7206A013200892FE8 /* SwifyPOSIX.swift */; };
+		F88914DB206A013200892FE8 /* SwifyPOSIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914D7206A013200892FE8 /* SwifyPOSIX.swift */; };
+		F88914DE206A01E800892FE8 /* dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914DC206A01E800892FE8 /* dummy.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F88914DF206A01E800892FE8 /* dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914DC206A01E800892FE8 /* dummy.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F88914E0206A01E800892FE8 /* dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914DC206A01E800892FE8 /* dummy.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F88914E1206A01E800892FE8 /* dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914DC206A01E800892FE8 /* dummy.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F88914E2206A01E800892FE8 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = F88914DD206A01E800892FE8 /* dummy.c */; };
+		F88914E3206A01E800892FE8 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = F88914DD206A01E800892FE8 /* dummy.c */; };
+		F88914E4206A01E800892FE8 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = F88914DD206A01E800892FE8 /* dummy.c */; };
+		F88914E5206A01E800892FE8 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = F88914DD206A01E800892FE8 /* dummy.c */; };
+		F8958DC7203A622700A99A02 /* PThreadSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecific.swift */; };
+		F8958DC8203A622700A99A02 /* PThreadSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecific.swift */; };
+		F8958DC9203A622700A99A02 /* PThreadSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecific.swift */; };
+		F8958DCA203A622700A99A02 /* PThreadSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecific.swift */; };
 		F8B1DBB9202EC10600EAC350 /* SwiftyPOSIX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1DBB0202EC10500EAC350 /* SwiftyPOSIX.framework */; };
 		F8B1DBD5202EC11200EAC350 /* SwiftyPOSIX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1DBCC202EC11100EAC350 /* SwiftyPOSIX.framework */; };
 		F8B1DBF1202EC11D00EAC350 /* SwiftyPOSIX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1DBE8202EC11D00EAC350 /* SwiftyPOSIX.framework */; };
@@ -17,6 +41,38 @@
 		F8B1DC13202EC26C00EAC350 /* SwiftyPOSIX.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B1DB94202EC07100EAC350 /* SwiftyPOSIX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8B1DC14202EC26D00EAC350 /* SwiftyPOSIX.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B1DB94202EC07100EAC350 /* SwiftyPOSIX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8B1DC15202EC26E00EAC350 /* SwiftyPOSIX.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B1DB94202EC07100EAC350 /* SwiftyPOSIX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8B1DC23202EC9F300EAC350 /* PThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC22202EC9F300EAC350 /* PThread.swift */; };
+		F8B1DC24202EC9F300EAC350 /* PThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC22202EC9F300EAC350 /* PThread.swift */; };
+		F8B1DC25202EC9F300EAC350 /* PThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC22202EC9F300EAC350 /* PThread.swift */; };
+		F8B1DC26202EC9F300EAC350 /* PThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC22202EC9F300EAC350 /* PThread.swift */; };
+		F8B1DC28202ECB3900EAC350 /* PThreadAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC27202ECB3900EAC350 /* PThreadAttribute.swift */; };
+		F8B1DC29202ECB3900EAC350 /* PThreadAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC27202ECB3900EAC350 /* PThreadAttribute.swift */; };
+		F8B1DC2A202ECB3900EAC350 /* PThreadAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC27202ECB3900EAC350 /* PThreadAttribute.swift */; };
+		F8B1DC2B202ECB3900EAC350 /* PThreadAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC27202ECB3900EAC350 /* PThreadAttribute.swift */; };
+		F8B1DC2E202ECB6F00EAC350 /* PThreadMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC2D202ECB6F00EAC350 /* PThreadMutex.swift */; };
+		F8B1DC2F202ECB6F00EAC350 /* PThreadMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC2D202ECB6F00EAC350 /* PThreadMutex.swift */; };
+		F8B1DC30202ECB6F00EAC350 /* PThreadMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC2D202ECB6F00EAC350 /* PThreadMutex.swift */; };
+		F8B1DC31202ECB6F00EAC350 /* PThreadMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC2D202ECB6F00EAC350 /* PThreadMutex.swift */; };
+		F8B1DC33202ECB7D00EAC350 /* PThreadMutexAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC32202ECB7D00EAC350 /* PThreadMutexAttribute.swift */; };
+		F8B1DC34202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC32202ECB7D00EAC350 /* PThreadMutexAttribute.swift */; };
+		F8B1DC35202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC32202ECB7D00EAC350 /* PThreadMutexAttribute.swift */; };
+		F8B1DC36202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC32202ECB7D00EAC350 /* PThreadMutexAttribute.swift */; };
+		F8B1DC38202ECB9200EAC350 /* PThreadCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */; };
+		F8B1DC39202ECB9200EAC350 /* PThreadCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */; };
+		F8B1DC3A202ECB9200EAC350 /* PThreadCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */; };
+		F8B1DC3B202ECB9200EAC350 /* PThreadCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */; };
+		F8B1DC3D202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */; };
+		F8B1DC3E202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */; };
+		F8B1DC3F202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */; };
+		F8B1DC40202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */; };
+		F8B1DC42202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
+		F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
+		F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
+		F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
+		F8B1DC48202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC47202ED0FD00EAC350 /* RestrictedPointers.swift */; };
+		F8B1DC49202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC47202ED0FD00EAC350 /* RestrictedPointers.swift */; };
+		F8B1DC4A202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC47202ED0FD00EAC350 /* RestrictedPointers.swift */; };
+		F8B1DC4B202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC47202ED0FD00EAC350 /* RestrictedPointers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +100,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyPOSIX_C.h; sourceTree = "<group>"; };
+		F88914CE2069F27300892FE8 /* Errno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errno.swift; sourceTree = "<group>"; };
+		F88914D7206A013200892FE8 /* SwifyPOSIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifyPOSIX.swift; sourceTree = "<group>"; };
+		F88914DC206A01E800892FE8 /* dummy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dummy.h; sourceTree = "<group>"; };
+		F88914DD206A01E800892FE8 /* dummy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dummy.c; sourceTree = "<group>"; };
+		F8958DC6203A622700A99A02 /* PThreadSpecific.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadSpecific.swift; sourceTree = "<group>"; };
 		F8B1DB94202EC07100EAC350 /* SwiftyPOSIX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyPOSIX.h; sourceTree = "<group>"; };
 		F8B1DB95202EC07100EAC350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B1DBA1202EC07100EAC350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +121,14 @@
 		F8B1DC16202EC2C300EAC350 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		F8B1DC19202EC43400EAC350 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F8B1DC1A202EC43E00EAC350 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8B1DC22202EC9F300EAC350 /* PThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThread.swift; sourceTree = "<group>"; };
+		F8B1DC27202ECB3900EAC350 /* PThreadAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadAttribute.swift; sourceTree = "<group>"; };
+		F8B1DC2D202ECB6F00EAC350 /* PThreadMutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadMutex.swift; sourceTree = "<group>"; };
+		F8B1DC32202ECB7D00EAC350 /* PThreadMutexAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadMutexAttribute.swift; sourceTree = "<group>"; };
+		F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadCondition.swift; sourceTree = "<group>"; };
+		F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadConditionAttribute.swift; sourceTree = "<group>"; };
+		F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadReadWriteLock.swift; sourceTree = "<group>"; };
+		F8B1DC47202ED0FD00EAC350 /* RestrictedPointers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictedPointers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +187,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F88914CA2069F11800892FE8 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F88914CB2069F12900892FE8 /* SwiftyPOSIX_C */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		F88914CB2069F12900892FE8 /* SwiftyPOSIX_C */ = {
+			isa = PBXGroup;
+			children = (
+				F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */,
+				F88914DC206A01E800892FE8 /* dummy.h */,
+			);
+			path = SwiftyPOSIX_C;
+			sourceTree = "<group>";
+		};
+		F88914CD2069F22400892FE8 /* Errno */ = {
+			isa = PBXGroup;
+			children = (
+				F88914CE2069F27300892FE8 /* Errno.swift */,
+			);
+			path = Errno;
+			sourceTree = "<group>";
+		};
 		F8B1DB87202EC07100EAC350 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +270,10 @@
 		F8B1DC17202EC2E900EAC350 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				F88914D7206A013200892FE8 /* SwifyPOSIX.swift */,
+				F8B1DC46202ED0E400EAC350 /* Common */,
+				F88914CD2069F22400892FE8 /* Errno */,
+				F8B1DC20202EC9E000EAC350 /* PThread */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -182,8 +281,33 @@
 		F8B1DC18202EC2F100EAC350 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				F88914CA2069F11800892FE8 /* include */,
+				F88914DD206A01E800892FE8 /* dummy.c */,
 			);
 			path = C;
+			sourceTree = "<group>";
+		};
+		F8B1DC20202EC9E000EAC350 /* PThread */ = {
+			isa = PBXGroup;
+			children = (
+				F8B1DC22202EC9F300EAC350 /* PThread.swift */,
+				F8B1DC27202ECB3900EAC350 /* PThreadAttribute.swift */,
+				F8B1DC2D202ECB6F00EAC350 /* PThreadMutex.swift */,
+				F8B1DC32202ECB7D00EAC350 /* PThreadMutexAttribute.swift */,
+				F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */,
+				F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */,
+				F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */,
+				F8958DC6203A622700A99A02 /* PThreadSpecific.swift */,
+			);
+			path = PThread;
+			sourceTree = "<group>";
+		};
+		F8B1DC46202ED0E400EAC350 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F8B1DC47202ED0FD00EAC350 /* RestrictedPointers.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +317,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88914DE206A01E800892FE8 /* dummy.h in Headers */,
+				F88914D3206A00DF00892FE8 /* SwiftyPOSIX_C.h in Headers */,
 				F8B1DC12202EC26B00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +327,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88914DF206A01E800892FE8 /* dummy.h in Headers */,
+				F88914D4206A00E000892FE8 /* SwiftyPOSIX_C.h in Headers */,
 				F8B1DC13202EC26C00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +337,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88914E0206A01E800892FE8 /* dummy.h in Headers */,
+				F88914D5206A00E100892FE8 /* SwiftyPOSIX_C.h in Headers */,
 				F8B1DC14202EC26D00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +347,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88914E1206A01E800892FE8 /* dummy.h in Headers */,
+				F88914D6206A00E200892FE8 /* SwiftyPOSIX_C.h in Headers */,
 				F8B1DC15202EC26E00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +494,7 @@
 				TargetAttributes = {
 					F8B1DBAF202EC10500EAC350 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					F8B1DBB7202EC10600EAC350 = {
@@ -370,6 +503,7 @@
 					};
 					F8B1DBCB202EC11100EAC350 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					F8B1DBD3202EC11200EAC350 = {
@@ -378,6 +512,7 @@
 					};
 					F8B1DBE7202EC11D00EAC350 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					F8B1DBEF202EC11D00EAC350 = {
@@ -386,6 +521,7 @@
 					};
 					F8B1DC03202EC12900EAC350 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -470,6 +606,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88914E2206A01E800892FE8 /* dummy.c in Sources */,
+				F88914D8206A013200892FE8 /* SwifyPOSIX.swift in Sources */,
+				F88914CF2069F27300892FE8 /* Errno.swift in Sources */,
+				F8958DC7203A622700A99A02 /* PThreadSpecific.swift in Sources */,
+				F8B1DC48202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */,
+				F8B1DC23202EC9F300EAC350 /* PThread.swift in Sources */,
+				F8B1DC42202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F8B1DC33202ECB7D00EAC350 /* PThreadMutexAttribute.swift in Sources */,
+				F8B1DC28202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
+				F8B1DC3D202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
+				F8B1DC38202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
+				F8B1DC2E202ECB6F00EAC350 /* PThreadMutex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +633,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88914E3206A01E800892FE8 /* dummy.c in Sources */,
+				F88914D9206A013200892FE8 /* SwifyPOSIX.swift in Sources */,
+				F88914D02069F27300892FE8 /* Errno.swift in Sources */,
+				F8958DC8203A622700A99A02 /* PThreadSpecific.swift in Sources */,
+				F8B1DC49202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */,
+				F8B1DC24202EC9F300EAC350 /* PThread.swift in Sources */,
+				F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F8B1DC34202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
+				F8B1DC29202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
+				F8B1DC3E202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
+				F8B1DC39202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
+				F8B1DC2F202ECB6F00EAC350 /* PThreadMutex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +660,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88914E4206A01E800892FE8 /* dummy.c in Sources */,
+				F88914DA206A013200892FE8 /* SwifyPOSIX.swift in Sources */,
+				F88914D12069F27300892FE8 /* Errno.swift in Sources */,
+				F8958DC9203A622700A99A02 /* PThreadSpecific.swift in Sources */,
+				F8B1DC4A202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */,
+				F8B1DC25202EC9F300EAC350 /* PThread.swift in Sources */,
+				F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F8B1DC35202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
+				F8B1DC2A202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
+				F8B1DC3F202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
+				F8B1DC3A202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
+				F8B1DC30202ECB6F00EAC350 /* PThreadMutex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +687,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88914E5206A01E800892FE8 /* dummy.c in Sources */,
+				F88914DB206A013200892FE8 /* SwifyPOSIX.swift in Sources */,
+				F88914D22069F27300892FE8 /* Errno.swift in Sources */,
+				F8958DCA203A622700A99A02 /* PThreadSpecific.swift in Sources */,
+				F8B1DC4B202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */,
+				F8B1DC26202EC9F300EAC350 /* PThread.swift in Sources */,
+				F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F8B1DC36202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
+				F8B1DC2B202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
+				F8B1DC40202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
+				F8B1DC3B202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
+				F8B1DC31202ECB6F00EAC350 /* PThreadMutex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +839,7 @@
 		F8B1DBC2202EC10600EAC350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -665,10 +850,13 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Sources/module.modulemap;
+				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
+				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -677,6 +865,7 @@
 		F8B1DBC3202EC10600EAC350 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -687,6 +876,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Sources/module.modulemap;
+				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
+				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
@@ -699,6 +890,7 @@
 		F8B1DBC5202EC10600EAC350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -712,6 +904,7 @@
 		F8B1DBC6202EC10600EAC350 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -725,6 +918,7 @@
 		F8B1DBDE202EC11200EAC350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -738,11 +932,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MODULEMAP_FILE = Sources/module.modulemap;
+				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
+				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -750,6 +947,7 @@
 		F8B1DBDF202EC11200EAC350 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -763,6 +961,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MODULEMAP_FILE = Sources/module.modulemap;
+				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
+				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
@@ -775,6 +975,7 @@
 		F8B1DBE1202EC11200EAC350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -791,6 +992,7 @@
 		F8B1DBE2202EC11200EAC350 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -807,6 +1009,7 @@
 		F8B1DBFA202EC11D00EAC350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -817,11 +1020,14 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Sources/module.modulemap;
+				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
+				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 11.2;
@@ -831,6 +1037,7 @@
 		F8B1DBFB202EC11D00EAC350 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -841,6 +1048,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Sources/module.modulemap;
+				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
+				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
@@ -855,6 +1064,7 @@
 		F8B1DBFD202EC11D00EAC350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -870,6 +1080,7 @@
 		F8B1DBFE202EC11D00EAC350 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -886,6 +1097,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -896,11 +1108,14 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Sources/module.modulemap;
+				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
+				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.2;
@@ -911,6 +1126,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -921,6 +1137,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Sources/module.modulemap;
+				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
+				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;

@@ -1,8 +1,8 @@
 //
-//  SwiftyPOSIX.h
+//  RestrictedPointers.swift
 //  SwiftyPOSIX
 //
-//  Created by Braden Scothern on 2/9/18.
+//  Created by Braden Scothern on 2/10/18.
 //  Copyright © 2018 Braden Scothern. All rights reserved.
 //
 // The MIT License (MIT)
@@ -26,11 +26,9 @@
 // SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-//! Project version number for SwiftyPOSIX.
-FOUNDATION_EXPORT double SwiftyPOSIXVersionNumber;
-
-//! Project version string for SwiftyPOSIX.
-FOUNDATION_EXPORT const unsigned char SwiftyPOSIXVersionString[];
-
+typealias UnsafeRestrictedPointer = UnsafePointer
+typealias UnsafeRestrictedMutablePointer = UnsafeMutablePointer
+typealias UnsafeRestrictedRawPointer = UnsafeRawPointer
+typealias UnsafeRestrictedMutableRawPointer = UnsafeMutableRawPointer

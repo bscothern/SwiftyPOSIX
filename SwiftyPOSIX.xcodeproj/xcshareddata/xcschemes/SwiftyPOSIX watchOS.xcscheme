@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F8B1DC03202EC12900EAC350"
-               BuildableName = "SwiftyPOSIX_watchOS.framework"
+               BuildableName = "SwiftyPOSIX.framework"
                BlueprintName = "SwiftyPOSIX watchOS"
                ReferencedContainer = "container:SwiftyPOSIX.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8B1DC03202EC12900EAC350"
-            BuildableName = "SwiftyPOSIX_watchOS.framework"
+            BuildableName = "SwiftyPOSIX.framework"
             BlueprintName = "SwiftyPOSIX watchOS"
             ReferencedContainer = "container:SwiftyPOSIX.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8B1DC03202EC12900EAC350"
-            BuildableName = "SwiftyPOSIX_watchOS.framework"
+            BuildableName = "SwiftyPOSIX.framework"
             BlueprintName = "SwiftyPOSIX watchOS"
             ReferencedContainer = "container:SwiftyPOSIX.xcodeproj">
          </BuildableReference>
