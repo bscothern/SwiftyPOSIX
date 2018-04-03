@@ -9,10 +9,12 @@ All Types and functions are prefixed with SP
 
 ## POSIX Headers
 
-These headers have been taken from POSIXStandard.pdf chapter 13.
+These headers have been identified from the the downloaded version of standard which is included in `POSIX.1-2017/` and taken from [here](http://pubs.opengroup.org/onlinepubs/9699919799/).
+To see the entire set of standards open `POSIX.1-2017/index.html`.
 
 - [ ] aio.h
 - [ ] arpa/inet.h
+- [ ] assert
 - [ ] complex.h
 - [ ] cpio.h
 - [ ] ctype.h

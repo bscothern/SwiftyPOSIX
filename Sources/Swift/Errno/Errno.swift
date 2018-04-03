@@ -124,7 +124,7 @@ public enum Errno: Int32, Error, Codable {
         case .E2BIG:
             return "Argument list too long."
         case .EACCES:
-            return "Permissiondenied."
+            return "Permission denied."
         case .EADDRINUSE:
             return "Address in use."
         case .EADDRNOTAVAIL:
@@ -160,7 +160,7 @@ public enum Errno: Int32, Error, Codable {
         case .EDQUOT:
             return "Reserved."
         case .EEXIST:
-            return "Fileexists."
+            return "File exists."
         case .EFAULT:
             return "Bad address."
         case .EFBIG:
@@ -230,11 +230,11 @@ public enum Errno: Int32, Error, Codable {
         case .ENOSTR:
             return "Not a STREAM."
         case .ENOSYS:
-            return "Function not supported."
+            return "Functionality not supported."
         case .ENOTCONN:
             return "The socket is not connected."
         case .ENOTDIR:
-            return "Not a directory."
+            return "Not a directory or a symbolic link to a directory."
         case .ENOTEMPTY:
             return "Directory not empty."
         case .ENOTRECOVERABLE:
