@@ -33,6 +33,9 @@ public class PThread: Equatable {
     public typealias Function = () -> Any
 
     //MARK:- Properties
+    //MARK: Public Static
+    public static let destructorIterations = PTHREAD_DESTRUCTOR_ITERATIONS
+    
     internal var pointer = UnsafeMutablePointer<pthread_t?>.allocate(capacity: 1)
     private var attribute: PThreadAttribute?
     private var function: Function?
@@ -49,7 +52,7 @@ public class PThread: Equatable {
     }
 
     deinit {
-        pointer.deallocate(capacity: 1)
+        pointer.deallocate()
     }
 
     //MARK:- Funcs

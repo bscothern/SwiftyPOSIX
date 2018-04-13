@@ -219,6 +219,6 @@ public class PThreadAttribute {
 
     deinit {
         pthread_attr_destroy(pointer)
-        pointer.deallocate(capacity: 1)
+        pointer.deallocate()
     }
 }

@@ -190,18 +190,10 @@
 		F88914CA2069F11800892FE8 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				F88914CB2069F12900892FE8 /* SwiftyPOSIX_C */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		F88914CB2069F12900892FE8 /* SwiftyPOSIX_C */ = {
-			isa = PBXGroup;
-			children = (
 				F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */,
 				F88914DC206A01E800892FE8 /* dummy.h */,
 			);
-			path = SwiftyPOSIX_C;
+			path = include;
 			sourceTree = "<group>";
 		};
 		F88914CD2069F22400892FE8 /* Errno */ = {

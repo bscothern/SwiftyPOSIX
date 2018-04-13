@@ -6,7 +6,6 @@
 //  Copyright © 2018 Braden Scothern. All rights reserved.
 //
 
-#if XCODE_FRAMEWORK
-#else
+#if SWIFT_PACKAGE
 @_exported import SwiftyPOSIX_C
 #endif
