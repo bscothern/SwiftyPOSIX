@@ -26,52 +26,57 @@
 // SOFTWARE.
 //
 
-import Foundation
-
 public enum PThreadSpecific {
-    //MARK:- Types
-    //MARK: Public
-    
-    //TODO: Make Destructor not pass an Any value.
-    // This requires the ability to cast to the dynamic type rather than just at compile time.
-    
-    /// The function type that can be associated with a `Key` to be called when a `PThread` exits if the value associated with the `Key` is not `nil`.
-    ///
-    /// Before the `Destructor` begins execution the thread local storage which contained `value` is set to `nil`.
-    ///
-    /// When a thread is exiting the execution order of all `Destructor`s associated with a `Key` is unspecified.
-    ///
-    /// It is safe to continue use of `Key.get()` and `Key.set(value:)` for any `Key`.
-    /// If a new value is set for a `Key` after all `Destructor`s have executed on the thread, then the process of calling `Destructor`s is repeated.
-    /// If after at least `PThread.destructorIterations` of `Destructor` calls for outstanding non-`nil` values, there are still some non-`nil` values associated with `Destructor`s it is up to the implementation of `PThread` to either:
-    /// 1) Continue calling `Destructor`s, even if resulting in an infinite loop.
-    /// 2) Simply end attempts to satisfy all `Destructor`s.
-    ///
-    /// - Parameter value: The value that was associated with the `Key` that `value` comes from.
-    ///     This is of type `Any` because Swift lacks dynamic casting to a dynamic type.
-    ///     It is safe for users of `Key`s to have their associated `Destructor` force cast `value` to the `Key.ValueType`
-    public typealias Destructor = (_ value: Any) -> Void
-    
     /// The mechanism that allows access to thread specific storage that can be accessed with the `Key`.
     ///
     /// Multiple threads may use the same `Key` to get and set an assoicated value on the Thread.
     /// This value will always default to `nil` when a new `Key` or thread is created.
     ///
     /// - Important: If the `Key` is destroyed then its `Destructor` will not execute.
-    public class Key<ValueType> {
+    public class Key<ValueType>: PThreadSpecificKeyProtocol {
+        //MARK:- Types
+        //MARK: Public
+
+        /// The function type that can be associated with a `Key` to be called when a `PThread` exits if the value associated with the `Key` is not `nil`.
+        ///
+        /// Before the `Destructor` begins execution the thread local storage which contained `value` is set to `nil`.
+        ///
+        /// When a thread is exiting the execution order of all `Destructor`s associated with a `Key` is unspecified.
+        ///
+        /// It is safe to continue use of `Key.get()` and `Key.set(value:)` for any `Key`.
+        /// If a new value is set for a `Key` after all `Destructor`s have executed on the thread, then the process of calling `Destructor`s is repeated.
+        /// If after at least `PThread.destructorIterations` of `Destructor` calls for outstanding non-`nil` values, there are still some non-`nil` values associated with `Destructor`s it is up to the implementation of `PThread` to either:
+        /// 1) Continue calling `Destructor`s, even if resulting in an infinite loop.
+        /// 2) Simply end attempts to satisfy all `Destructor`s.
+        ///
+        /// - Parameter value: The value that was associated with the `Key` that `value` comes from.
+        public typealias Destructor = (_ value: ValueType) -> Void
+
         //MARK:- Properties
-        
+        //MARK: Public Static
         public static var max: Int {
             return Int(PTHREAD_KEYS_MAX)
         }
 
+        //MARK: Private
+
+        /// The pthread_key_t* that is used for all `PThreadSpecific` functions.
         private var pointer = UnsafeMutablePointer<pthread_key_t>.allocate(capacity: 1)
+
+        /// The destructor that should be raised for the `Key` when a thread exits.
         private var destructor: Destructor?
-        
-        private let contextsLock = NSLock() //TODO: Make this PThreadMutex
+
+        /// The lock that protexts the contexts of the `Key`.
+        private let contextsLock = PThreadMutex()
+
+        /// The contexts that have been created for this `Key`.
+        ///
+        /// These are also stored with they key
+        private var contexts: Set<UnsafeMutablePointer<Context>> = []
 
         //MARK:- Init
-        
+        //MARK: Public
+
         /// Create a `Key` that allows access to `PThread` specific storage.
         ///
         /// - Note: `int pthread_key_create(pthread_key_t *key, void (*destructor)(void*))`
@@ -81,21 +86,21 @@ public enum PThreadSpecific {
             self.destructor = destructor
             pthread_key_create(pointer) { context in
                 let context = UnsafeMutablePointer<Context>(OpaquePointer(context))
-                if let value = context.pointee.value {
-                    context.pointee.destructor?(value)
-                }
-                context.deinitialize(count: 1)
-                context.deallocate()
+                context.pointee.key?.raiseDestruction(of: context)
             }
         }
 
         deinit {
             pthread_key_delete(pointer.pointee)
             pointer.deallocate()
+            for context in contexts {
+                context.deinitialize(count: 1).deallocate()
+            }
         }
-        
+
         //MARK:- Funcs
-        
+        //MARK: Public
+
         /// Get the thread specific value currently associated with the `Key`.
         ///
         /// - Note: `void *pthread_getspecific(pthread_key_t key)`
@@ -109,7 +114,7 @@ public enum PThreadSpecific {
             }
             return (value as! ValueType)
         }
-        
+
         /// Sets a thread specific value with the `Key`.
         ///
         /// - Note: `int pthread_setspecific(pthread_key_t key, const void *value)`
@@ -121,20 +126,42 @@ public enum PThreadSpecific {
                 context.pointee.value = value
             } else {
                 let context = UnsafeMutablePointer<Context>.allocate(capacity: 1)
-                context.initialize(to: PThreadSpecific.Context(value: value, destructor: self.destructor))
+                context.initialize(to: PThreadSpecific.Context(value: value, key: self))
                 pthread_setspecific(self.pointer.pointee, UnsafeRawPointer(context))
+
+                contextsLock.lock()
+                contexts.insert(context)
+                contextsLock.unlock()
             }
+        }
+
+        //MARK:- FilePrivate Protocol Conformance
+        //MARK: PThreadSpecificKeyProtocol
+        fileprivate func raiseDestruction(of context: UnsafeMutablePointer<PThreadSpecific.Context>) {
+
+            if let value = context.pointee.value {
+                destructor?(value as! ValueType)
+            }
+
+            contextsLock.lock()
+            contexts.remove(context)
+            contextsLock.unlock()
+
+            context.deinitialize(count: 1).deallocate()
         }
     }
 
     //MARK: Private
-    
-    /// A helper struct for `Key<T>` that contains both the value of the key and the destructor to execute on thread exit.
-    private struct Context {
+
+    fileprivate struct Context {
         /// The value currently associated with a `Key`
         var value: Any?
-        
-        /// A `Destructor` function that will be called when a thread exits.
-        let destructor: Destructor?
+
+        /// The key that needs to clean up its state about the context.
+        weak var key: PThreadSpecificKeyProtocol?
     }
+}
+
+private protocol PThreadSpecificKeyProtocol: AnyObject {
+    func raiseDestruction(of context: UnsafeMutablePointer<PThreadSpecific.Context>)
 }

@@ -26,8 +26,6 @@
 // SOFTWARE.
 //
 
-import Foundation
-
 public class PThread: Equatable {
     //MARK:- Types
     public typealias Function = () -> Any
@@ -35,7 +33,7 @@ public class PThread: Equatable {
     //MARK:- Properties
     //MARK: Public Static
     public static let destructorIterations = PTHREAD_DESTRUCTOR_ITERATIONS
-    
+
     internal var pointer = UnsafeMutablePointer<pthread_t?>.allocate(capacity: 1)
     private var attribute: PThreadAttribute?
     private var function: Function?

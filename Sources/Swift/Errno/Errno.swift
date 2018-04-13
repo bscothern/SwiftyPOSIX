@@ -26,8 +26,6 @@
 // SOFTWARE.
 //
 
-import Foundation
-
 public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugStringConvertible {
     //MARK: POSIX error definitions
     case E2BIG

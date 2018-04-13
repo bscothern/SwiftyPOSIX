@@ -26,8 +26,6 @@
 // SOFTWARE.
 //
 
-import Foundation
-
 typealias UnsafeRestrictedPointer = UnsafePointer
 typealias UnsafeRestrictedMutablePointer = UnsafeMutablePointer
 typealias UnsafeRestrictedRawPointer = UnsafeRawPointer

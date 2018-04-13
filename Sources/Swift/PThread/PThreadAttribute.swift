@@ -26,8 +26,6 @@
 // SOFTWARE.
 //
 
-import Foundation
-
 public class PThreadAttribute {
     //MARK:- Types
     public enum SchedulePolicy {

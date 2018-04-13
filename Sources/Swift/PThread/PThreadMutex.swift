@@ -26,5 +26,19 @@
 // SOFTWARE.
 //
 
+public class PThreadMutex {
+
+    public func lock() {
+    }
+
+    public func unlock() {
+    }
+}
+
+#if canImport(Foundation)
 import Foundation
 
+extension PThreadMutex: NSLocking {
+}
+
+#endif

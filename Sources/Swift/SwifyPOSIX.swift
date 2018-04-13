@@ -9,3 +9,9 @@
 #if SWIFT_PACKAGE
 @_exported import SwiftyPOSIX_C
 #endif
+
+#if os(Linux)
+@_exported import Glibc
+#else
+@_exported import Darwin.C
+#endif
