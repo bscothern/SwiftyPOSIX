@@ -84,18 +84,52 @@ public class PThreadAttribute {
     }
 
     //MARK:- Properties
-    public var stack: (pointer: UnsafeMutableRawPointer?, size: Int) {
+    //MARK: Public Static
+    
+    /// The smallest supported stack size for a `PThread`.
+    ///
+    /// - Note: `PTHREAD_STACK_MIN`
+    public static var stackSizeMinimum: Int {
+        return Int(PTHREAD_STACK_MIN)
+    }
+    
+    //MARK: Public
+    
+    /// The area of storage to be used for the created `PThread`'s stack.
+    ///
+    /// `baseAddress` will be the lowest addressable type of the storage and the `count` will be equal to the `stackSize`.
+    ///
+    /// - Important: When assigning to this property the `count` must be greater than or equal to `PThreadAttribute.stackSizeMinimum`.
+    ///
+    /// - Important: Can set Errno on set failures.
+    ///
+    /// Required Failures:
+    ///
+    ///    1. Errno.EINVAL - The value of stacksize is less than `PThreadAttribute.stackSizeMinimum` or exceeds an implementation-defined limit.
+    ///
+    /// Optional Failures:
+    ///
+    ///    1. Errno.EINVAL - The value of `baseAddress` does not have proper alignment to be used as a stack, or `UnsafeMutablePointer<CChar>(OpaquePointer(newValue.baseAddress)) + count` lacks proper alignment.
+    ///
+    ///    2. Errno.EACCES - The stack page(s) described by the `UnsafeMutableRawBufferPointer` are not both readable and writable by the thread.
+    ///
+    /// - Note: `int pthread_attr_getstack(const pthread_attr_t *restrict attr, void **restrict stackaddr, size_t *restrict stacksize)`
+    /// - Note: `int pthread_attr_setstack(pthread_attr_t *attr, void *stackaddr, size_t stacksize)`
+    public var stack: UnsafeMutableRawBufferPointer {
         get {
             var value: (pointer: UnsafeMutableRawPointer?, size: Int) = (nil, 0)
             pthread_attr_getstack(pointer, &value.pointer, &value.size)
-            return value
+            return UnsafeMutableRawBufferPointer(start: value.pointer, count: value.size)
         }
         set {
-            var newValue = newValue
-            if newValue.pointer == nil {
-                newValue.pointer = UnsafeMutableRawPointer(bitPattern: 0)
+            guard newValue.baseAddress != nil else {
+                return
             }
-            pthread_attr_setstack(pointer, newValue.pointer!, newValue.size)
+            let errorCode = pthread_attr_setstack(pointer, newValue.baseAddress!, newValue.count)
+
+            if errorCode != 0 {
+                Errno.value = Errno(rawValue: errorCode)
+            }
         }
     }
 
@@ -121,6 +155,13 @@ public class PThreadAttribute {
         }
     }
 
+    @available(*, unavailable, message: "This property is obsolete, non-portable, and unsafe. Insead PthreadAttribute.stack should be used. It has only been \"supported\" for clarity.")
+    /// Used to specify the addres at which the stack of the newly created thread should be located.
+    ///
+    /// - Important: This doesn't provide a way to know specify if the address is at the top or bottom of the stack depending on how it grows.
+    ///
+    /// - Note: `int pthread_attr_getstackaddr(const pthread_attr_t *restrict attr, void **restrict stackaddr)`
+    /// - Note: `int pthread_attr_setstackaddr(pthread_attr_t *attr, void *stackaddr)`
     public var stackAddress: UnsafeMutableRawPointer? {
         get {
             var value: UnsafeMutableRawPointer?
@@ -197,8 +238,13 @@ public class PThreadAttribute {
     internal var pointer = UnsafeMutablePointer<pthread_attr_t>.allocate(capacity: 1)
 
     //MARK:- Init
-    public init() {
-        pthread_attr_init(pointer)
+    public init?() {
+        let errorCode = pthread_attr_init(pointer)
+
+        if let error = Errno(rawValue: errorCode) {
+            Errno.value = error
+            return nil
+        }
     }
 
     internal convenience init?(copy other: PThreadAttribute?) {

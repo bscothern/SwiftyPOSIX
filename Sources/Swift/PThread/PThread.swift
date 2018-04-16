@@ -26,18 +26,25 @@
 // SOFTWARE.
 //
 
-public class PThread: Equatable {
+public class PThread<T>: Equatable, PThreadRunnerProtocol {
     //MARK:- Types
-    public typealias Function = () -> Any
+    public typealias Function = () -> T
 
     //MARK:- Properties
     //MARK: Public Static
-    public static let destructorIterations = PTHREAD_DESTRUCTOR_ITERATIONS
+    public static var destructorIterations: Int {
+        return Int(PTHREAD_DESTRUCTOR_ITERATIONS)
+    }
 
     internal var pointer = UnsafeMutablePointer<pthread_t?>.allocate(capacity: 1)
     private var attribute: PThreadAttribute?
-    private var function: Function?
-    private var result: Any?
+    private var function: Function!
+    private var result: T?
+    private lazy var context: UnsafeMutablePointer<PThreadContext> = {
+        let value = UnsafeMutablePointer<PThreadContext>.allocate(capacity: 1)
+        value.initialize(to: PThreadContext(runner: self))
+        return value
+    }()
 
     //MARK:- Init
     init(attribute: PThreadAttribute? = nil) {
@@ -51,6 +58,7 @@ public class PThread: Equatable {
 
     deinit {
         pointer.deallocate()
+        context.deallocate()
     }
 
     //MARK:- Funcs
@@ -64,11 +72,10 @@ public class PThread: Equatable {
         self.function = function
 
         pthread_create(pointer, attribute?.pointer, { context in
-            let pthread = Unmanaged<PThread>.fromOpaque(context).takeUnretainedValue()
-            let result = pthread.function!()
-
+            let context = UnsafeMutablePointer<PThreadContext>(OpaquePointer(context))
+            context.pointee.runner?.execute()
             return nil
-        }, Unmanaged<PThread>.passUnretained(self).toOpaque())
+        }, self.context)
     }
 
     public func cancel() {
@@ -78,9 +85,16 @@ public class PThread: Equatable {
     public func detach() {
         pthread_detach(pointer.pointee!)
     }
+    
+    //MARK: FilePrivate
+    fileprivate func execute() {
+        result = function()
+    }
 }
 
-public func == (lhs: PThread, rhs: PThread) -> Bool {
+//MARK:- Operators
+//MARK: Public
+public func == <T>(lhs: PThread<T>, rhs: PThread<T>) -> Bool {
     if lhs === rhs {
         return true
     }
@@ -90,4 +104,14 @@ public func == (lhs: PThread, rhs: PThread) -> Bool {
             return false
     }
     return pthread_equal(lhs, rhs) != 0
+}
+
+//MARK:- Types
+//MARK: Private
+private struct PThreadContext {
+    weak var runner: PThreadRunnerProtocol?
+}
+
+private protocol PThreadRunnerProtocol: AnyObject {
+    func execute()
 }

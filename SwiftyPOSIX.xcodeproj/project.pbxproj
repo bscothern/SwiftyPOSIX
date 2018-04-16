@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8419F1D2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
+		F8419F1E2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
+		F8419F1F2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
+		F8419F202084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
 		F88914CF2069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
 		F88914D02069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
 		F88914D12069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
@@ -100,6 +104,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F8419F1C2084614F0001179A /* StaticFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFuncs.swift; sourceTree = "<group>"; };
 		F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyPOSIX_C.h; sourceTree = "<group>"; };
 		F88914CE2069F27300892FE8 /* Errno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errno.swift; sourceTree = "<group>"; };
 		F88914D7206A013200892FE8 /* SwifyPOSIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifyPOSIX.swift; sourceTree = "<group>"; };
@@ -187,6 +192,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8419F1B208461310001179A /* InternalHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				F8419F1C2084614F0001179A /* StaticFuncs.swift */,
+			);
+			path = InternalHelpers;
+			sourceTree = "<group>";
+		};
 		F88914CA2069F11800892FE8 /* include */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +278,7 @@
 				F88914D7206A013200892FE8 /* SwifyPOSIX.swift */,
 				F8B1DC46202ED0E400EAC350 /* Common */,
 				F88914CD2069F22400892FE8 /* Errno */,
+				F8419F1B208461310001179A /* InternalHelpers */,
 				F8B1DC20202EC9E000EAC350 /* PThread */,
 			);
 			path = Swift;
@@ -606,6 +620,7 @@
 				F8B1DC23202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC42202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
 				F8B1DC33202ECB7D00EAC350 /* PThreadMutexAttribute.swift in Sources */,
+				F8419F1D2084614F0001179A /* StaticFuncs.swift in Sources */,
 				F8B1DC28202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3D202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
 				F8B1DC38202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
@@ -633,6 +648,7 @@
 				F8B1DC24202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
 				F8B1DC34202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
+				F8419F1E2084614F0001179A /* StaticFuncs.swift in Sources */,
 				F8B1DC29202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3E202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
 				F8B1DC39202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
@@ -660,6 +676,7 @@
 				F8B1DC25202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
 				F8B1DC35202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
+				F8419F1F2084614F0001179A /* StaticFuncs.swift in Sources */,
 				F8B1DC2A202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3F202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
 				F8B1DC3A202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
@@ -687,6 +704,7 @@
 				F8B1DC26202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
 				F8B1DC36202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
+				F8419F202084614F0001179A /* StaticFuncs.swift in Sources */,
 				F8B1DC2B202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC40202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
 				F8B1DC3B202ECB9200EAC350 /* PThreadCondition.swift in Sources */,

@@ -155,7 +155,7 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
             return Errno()
         }
     }
-
+    
     //MARK: Public
     public var rawValue: Int32 {
         return cValue(ofErrno: self)
@@ -657,6 +657,15 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
     /// Attempts to create an `Errno` based on the current value of the `errno` property.
     public init?() {
         self.init(rawValue: errno)
+    }
+
+    public init?(rawValue: RawValue) {
+        //TODO: remove this when swift properly supports enum iteration
+        for errno in iterateEnum(Errno.self) where errno.rawValue == rawValue {
+            self = errno
+            return
+        }
+        return nil
     }
 }
 
