@@ -32,10 +32,12 @@
 /// This value will always default to `nil` when a new `PThreadSpecificKey` or thread is created.
 ///
 /// - Important: If the `Key` is destroyed then its `Destructor` will not execute.
+///
+/// - Note: `pthread_key_t`
 public class PThreadSpecificKey<ValueType>: PThreadSpecificKeyDestructorRaiser {
     //MARK:- Types
     //MARK: Public
-    
+
     /// The function type that can be associated with a `PThreadSpecificKey` to be called when a `PThread` exits if the value associated with the `Key` is not `nil`.
     ///
     /// Before the `Destructor` begins execution the thread local storage which contained `value` is set to `nil`.
@@ -63,7 +65,7 @@ public class PThreadSpecificKey<ValueType>: PThreadSpecificKeyDestructorRaiser {
     
     //MARK: Private
     
-    /// The pthread_key_t* that is used for all `PThreadSpecific` functions.
+    /// The `pthread_key_t*` that is used for all `PThreadSpecific` functions.
     private var pointer = UnsafeMutablePointer<pthread_key_t>.allocate(capacity: 1)
     
     /// The destructor that should be raised for the `Key` when a thread exits.
