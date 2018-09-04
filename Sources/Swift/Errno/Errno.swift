@@ -26,6 +26,13 @@
 // SOFTWARE.
 //
 
+/// **System Error Numbers**
+///
+/// The value of errno should only be examined when it is indicated to be valid by a function's return value.
+/// No function in this volume of POSIX.1-2017 shall set Errno.value to zero/nil.
+/// For each thread of a process, Errno.value shall not be affected by function calls or assignments to Errno.value by other threads.
+///
+/// - Note: `<errno.h>`
 public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugStringConvertible {
     //MARK: POSIX error definitions
     case E2BIG
@@ -70,7 +77,6 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
     case ENETUNREACH
     case ENFILE
     case ENOBUFS
-//    @available(*, deprecated)
     case ENODATA
     case ENODEV
     case ENOENT
@@ -81,9 +87,7 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
     case ENOMSG
     case ENOPROTOOPT
     case ENOSPC
-//    @available(*, deprecated)
     case ENOSR
-//    @available(*, deprecated)
     case ENOSTR
     case ENOSYS
     case ENOTCONN
@@ -107,7 +111,6 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
     case ESPIPE
     case ESRCH
     case ESTALE
-//    @available(*, deprecated)
     case ETIME
     case ETIMEDOUT
     case ETXTBSY
@@ -659,7 +662,7 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
         self.init(rawValue: errno)
     }
 
-    public init?(rawValue: RawValue) {
+    public init?(rawValue: Int32) {
         //TODO: remove this when swift properly supports enum iteration
         for errno in iterateEnum(Errno.self) where errno.rawValue == rawValue {
             self = errno

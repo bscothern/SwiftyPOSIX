@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80EA90E2085E591002D0E36 /* POSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* POSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F80EA90F2085E591002D0E36 /* POSIX_C.c in Sources */ = {isa = PBXBuildFile; fileRef = F80EA90C2085E198002D0E36 /* POSIX_C.c */; };
+		F80EA9102085E592002D0E36 /* POSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* POSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F80EA9112085E592002D0E36 /* POSIX_C.c in Sources */ = {isa = PBXBuildFile; fileRef = F80EA90C2085E198002D0E36 /* POSIX_C.c */; };
+		F80EA9122085E592002D0E36 /* POSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* POSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F80EA9132085E592002D0E36 /* POSIX_C.c in Sources */ = {isa = PBXBuildFile; fileRef = F80EA90C2085E198002D0E36 /* POSIX_C.c */; };
+		F80EA9142085E593002D0E36 /* POSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* POSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F80EA9152085E593002D0E36 /* POSIX_C.c in Sources */ = {isa = PBXBuildFile; fileRef = F80EA90C2085E198002D0E36 /* POSIX_C.c */; };
 		F8419F1D2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
 		F8419F1E2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
 		F8419F1F2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
 		F8419F202084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
+		F84E33242094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
+		F84E33252094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
+		F84E33262094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
+		F84E33272094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
 		F88914CF2069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
 		F88914D02069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
 		F88914D12069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
@@ -23,18 +35,22 @@
 		F88914D9206A013200892FE8 /* SwifyPOSIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914D7206A013200892FE8 /* SwifyPOSIX.swift */; };
 		F88914DA206A013200892FE8 /* SwifyPOSIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914D7206A013200892FE8 /* SwifyPOSIX.swift */; };
 		F88914DB206A013200892FE8 /* SwifyPOSIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914D7206A013200892FE8 /* SwifyPOSIX.swift */; };
-		F88914DE206A01E800892FE8 /* dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914DC206A01E800892FE8 /* dummy.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		F88914DF206A01E800892FE8 /* dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914DC206A01E800892FE8 /* dummy.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		F88914E0206A01E800892FE8 /* dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914DC206A01E800892FE8 /* dummy.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		F88914E1206A01E800892FE8 /* dummy.h in Headers */ = {isa = PBXBuildFile; fileRef = F88914DC206A01E800892FE8 /* dummy.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F88914E2206A01E800892FE8 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = F88914DD206A01E800892FE8 /* dummy.c */; };
 		F88914E3206A01E800892FE8 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = F88914DD206A01E800892FE8 /* dummy.c */; };
 		F88914E4206A01E800892FE8 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = F88914DD206A01E800892FE8 /* dummy.c */; };
 		F88914E5206A01E800892FE8 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = F88914DD206A01E800892FE8 /* dummy.c */; };
-		F8958DC7203A622700A99A02 /* PThreadSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecific.swift */; };
-		F8958DC8203A622700A99A02 /* PThreadSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecific.swift */; };
-		F8958DC9203A622700A99A02 /* PThreadSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecific.swift */; };
-		F8958DCA203A622700A99A02 /* PThreadSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecific.swift */; };
+		F8958DC7203A622700A99A02 /* PThreadSpecificKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */; };
+		F8958DC8203A622700A99A02 /* PThreadSpecificKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */; };
+		F8958DC9203A622700A99A02 /* PThreadSpecificKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */; };
+		F8958DCA203A622700A99A02 /* PThreadSpecificKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */; };
+		F8A4BF25213DF2C600AA8A05 /* SP_unistd.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4BF23213DF2C600AA8A05 /* SP_unistd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8A4BF26213DF2C600AA8A05 /* SP_unistd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8A4BF24213DF2C600AA8A05 /* SP_unistd.c */; };
+		F8A4BF27213DF31400AA8A05 /* SP_unistd.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4BF23213DF2C600AA8A05 /* SP_unistd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8A4BF28213DF31500AA8A05 /* SP_unistd.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4BF23213DF2C600AA8A05 /* SP_unistd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8A4BF29213DF31700AA8A05 /* SP_unistd.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4BF23213DF2C600AA8A05 /* SP_unistd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8A4BF2A213DF43B00AA8A05 /* SP_unistd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8A4BF24213DF2C600AA8A05 /* SP_unistd.c */; };
+		F8A4BF2B213DF43B00AA8A05 /* SP_unistd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8A4BF24213DF2C600AA8A05 /* SP_unistd.c */; };
+		F8A4BF2C213DF43C00AA8A05 /* SP_unistd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8A4BF24213DF2C600AA8A05 /* SP_unistd.c */; };
 		F8B1DBB9202EC10600EAC350 /* SwiftyPOSIX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1DBB0202EC10500EAC350 /* SwiftyPOSIX.framework */; };
 		F8B1DBD5202EC11200EAC350 /* SwiftyPOSIX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1DBCC202EC11100EAC350 /* SwiftyPOSIX.framework */; };
 		F8B1DBF1202EC11D00EAC350 /* SwiftyPOSIX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1DBE8202EC11D00EAC350 /* SwiftyPOSIX.framework */; };
@@ -104,13 +120,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F80EA90A2085E154002D0E36 /* POSIX_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POSIX_C.h; sourceTree = "<group>"; };
+		F80EA90B2085E168002D0E36 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		F80EA90C2085E198002D0E36 /* POSIX_C.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = POSIX_C.c; sourceTree = "<group>"; };
 		F8419F1C2084614F0001179A /* StaticFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFuncs.swift; sourceTree = "<group>"; };
+		F84E33232094306F00D7A162 /* Unistd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unistd.swift; sourceTree = "<group>"; };
 		F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyPOSIX_C.h; sourceTree = "<group>"; };
 		F88914CE2069F27300892FE8 /* Errno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errno.swift; sourceTree = "<group>"; };
 		F88914D7206A013200892FE8 /* SwifyPOSIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifyPOSIX.swift; sourceTree = "<group>"; };
-		F88914DC206A01E800892FE8 /* dummy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dummy.h; sourceTree = "<group>"; };
 		F88914DD206A01E800892FE8 /* dummy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dummy.c; sourceTree = "<group>"; };
-		F8958DC6203A622700A99A02 /* PThreadSpecific.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadSpecific.swift; sourceTree = "<group>"; };
+		F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadSpecificKey.swift; sourceTree = "<group>"; };
+		F8A4BF23213DF2C600AA8A05 /* SP_unistd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SP_unistd.h; sourceTree = "<group>"; };
+		F8A4BF24213DF2C600AA8A05 /* SP_unistd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SP_unistd.c; sourceTree = "<group>"; };
 		F8B1DB94202EC07100EAC350 /* SwiftyPOSIX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyPOSIX.h; sourceTree = "<group>"; };
 		F8B1DB95202EC07100EAC350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B1DBA1202EC07100EAC350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -192,6 +213,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F80EA9082085E11A002D0E36 /* POSIX_C */ = {
+			isa = PBXGroup;
+			children = (
+				F80EA9092085E140002D0E36 /* include */,
+				F80EA90C2085E198002D0E36 /* POSIX_C.c */,
+				F8A4BF24213DF2C600AA8A05 /* SP_unistd.c */,
+			);
+			path = POSIX_C;
+			sourceTree = "<group>";
+		};
+		F80EA9092085E140002D0E36 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F80EA90A2085E154002D0E36 /* POSIX_C.h */,
+				F8A4BF23213DF2C600AA8A05 /* SP_unistd.h */,
+				F80EA90B2085E168002D0E36 /* module.modulemap */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		F8419F1B208461310001179A /* InternalHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,11 +241,18 @@
 			path = InternalHelpers;
 			sourceTree = "<group>";
 		};
+		F84E33222094304400D7A162 /* Unistd */ = {
+			isa = PBXGroup;
+			children = (
+				F84E33232094306F00D7A162 /* Unistd.swift */,
+			);
+			path = Unistd;
+			sourceTree = "<group>";
+		};
 		F88914CA2069F11800892FE8 /* include */ = {
 			isa = PBXGroup;
 			children = (
 				F88914CC2069F13F00892FE8 /* SwiftyPOSIX_C.h */,
-				F88914DC206A01E800892FE8 /* dummy.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -250,6 +298,7 @@
 				F8B1DC16202EC2C300EAC350 /* module.modulemap */,
 				F8B1DC17202EC2E900EAC350 /* Swift */,
 				F8B1DC18202EC2F100EAC350 /* C */,
+				F80EA9082085E11A002D0E36 /* POSIX_C */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -280,6 +329,7 @@
 				F88914CD2069F22400892FE8 /* Errno */,
 				F8419F1B208461310001179A /* InternalHelpers */,
 				F8B1DC20202EC9E000EAC350 /* PThread */,
+				F84E33222094304400D7A162 /* Unistd */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -303,7 +353,7 @@
 				F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */,
 				F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */,
 				F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */,
-				F8958DC6203A622700A99A02 /* PThreadSpecific.swift */,
+				F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */,
 			);
 			path = PThread;
 			sourceTree = "<group>";
@@ -323,8 +373,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F88914DE206A01E800892FE8 /* dummy.h in Headers */,
 				F88914D3206A00DF00892FE8 /* SwiftyPOSIX_C.h in Headers */,
+				F8A4BF25213DF2C600AA8A05 /* SP_unistd.h in Headers */,
+				F80EA90E2085E591002D0E36 /* POSIX_C.h in Headers */,
 				F8B1DC12202EC26B00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,8 +384,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F88914DF206A01E800892FE8 /* dummy.h in Headers */,
 				F88914D4206A00E000892FE8 /* SwiftyPOSIX_C.h in Headers */,
+				F8A4BF27213DF31400AA8A05 /* SP_unistd.h in Headers */,
+				F80EA9102085E592002D0E36 /* POSIX_C.h in Headers */,
 				F8B1DC13202EC26C00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,8 +395,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F88914E0206A01E800892FE8 /* dummy.h in Headers */,
 				F88914D5206A00E100892FE8 /* SwiftyPOSIX_C.h in Headers */,
+				F8A4BF28213DF31500AA8A05 /* SP_unistd.h in Headers */,
+				F80EA9122085E592002D0E36 /* POSIX_C.h in Headers */,
 				F8B1DC14202EC26D00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,8 +406,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F88914E1206A01E800892FE8 /* dummy.h in Headers */,
 				F88914D6206A00E200892FE8 /* SwiftyPOSIX_C.h in Headers */,
+				F8A4BF29213DF31700AA8A05 /* SP_unistd.h in Headers */,
+				F80EA9142085E593002D0E36 /* POSIX_C.h in Headers */,
 				F8B1DC15202EC26E00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,9 +667,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88914E2206A01E800892FE8 /* dummy.c in Sources */,
+				F80EA90F2085E591002D0E36 /* POSIX_C.c in Sources */,
 				F88914D8206A013200892FE8 /* SwifyPOSIX.swift in Sources */,
 				F88914CF2069F27300892FE8 /* Errno.swift in Sources */,
-				F8958DC7203A622700A99A02 /* PThreadSpecific.swift in Sources */,
+				F8A4BF26213DF2C600AA8A05 /* SP_unistd.c in Sources */,
+				F8958DC7203A622700A99A02 /* PThreadSpecificKey.swift in Sources */,
+				F84E33242094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC48202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */,
 				F8B1DC23202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC42202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
@@ -641,9 +698,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88914E3206A01E800892FE8 /* dummy.c in Sources */,
+				F80EA9112085E592002D0E36 /* POSIX_C.c in Sources */,
 				F88914D9206A013200892FE8 /* SwifyPOSIX.swift in Sources */,
 				F88914D02069F27300892FE8 /* Errno.swift in Sources */,
-				F8958DC8203A622700A99A02 /* PThreadSpecific.swift in Sources */,
+				F8958DC8203A622700A99A02 /* PThreadSpecificKey.swift in Sources */,
+				F8A4BF2A213DF43B00AA8A05 /* SP_unistd.c in Sources */,
+				F84E33252094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC49202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */,
 				F8B1DC24202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
@@ -669,9 +729,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88914E4206A01E800892FE8 /* dummy.c in Sources */,
+				F80EA9132085E592002D0E36 /* POSIX_C.c in Sources */,
 				F88914DA206A013200892FE8 /* SwifyPOSIX.swift in Sources */,
 				F88914D12069F27300892FE8 /* Errno.swift in Sources */,
-				F8958DC9203A622700A99A02 /* PThreadSpecific.swift in Sources */,
+				F8958DC9203A622700A99A02 /* PThreadSpecificKey.swift in Sources */,
+				F8A4BF2B213DF43B00AA8A05 /* SP_unistd.c in Sources */,
+				F84E33262094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC4A202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */,
 				F8B1DC25202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
@@ -697,9 +760,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88914E5206A01E800892FE8 /* dummy.c in Sources */,
+				F80EA9152085E593002D0E36 /* POSIX_C.c in Sources */,
 				F88914DB206A013200892FE8 /* SwifyPOSIX.swift in Sources */,
 				F88914D22069F27300892FE8 /* Errno.swift in Sources */,
-				F8958DCA203A622700A99A02 /* PThreadSpecific.swift in Sources */,
+				F8958DCA203A622700A99A02 /* PThreadSpecificKey.swift in Sources */,
+				F8A4BF2C213DF43C00AA8A05 /* SP_unistd.c in Sources */,
+				F84E33272094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC4B202ED0FD00EAC350 /* RestrictedPointers.swift in Sources */,
 				F8B1DC26202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,

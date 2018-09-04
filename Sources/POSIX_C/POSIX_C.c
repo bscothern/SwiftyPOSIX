@@ -1,9 +1,9 @@
 //
-// module.modulemap
-// SwiftyPOSIX
+//  POSIX_C.c
+//  SwiftyPOSIX iOS
 //
-// Created by Braden Scothern on 2/9/18.
-//  Copyright © 2017 Braden Scothern. All rights reserved.
+//  Created by Braden Scothern on 4/17/18.
+//  Copyright © 2018 Braden Scothern. All rights reserved.
 //
 // The MIT License (MIT)
 //
@@ -26,20 +26,7 @@
 // SOFTWARE.
 //
 
-framework module SwiftyPOSIX {
-    header "SwiftyPOSIX.h"
-    
-    private header "SwiftyPOSIX_C.h"
-    
-    module POSIX_C {
-        header "POSIX_C.h"
-        export *
-
-        explicit module Shims {
-            header "SP_unistd.h"
-            export *
-        }
-    }
-    
-    export *
+// Unaccessible method to silence compiler warnings
+int posix_c_anchor() {
+    return 0;
 }

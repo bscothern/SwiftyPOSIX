@@ -6,6 +6,4 @@
 //  Copyright © 2018 Braden Scothern. All rights reserved.
 //
 
-#include "dummy.h"
-
 const int dummyC = 0;

@@ -29,6 +29,5 @@
 #ifndef SwiftyPOSIX_C_h
 #define SwiftyPOSIX_C_h
 
-#include "dummy.h"
 
 #endif /* SwiftyPOSIX_C_h */
