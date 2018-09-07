@@ -28,11 +28,9 @@
 
 framework module SwiftyPOSIX {
     header "SwiftyPOSIX.h"
-    
-    private header "SwiftyPOSIX_C.h"
-    
-    module POSIX_C {
-        header "POSIX_C.h"
+
+    module SwiftyPOSIX_C {
+        header "SwiftyPOSIX_C.h"
         export *
 
         explicit module Shims {
