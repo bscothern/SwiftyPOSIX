@@ -20,7 +20,7 @@ To see the entire set of standards open `POSIX.1-2017/index.html`.
 - [ ] ctype.h
 - [ ] dirent.h
 - [ ] dlfcn.h
-- [x] errno.h<sup>1</sup>
+- [x] errno.h <sup>1</sup>
 - [ ] fcntl.h
 - [ ] fenv.h
 - [ ] float.h
@@ -46,7 +46,7 @@ To see the entire set of standards open `POSIX.1-2017/index.html`.
 - [ ] netinet/tcp.h
 - [ ] nl_types.h
 - [ ] poll.h
-- [ ] pthread.h
+- [ ] pthread.h *
 - [ ] pwd.h
 - [ ] regex.h
 - [ ] sched.h
@@ -86,12 +86,15 @@ To see the entire set of standards open `POSIX.1-2017/index.html`.
 - [ ] time.h
 - [ ] trace.h
 - [ ] ulimit.h
-- [ ] unistd.h
+- [ ] unistd.h * <sup>2 3</sup>
 - [ ] utime.h
 - [ ] utmpx.h
 - [ ] wchar.h
 - [ ] wctype.h
 - [ ] wordexp.h
 
-Key
-1 Convenience TODOs are present and need more implementaiton before being finished.
+### Superscript Key
+* \* -- In Progress
+* 1 -- Convenience TODOs are present and need more implementaiton before being finished.
+* 2 -- Naming cleanup is needed.
+* 3 -- Compile time expressions need to be marked when supported. [See](https://forums.swift.org/t/compile-time-constant-expressions-for-swift/12879)
