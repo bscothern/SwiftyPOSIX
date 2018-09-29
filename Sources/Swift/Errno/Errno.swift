@@ -165,42 +165,40 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
     }
 
     public var isSystemDefined: Bool {
+        switch self {
         #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
-            switch self {
-            case .ENOTBLK,
-                 .ESOCKTNOSUPPORT,
-                 .EPFNOSUPPORT,
-                 .ESHUTDOWN,
-                 .ETOOMANYREFS,
-                 .EHOSTDOWN,
-                 .EPROCLIM,
-                 .EUSERS,
-                 .EREMOTE,
-                 .EBADRPC,
-                 .ERPCMISMATCH,
-                 .EPROGUNAVAIL,
-                 .EPROGMISMATCH,
-                 .EPROCUNAVAIL,
-                 .EFTYPE,
-                 .EAUTH,
-                 .ENEEDAUTH,
-                 .EPWROFF,
-                 .EDEVERR,
-                 .EBADEXEC,
-                 .EBADARCH,
-                 .ESHLIBVERS,
-                 .EBADMACHO,
-                 .ENOATTR,
-                 .ENOPOLICY,
-                 .EQFULL,
-                 .ELAST:
-                return true
-            default:
-                break
-            }
-
+        case .ENOTBLK,
+             .ESOCKTNOSUPPORT,
+             .EPFNOSUPPORT,
+             .ESHUTDOWN,
+             .ETOOMANYREFS,
+             .EHOSTDOWN,
+             .EPROCLIM,
+             .EUSERS,
+             .EREMOTE,
+             .EBADRPC,
+             .ERPCMISMATCH,
+             .EPROGUNAVAIL,
+             .EPROGMISMATCH,
+             .EPROCUNAVAIL,
+             .EFTYPE,
+             .EAUTH,
+             .ENEEDAUTH,
+             .EPWROFF,
+             .EDEVERR,
+             .EBADEXEC,
+             .EBADARCH,
+             .ESHLIBVERS,
+             .EBADMACHO,
+             .ENOATTR,
+             .ENOPOLICY,
+             .EQFULL,
+             .ELAST:
+            return true
         #endif
-        return false
+        default:
+            return false
+        }
     }
 
     //TODO: Convert Errno to debug string via strerror()
@@ -372,72 +370,63 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
             return "Operation would block (may be the same value as [EAGAIN])."
         case .EXDEV:
             return "Cross-device link."
-        default:
-            break
-        }
-
         #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
-            switch self {
-            case .ENOTBLK:
-                return "Block device required."
-            case .ESOCKTNOSUPPORT:
-                return "Socket type not supported."
-            case .EPFNOSUPPORT:
-                return "Protocol family not supported."
-            case .ESHUTDOWN:
-                return "Can't send after socket shutdown."
-            case .ETOOMANYREFS:
-                return "Too many references: can't splice."
-            case .EHOSTDOWN:
-                return "Host is down."
-            case .EPROCLIM:
-                return "Too many processes."
-            case .EUSERS:
-                return "Too many users."
-            case .EREMOTE:
-                return "Too many levels of remote in path."
-            case .EBADRPC:
-                return "RPC struct is bad."
-            case .ERPCMISMATCH:
-                return "RPC version wrong."
-            case .EPROGUNAVAIL:
-                return "RPC prog. not avail."
-            case .EPROGMISMATCH:
-                return "Program version wrong."
-            case .EPROCUNAVAIL:
-                return "Bad procedure for program."
-            case .EFTYPE:
-                return "Inappropriate file type or format."
-            case .EAUTH:
-                return "Authentication error."
-            case .ENEEDAUTH:
-                return "Need authenticator."
-            case .EPWROFF:
-                return "Device power is off."
-            case .EDEVERR:
-                return "Device error, e.g. paper out."
-            case .EBADEXEC:
-                return "Bad executable."
-            case .EBADARCH:
-                return "Bad CPU type in executable."
-            case .ESHLIBVERS:
-                return "Shared library version mismatch."
-            case .EBADMACHO:
-                return "Malformed Macho file."
-            case .ENOATTR:
-                return "Attribute not found."
-            case .ENOPOLICY:
-                return "No such policy registered."
-            case .EQFULL:
-                return "Interface output queue is full."
-            case .ELAST:
-                return "Must be equal largest errno."
-            default:
-                break
-            }
+        case .ENOTBLK:
+            return "Block device required."
+        case .ESOCKTNOSUPPORT:
+            return "Socket type not supported."
+        case .EPFNOSUPPORT:
+            return "Protocol family not supported."
+        case .ESHUTDOWN:
+            return "Can't send after socket shutdown."
+        case .ETOOMANYREFS:
+            return "Too many references: can't splice."
+        case .EHOSTDOWN:
+            return "Host is down."
+        case .EPROCLIM:
+            return "Too many processes."
+        case .EUSERS:
+            return "Too many users."
+        case .EREMOTE:
+            return "Too many levels of remote in path."
+        case .EBADRPC:
+            return "RPC struct is bad."
+        case .ERPCMISMATCH:
+            return "RPC version wrong."
+        case .EPROGUNAVAIL:
+            return "RPC prog. not avail."
+        case .EPROGMISMATCH:
+            return "Program version wrong."
+        case .EPROCUNAVAIL:
+            return "Bad procedure for program."
+        case .EFTYPE:
+            return "Inappropriate file type or format."
+        case .EAUTH:
+            return "Authentication error."
+        case .ENEEDAUTH:
+            return "Need authenticator."
+        case .EPWROFF:
+            return "Device power is off."
+        case .EDEVERR:
+            return "Device error, e.g. paper out."
+        case .EBADEXEC:
+            return "Bad executable."
+        case .EBADARCH:
+            return "Bad CPU type in executable."
+        case .ESHLIBVERS:
+            return "Shared library version mismatch."
+        case .EBADMACHO:
+            return "Malformed Macho file."
+        case .ENOATTR:
+            return "Attribute not found."
+        case .ENOPOLICY:
+            return "No such policy registered."
+        case .EQFULL:
+            return "Interface output queue is full."
+        case .ELAST:
+            return "Must be equal largest errno."
         #endif
-
-        fatalError("Unable to determine description from POSIX standard or system header.")
+        }
     }
 
     public var debugDescription: String {
@@ -840,70 +829,61 @@ private func cValue(ofErrno errno: Errno) -> Int32 {
         return EWOULDBLOCK
     case .EXDEV:
         return EXDEV
-    default:
-        break
-    }
-
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
-        switch errno {
-        case .ENOTBLK:
-            return ENOTBLK
-        case .ESOCKTNOSUPPORT:
-            return ESOCKTNOSUPPORT
-        case .EPFNOSUPPORT:
-            return EPFNOSUPPORT
-        case .ESHUTDOWN:
-            return ESHUTDOWN
-        case .ETOOMANYREFS:
-            return ETOOMANYREFS
-        case .EHOSTDOWN:
-            return EHOSTDOWN
-        case .EPROCLIM:
-            return EPROCLIM
-        case .EUSERS:
-            return EUSERS
-        case .EREMOTE:
-            return EREMOTE
-        case .EBADRPC:
-            return EBADRPC
-        case .ERPCMISMATCH:
-            return ERPCMISMATCH
-        case .EPROGUNAVAIL:
-            return EPROGUNAVAIL
-        case .EPROGMISMATCH:
-            return EPROGMISMATCH
-        case .EPROCUNAVAIL:
-            return EPROCUNAVAIL
-        case .EFTYPE:
-            return EFTYPE
-        case .EAUTH:
-            return EAUTH
-        case .ENEEDAUTH:
-            return ENEEDAUTH
-        case .EPWROFF:
-            return EPWROFF
-        case .EDEVERR:
-            return EDEVERR
-        case .EBADEXEC:
-            return EBADEXEC
-        case .EBADARCH:
-            return EBADARCH
-        case .ESHLIBVERS:
-            return ESHLIBVERS
-        case .EBADMACHO:
-            return EBADMACHO
-        case .ENOATTR:
-            return ENOATTR
-        case .ENOPOLICY:
-            return ENOPOLICY
-        case .EQFULL:
-            return EQFULL
-        case .ELAST:
-            return ELAST
-        default:
-            break
-        }
+    case .ENOTBLK:
+        return ENOTBLK
+    case .ESOCKTNOSUPPORT:
+        return ESOCKTNOSUPPORT
+    case .EPFNOSUPPORT:
+        return EPFNOSUPPORT
+    case .ESHUTDOWN:
+        return ESHUTDOWN
+    case .ETOOMANYREFS:
+        return ETOOMANYREFS
+    case .EHOSTDOWN:
+        return EHOSTDOWN
+    case .EPROCLIM:
+        return EPROCLIM
+    case .EUSERS:
+        return EUSERS
+    case .EREMOTE:
+        return EREMOTE
+    case .EBADRPC:
+        return EBADRPC
+    case .ERPCMISMATCH:
+        return ERPCMISMATCH
+    case .EPROGUNAVAIL:
+        return EPROGUNAVAIL
+    case .EPROGMISMATCH:
+        return EPROGMISMATCH
+    case .EPROCUNAVAIL:
+        return EPROCUNAVAIL
+    case .EFTYPE:
+        return EFTYPE
+    case .EAUTH:
+        return EAUTH
+    case .ENEEDAUTH:
+        return ENEEDAUTH
+    case .EPWROFF:
+        return EPWROFF
+    case .EDEVERR:
+        return EDEVERR
+    case .EBADEXEC:
+        return EBADEXEC
+    case .EBADARCH:
+        return EBADARCH
+    case .ESHLIBVERS:
+        return ESHLIBVERS
+    case .EBADMACHO:
+        return EBADMACHO
+    case .ENOATTR:
+        return ENOATTR
+    case .ENOPOLICY:
+        return ENOPOLICY
+    case .EQFULL:
+        return EQFULL
+    case .ELAST:
+        return ELAST
     #endif
-
-    fatalError("Unable to find C level errno value for Errno.")
+    }
 }

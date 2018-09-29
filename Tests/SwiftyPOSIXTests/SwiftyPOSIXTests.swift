@@ -158,12 +158,11 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ETIMEDOUT: ETIMEDOUT,
         Errno.ETXTBSY: ETXTBSY,
         Errno.EWOULDBLOCK: EWOULDBLOCK,
-        Errno.EXDEV: EXDEV
+        Errno.EXDEV: EXDEV,
     ]
     
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
-    do {
-        let errnoExtensionMap: [Errno: Int32] = [
+        errnoMap.merge([
             Errno.ENOTBLK: ENOTBLK,
             Errno.ESOCKTNOSUPPORT: ESOCKTNOSUPPORT,
             Errno.EPFNOSUPPORT: EPFNOSUPPORT,
@@ -191,12 +190,8 @@ private func createErrnoMap() -> [Errno: Int32] {
             Errno.ENOPOLICY: ENOPOLICY,
             Errno.EQFULL: EQFULL,
             Errno.ELAST: ELAST
-        ]
-        for pair in errnoExtensionMap {
-            errnoMap[pair.key] = pair.value
-        }
-    }
+        ], uniquingKeysWith: { _, _ in fatalError() })
     #endif
-    
+
     return errnoMap
 }

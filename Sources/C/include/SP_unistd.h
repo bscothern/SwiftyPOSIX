@@ -117,6 +117,25 @@ const int* SP_POSIX_SYNC_IO(void);
 const int* SP_POSIX_TIMESTAMP_RESOLUTION(void);
 const int* SP_POSIX2_SYMLINKS(void);
 
+//MARK:- Constants For Functions
+const int* SP_CS_PATH(void);
+const int* SP_CS_POSIX_V7_ILP32_OFF32_CFLAGS(void);
+const int* SP_CS_POSIX_V7_ILP32_OFF32_LDFLAGS(void);
+const int* SP_CS_POSIX_V7_ILP32_OFF32_LIBS(void);
+const int* SP_CS_POSIX_V7_ILP32_OFFBIG_CFLAGS(void);
+const int* SP_CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS(void);
+const int* SP_CS_POSIX_V7_ILP32_OFFBIG_LIBS(void);
+const int* SP_CS_POSIX_V7_LP64_OFF64_CFLAGS(void);
+const int* SP_CS_POSIX_V7_LP64_OFF64_LDFLAGS(void);
+const int* SP_CS_POSIX_V7_LP64_OFF64_LIBS(void);
+const int* SP_CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS(void);
+const int* SP_CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS(void);
+const int* SP_CS_POSIX_V7_LPBIG_OFFBIG_LIBS(void);
+const int* SP_CS_POSIX_V7_THREADS_CFLAGS(void);
+const int* SP_CS_POSIX_V7_THREADS_LDFLAGS(void);
+const int* SP_CS_POSIX_V7_WIDTH_RESTRICTED_ENVS(void);
+const int* SP_CS_V7_ENV(void);
+
 /*
 const int* SP<#Description#>(void);
 const int* SP<#Description#>(void);

@@ -910,8 +910,167 @@ public enum Unistd {
             }
         }
         
+        /// The `<unistd.h>` header shall define the following symbolic constants for the `confstr()` function.
         public enum Confstr {
+            /// This is the value for the PATH environment variable that finds all of the standard utilities that are provided in a manner accessible via the exec family of functions.
+            ///
+            /// - Note: `_CS_PATH`
+            public static let path: Int? = {
+               return Int(valuePointer: SP_CS_PATH())
+            }()
             
+            /// The POSIX v7 defines for `consfstr()`.
+            ///
+            /// These values in C land all start with `_CS_POSIX_V7_`
+            public enum POSIXv7 {
+                
+                /// These `consfstr()` defines for POSIX v7 are the `ILP32_OFF32` values.
+                ///
+                /// These all start with `_CS_POSIX_V7_ILP32_OFF32_`.
+                public enum ILP32Off32 {
+                    /// If `sysconf(_SC_V7_ILP32_OFF32)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of initial options to be given to the c99 utility to build an application using a programming model with 32-bit `int`, `long`, `pointer`, and `off_t` types.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_ILP32_OFF32_CFLAGS`
+                    public static let cFlags: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_ILP32_OFF32_CFLAGS())
+                    }()
+                
+                    /// If `sysconf(_SC_V7_ILP32_OFF32)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of final options to be given to the c99 utility to build an application using a programming model with 32-bit `int`, `long`, `pointer`, and `off_t` types.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_ILP32_OFF32_LDFLAGS`
+                    public static let ldFlags: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_ILP32_OFF32_LDFLAGS())
+                    }()
+                    
+                    /// If `sysconf(_SC_V7_ILP32_OFF32)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of libraries to be given to the c99 utility to build an application using a programming model with 32-bit `int`, `long`, `pointer`, and `off_t` types.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_ILP32_OFF32_LIBS`
+                    public static let libs: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_ILP32_OFF32_LIBS())
+                    }()
+                }
+                
+                /// These `consfstr()` defines for POSIX v7 are the `ILP32_OFFBIG` values.
+                ///
+                /// These all start with `_CS_POSIX_V7_ILP32_OFFBIG_`.
+                public enum ILP32OffBig {
+                    /// If `sysconf(_SC_V7_ILP32_OFFBIG)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of initial options to be given to the c99 utility to build an application using a programming model with 32-bit `int`, `long`, and pointer types, and an `off_t` type using at least 64 bits.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_ILP32_OFFBIG_CFLAGS`
+                    public static let cFlags: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_ILP32_OFFBIG_CFLAGS())
+                    }()
+                    
+                    /// If `sysconf(_SC_V7_ILP32_OFFBIG)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of final options to be given to the c99 utility to build an application using a programming model with 32-bit `int`, `long`, and pointer types, and an `off_t` type using at least 64 bits.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS`
+                    public static let ldFlags: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS())
+                    }()
+                    
+                    /// If `sysconf(_SC_V7_ILP32_OFFBIG)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of libraries to be given to the c99 utility to build an application using a programming model with 32-bit `int`, `long`, and pointer types, and an `off_t` type using at least 64 bits.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_ILP32_OFFBIG_LIBS`
+                    public static let libs: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_ILP32_OFFBIG_LIBS())
+                    }()
+                }
+                
+                /// These `consfstr()` defines for POSIX v7 are the `LP64_OFF64` values.
+                ///
+                /// These all start with `_CS_POSIX_V7_LP64_OFF64_`.
+                public enum LP64Off64 {
+                    /// If `sysconf(_SC_V7_LP64_OFF64)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of initial options to be given to the c99 utility to build an application using a programming model with 32-bit `int` and 64-bit `long`, `pointer`, and `off_t` types.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_LP64_OFF64_CFLAGS`
+                    public static let cFlags: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_LP64_OFF64_CFLAGS())
+                    }()
+                    
+                    /// If `sysconf(_SC_V7_LP64_OFF64)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of final options to be given to the c99 utility to build an application using a programming model with 32-bit `int` and 64-bit `long`, `pointer`, and `off_t` types.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_LP64_OFF64_LDFLAGS`
+                    public static let ldFlags: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_LP64_OFF64_LDFLAGS())
+                    }()
+                    
+                    /// If `sysconf(_SC_V7_LP64_OFF64)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of libraries to be given to the c99 utility to build an application using a programming model with 32-bit `int` and 64-bit `long`, `pointer`, and `off_t` types.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_LP64_OFF64_LIBS`
+                    public static let libs: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_LP64_OFF64_LIBS())
+                    }()
+                }
+                
+                /// These `consfstr()` defines for POSIX v7 are the `LPBIG_OFFBIG` values.
+                ///
+                /// These all start with `_CS_POSIX_V7_LPBIG_OFFBIG_`.
+                public enum LPBigOffBig {
+                    /// If `sysconf(_SC_V7_LPBIG_OFFBIG)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of initial options to be given to the c99 utility to build an application using a programming model with an `int` type using at least 32 bits and `long`, `pointer`, and `off_t` types using at least 64 bits.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS`
+                    public static let cFlags: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS())
+                    }()
+                    
+                    /// If `sysconf(_SC_V7_LPBIG_OFFBIG)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of final options to be given to the c99 utility to build an application using a programming model with an `int` type using at least 32 bits and `long`, `pointer`, and `off_t` types using at least 64 bits.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS`
+                    public static let ldFlags: Int? = {
+                        return Int(valuePointer: SP_CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS())
+                    }()
+                    
+                    /// If `sysconf(_SC_V7_LPBIG_OFFBIG)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of libraries to be given to the c99 utility to build an application using a programming model with an `int` type using at least 32 bits and `long`, `pointer`, and `off_t` types using at least 64 bits.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_LPBIG_OFFBIG_LIBS`
+                    public static let libs: Int? = {
+                       return Int(valuePointer: SP_CS_POSIX_V7_LPBIG_OFFBIG_LIBS())
+                    }()
+                }
+                
+                /// These `consfstr()` defines for POSIX v7 are the `THREADS` values.
+                ///
+                /// These all start with `_CS_POSIX_V7_THREADS_`.
+                public enum Threads {
+                    /// If `sysconf(_SC_POSIX_THREADS)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of initial options to be given to the c99 utility to build a multi-threaded application.
+                    /// These flags are in addition to those associated with any of the other `_CS_POSIX_V7_*_CFLAGS` values used to specify particular type size programing environments.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_THREADS_CFLAGS`
+                    public static let cFlags: Int? = {
+                       return Int(valuePointer: SP_CS_POSIX_V7_THREADS_CFLAGS())
+                    }()
+                    
+                    /// If `sysconf(_SC_POSIX_THREADS)` returns `-1`, the meaning of this value is unspecified.
+                    /// Otherwise, this value is the set of final options to be given to the c99 utility to build a multi-threaded application.
+                    /// These flags are in addition to those associated with any of the other `_CS_POSIX_V7_*_LDFLAGS` values used to specify particular type size programing environments.
+                    ///
+                    /// - Note: `_CS_POSIX_V7_THREADS_LDFLAGS`
+                    public static let ldFlags: Int? = {
+                       return Int(valuePointer: SP_CS_POSIX_V7_THREADS_LDFLAGS())
+                    }()
+                }
+                
+                /// This value is a <newline>-separated list of names of programming environments supported by the implementation in which the widths of the `blksize_t`, `cc_t`, `mode_t`, `nfds_t`, `pid_t`, `ptrdiff_t`, `size_t`, `speed_t`, `ssize_t`, `suseconds_t`, `tcflag_t`, `wchar_t`, and `wint_t` types are no greater than the width of type `long`.
+                /// The format of each name shall be suitable for use with the `getconf` `-v` option.
+                ///
+                /// - Note: `_CS_POSIX_V7_WIDTH_RESTRICTED_ENVS`
+                public static let widthRestrictedEnvs: Int? = {
+                    return Int(valuePointer: SP_CS_POSIX_V7_WIDTH_RESTRICTED_ENVS())
+                }()
+            }
         }
     }
 }

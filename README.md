@@ -20,7 +20,7 @@ To see the entire set of standards open `POSIX.1-2017/index.html`.
 - [ ] ctype.h
 - [ ] dirent.h
 - [ ] dlfcn.h
-- [x] errno.h*
+- [x] errno.h<sup>1</sup>
 - [ ] fcntl.h
 - [ ] fenv.h
 - [ ] float.h
@@ -93,4 +93,5 @@ To see the entire set of standards open `POSIX.1-2017/index.html`.
 - [ ] wctype.h
 - [ ] wordexp.h
 
-\* Convenience TODOs are present and need more implementaiton before being finished.
+Key
+1 Convenience TODOs are present and need more implementaiton before being finished.
