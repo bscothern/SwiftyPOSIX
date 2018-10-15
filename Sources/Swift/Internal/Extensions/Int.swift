@@ -15,7 +15,7 @@ internal extension Int {
         }
         self = Int(valuePointer.pointee)
     }
-    
+
     init?(valuePointer: UnsafePointer<CLong>?) {
         guard let valuePointer = valuePointer else {
             return nil

@@ -85,7 +85,7 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
     public func detach() {
         pthread_detach(pointer.pointee!)
     }
-    
+
     //MARK: FilePrivate
     fileprivate func execute() {
         result = function()

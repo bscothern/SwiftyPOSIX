@@ -158,7 +158,7 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
             return Errno()
         }
     }
-    
+
     //MARK: Public
     public var rawValue: Int32 {
         return cValue(ofErrno: self)

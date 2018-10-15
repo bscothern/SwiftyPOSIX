@@ -136,6 +136,21 @@ const int* SP_CS_POSIX_V7_THREADS_LDFLAGS(void);
 const int* SP_CS_POSIX_V7_WIDTH_RESTRICTED_ENVS(void);
 const int* SP_CS_V7_ENV(void);
 
+const int* SP_CS_POSIX_V6_ILP32_OFF32_CFLAGS(void);
+const int* SP_CS_POSIX_V6_ILP32_OFF32_LDFLAGS(void);
+const int* SP_CS_POSIX_V6_ILP32_OFF32_LIBS(void);
+const int* SP_CS_POSIX_V6_ILP32_OFFBIG_CFLAGS(void);
+const int* SP_CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS(void);
+const int* SP_CS_POSIX_V6_ILP32_OFFBIG_LIBS(void);
+const int* SP_CS_POSIX_V6_LP64_OFF64_CFLAGS(void);
+const int* SP_CS_POSIX_V6_LP64_OFF64_LDFLAGS(void);
+const int* SP_CS_POSIX_V6_LP64_OFF64_LIBS(void);
+const int* SP_CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS(void);
+const int* SP_CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS(void);
+const int* SP_CS_POSIX_V6_LPBIG_OFFBIG_LIBS(void);
+const int* SP_CS_POSIX_V6_WIDTH_RESTRICTED_ENVS(void);
+const int* SP_CS_V6_ENV(void);
+
 /*
 const int* SP<#Description#>(void);
 const int* SP<#Description#>(void);

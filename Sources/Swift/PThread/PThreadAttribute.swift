@@ -85,16 +85,16 @@ public class PThreadAttribute {
 
     //MARK:- Properties
     //MARK: Public Static
-    
+
     /// The smallest supported stack size for a `PThread`.
     ///
     /// - Note: `PTHREAD_STACK_MIN`
     public static var stackSizeMinimum: Int {
         return Int(PTHREAD_STACK_MIN)
     }
-    
+
     //MARK: Public
-    
+
     /// The area of storage to be used for the created `PThread`'s stack.
     ///
     /// `baseAddress` will be the lowest addressable type of the storage and the `count` will be equal to the `stackSize`.

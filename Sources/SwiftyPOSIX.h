@@ -33,4 +33,3 @@ FOUNDATION_EXPORT double SwiftyPOSIXVersionNumber;
 
 //! Project version string for SwiftyPOSIX.
 FOUNDATION_EXPORT const unsigned char SwiftyPOSIXVersionString[];
-

@@ -958,3 +958,129 @@ const int* SP_CS_V7_ENV() {
     return NULL;
 #endif
 }
+
+const int* SP_CS_POSIX_V6_ILP32_OFF32_CFLAGS() {
+#if _CS_POSIX_V6_ILP32_OFF32_CFLAGS
+    const static int value = _CS_POSIX_V6_ILP32_OFF32_CFLAGS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_ILP32_OFF32_LDFLAGS() {
+#if _CS_POSIX_V6_ILP32_OFF32_LDFLAGS
+    const static int value = _CS_POSIX_V6_ILP32_OFF32_LDFLAGS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_ILP32_OFF32_LIBS() {
+#if _CS_POSIX_V6_ILP32_OFF32_LIBS
+    const static int value = _CS_POSIX_V6_ILP32_OFF32_LIBS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_ILP32_OFFBIG_CFLAGS() {
+#if _CS_POSIX_V6_ILP32_OFFBIG_CFLAGS
+    const static int value = _CS_POSIX_V6_ILP32_OFFBIG_CFLAGS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS() {
+#if _CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS
+    const static int value = _CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_ILP32_OFFBIG_LIBS() {
+#if _CS_POSIX_V6_ILP32_OFFBIG_LIBS
+    const static int value = _CS_POSIX_V6_ILP32_OFFBIG_LIBS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_LP64_OFF64_CFLAGS() {
+#if _CS_POSIX_V6_LP64_OFF64_CFLAGS
+    const static int value = _CS_POSIX_V6_LP64_OFF64_CFLAGS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_LP64_OFF64_LDFLAGS() {
+#if _CS_POSIX_V6_LP64_OFF64_LDFLAGS
+    const static int value = _CS_POSIX_V6_LP64_OFF64_LDFLAGS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_LP64_OFF64_LIBS() {
+#if _CS_POSIX_V6_LP64_OFF64_LIBS
+    const static int value = _CS_POSIX_V6_LP64_OFF64_LIBS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS() {
+#if _CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS
+    const static int value = _CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS() {
+#if _CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS
+    const static int value = _CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_LPBIG_OFFBIG_LIBS() {
+#if _CS_POSIX_V6_LPBIG_OFFBIG_LIBS
+    const static int value = _CS_POSIX_V6_LPBIG_OFFBIG_LIBS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_POSIX_V6_WIDTH_RESTRICTED_ENVS() {
+#if _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS
+    const static int value = _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS;
+    return &value;
+#else
+    return NULL;
+#endif
+}
+
+const int* SP_CS_V6_ENV() {
+#if _CS_V6_ENV
+    const static int value = _CS_V6_ENV;
+    return &value;
+#else
+    return NULL;
+#endif
+}

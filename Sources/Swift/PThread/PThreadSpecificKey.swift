@@ -52,36 +52,36 @@ public class PThreadSpecificKey<ValueType>: PThreadSpecificKeyDestructorRaiser {
     ///
     /// - Parameter value: The value that was associated with the `PThreadSpecificKey` that `value` comes from.
     public typealias Destructor = (_ value: ValueType) -> Void
-    
+
     //MARK:- Properties
     //MARK: Public Static
-    
+
     /// The maximum number of `PthreadSpecificKey`s that can be created on the system.
     ///
     /// - Note: `PTHREAD_KEYS_MAX`
     public static var max: Int {
         return Int(PTHREAD_KEYS_MAX)
     }
-    
+
     //MARK: Private
-    
+
     /// The `pthread_key_t*` that is used for all `PThreadSpecific` functions.
     private var pointer = UnsafeMutablePointer<pthread_key_t>.allocate(capacity: 1)
-    
+
     /// The destructor that should be raised for the `Key` when a thread exits.
     private var destructor: Destructor?
-    
+
     /// The lock that protexts the contexts of the `Key`.
     private let contextsLock = PThreadMutex()
-    
+
     /// The contexts that have been created for this `Key`.
     ///
     /// These are also stored with they key
     private var contexts: Set<UnsafeMutablePointer<PThreadSpecificKeyContext>> = []
-    
+
     //MARK:- Init
     //MARK: Public
-    
+
     /// Create a `Key` that allows access to `PThread` specific storage.
     ///
     /// - Note: `int pthread_key_create(pthread_key_t *key, void (*destructor)(void*))`
@@ -113,10 +113,10 @@ public class PThreadSpecificKey<ValueType>: PThreadSpecificKeyDestructorRaiser {
             context.deinitialize(count: 1).deallocate()
         }
     }
-    
+
     //MARK:- Funcs
     //MARK: Public
-    
+
     /// Get the thread specific value currently associated with the `Key`.
     ///
     /// - Note: `void *pthread_getspecific(pthread_key_t key)`
@@ -130,7 +130,7 @@ public class PThreadSpecificKey<ValueType>: PThreadSpecificKeyDestructorRaiser {
         }
         return (value as! ValueType)
     }
-    
+
     /// Sets a thread specific value with the `Key`.
     ///
     /// - Note: `int pthread_setspecific(pthread_key_t key, const void *value)`
@@ -144,18 +144,18 @@ public class PThreadSpecificKey<ValueType>: PThreadSpecificKeyDestructorRaiser {
             let context = UnsafeMutablePointer<PThreadSpecificKeyContext>.allocate(capacity: 1)
             context.initialize(to: PThreadSpecificKeyContext(value: value, keyDestructorRaiser: self))
             pthread_setspecific(self.pointer.pointee, UnsafeRawPointer(context))
-            
+
             // This is used to prevent memory leaks.
             contextsLock.lock()
             contexts.insert(context)
             contextsLock.unlock()
         }
     }
-    
+
     //MARK:- FilePrivate Protocol Conformance
     //MARK: PThreadSpecificKeyProtocol
     fileprivate func raiseDestruction(of context: UnsafeMutablePointer<PThreadSpecificKeyContext>) {
-        
+
         if let value = context.pointee.value {
             destructor?(value as! ValueType)
         }
@@ -163,7 +163,7 @@ public class PThreadSpecificKey<ValueType>: PThreadSpecificKeyDestructorRaiser {
         contextsLock.lock()
         contexts.remove(context)
         contextsLock.unlock()
-        
+
         context.deinitialize(count: 1).deallocate()
     }
 }
@@ -179,12 +179,12 @@ private struct PThreadSpecificKeyContext {
     ///
     /// Because the `PThreadSpecificKey` is the only thing that can get or set this, it knows how to safely cast it to the proper type.
     var value: Any?
-    
+
     /// The object that can take a pointer to the `PThreadSpecificKeyContext` and raise the destructor that was associated with it.
     ///
     /// This should **always** be the `PThreadSpecificKey` that created the context so it can have the correct type information.
     private(set) weak var keyDestructorRaiser: PThreadSpecificKeyDestructorRaiser?
-    
+
     /// Create a `PThreadSpecificKeyContext`.
     ///
     /// - Parameters:
@@ -199,7 +199,7 @@ private struct PThreadSpecificKeyContext {
 
 /// The protocol that is used to safely type erase a `PThreadSpecificKey<T>` so it can convert a `PThreadSpecificKeyContext.value` back to the correct type and raise its destructor when a thread is exiting.
 private protocol PThreadSpecificKeyDestructorRaiser: AnyObject {
-    
+
     /// A function that can conver a `PThreadSpecificKeyContext.value` back to the correct type and raise the associated destructor as a thread is exiting.
     ///
     /// - Parameter context: A pointer to the `PThreadSpecificKeyContext` that is being destroyed as a thread is exiting.

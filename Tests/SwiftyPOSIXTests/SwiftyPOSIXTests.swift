@@ -20,14 +20,14 @@ class SwiftyPOSIXTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testErrno() {
         let errnoMap = createErrnoMap()
 
         // Manually check that we get back nil when cleared
         errno = 0
         XCTAssert(Errno() == nil)
-        
+
         for pair in errnoMap {
             // Check conversion and creation
             XCTAssert(pair.key.rawValue == pair.value)
@@ -49,10 +49,10 @@ class SwiftyPOSIXTests: XCTestCase {
         Errno.value = nil
         XCTAssert(Errno() == nil)
     }
-    
+
     func testPThreadSpecificMax() {
         var keys: [PThreadSpecificKey<Any>] = []
-        
+
         // Hit the max number of keys
         while let key = PThreadSpecificKey<Any>() {
             keys.append(key)
@@ -61,13 +61,13 @@ class SwiftyPOSIXTests: XCTestCase {
 
         // These are the acceptable values of Errno when a PThreadSpecificKey cannot be created.
         XCTAssert(Errno() == Errno.EAGAIN || Errno() == Errno.ENOMEM)
-        
+
         // Clean up keys to make sure we can create more
         keys.removeAll()
-        
+
         // Clear Errno
         Errno.value = nil
-        
+
         // Make sure we can make a new key after hitting the max
         let key = PThreadSpecificKey<Any>()
         XCTAssert(key != nil)
@@ -160,7 +160,7 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.EWOULDBLOCK: EWOULDBLOCK,
         Errno.EXDEV: EXDEV,
     ]
-    
+
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
         errnoMap.merge([
             Errno.ENOTBLK: ENOTBLK,
