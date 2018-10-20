@@ -11,10 +11,6 @@
 		F80EA9102085E592002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80EA9122085E592002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80EA9142085E593002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F8419F1D2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
-		F8419F1E2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
-		F8419F1F2084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
-		F8419F202084614F0001179A /* StaticFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419F1C2084614F0001179A /* StaticFuncs.swift */; };
 		F84E33242094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
 		F84E33252094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
 		F84E33262094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
@@ -77,6 +73,12 @@
 		F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
 		F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
 		F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
+		F8D5AEB1217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
+		F8D5AEB2217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
+		F8D5AEB3217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
+		F8D5AEB6217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB5217ADAD8006B19D2 /* PThreadSpecificTests.swift */; };
+		F8D5AEB7217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB5217ADAD8006B19D2 /* PThreadSpecificTests.swift */; };
+		F8D5AEB8217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB5217ADAD8006B19D2 /* PThreadSpecificTests.swift */; };
 		F8F41C3621423725000935F0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F41C3521423725000935F0 /* Int.swift */; };
 		F8F41C3721423725000935F0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F41C3521423725000935F0 /* Int.swift */; };
 		F8F41C3821423725000935F0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F41C3521423725000935F0 /* Int.swift */; };
@@ -110,7 +112,6 @@
 /* Begin PBXFileReference section */
 		F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyPOSIX_C.h; sourceTree = "<group>"; };
 		F80EA90B2085E168002D0E36 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		F8419F1C2084614F0001179A /* StaticFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFuncs.swift; sourceTree = "<group>"; };
 		F84E33232094306F00D7A162 /* Unistd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unistd.swift; sourceTree = "<group>"; };
 		F88914CE2069F27300892FE8 /* Errno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errno.swift; sourceTree = "<group>"; };
 		F88914D7206A013200892FE8 /* SwifyPOSIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifyPOSIX.swift; sourceTree = "<group>"; };
@@ -139,6 +140,9 @@
 		F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadCondition.swift; sourceTree = "<group>"; };
 		F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadConditionAttribute.swift; sourceTree = "<group>"; };
 		F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadReadWriteLock.swift; sourceTree = "<group>"; };
+		F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrnoTests.swift; sourceTree = "<group>"; };
+		F8D5AEB5217ADAD8006B19D2 /* PThreadSpecificTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadSpecificTests.swift; sourceTree = "<group>"; };
+		F8D5AEB9217ADB79006B19D2 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		F8F41C3521423725000935F0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,6 +287,10 @@
 		F8B1DC0C202EC1C500EAC350 /* SwiftyPOSIXTests */ = {
 			isa = PBXGroup;
 			children = (
+				F8D5AEBF217ADC35006B19D2 /* Unistd */,
+				F8D5AEBE217ADC2E006B19D2 /* PThread */,
+				F8D5AEBD217ADBC2006B19D2 /* Errno */,
+				F8D5AEB9217ADB79006B19D2 /* XCTestManifests.swift */,
 				F8B1DC0D202EC1C500EAC350 /* SwiftyPOSIXTests.swift */,
 			);
 			path = SwiftyPOSIXTests;
@@ -315,10 +323,32 @@
 			path = PThread;
 			sourceTree = "<group>";
 		};
+		F8D5AEBD217ADBC2006B19D2 /* Errno */ = {
+			isa = PBXGroup;
+			children = (
+				F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */,
+			);
+			path = Errno;
+			sourceTree = "<group>";
+		};
+		F8D5AEBE217ADC2E006B19D2 /* PThread */ = {
+			isa = PBXGroup;
+			children = (
+				F8D5AEB5217ADAD8006B19D2 /* PThreadSpecificTests.swift */,
+			);
+			path = PThread;
+			sourceTree = "<group>";
+		};
+		F8D5AEBF217ADC35006B19D2 /* Unistd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Unistd;
+			sourceTree = "<group>";
+		};
 		F8F41C3321423708000935F0 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				F8419F1C2084614F0001179A /* StaticFuncs.swift */,
 				F8F41C3421423712000935F0 /* Extensions */,
 			);
 			path = Internal;
@@ -638,7 +668,6 @@
 				F8B1DC23202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC42202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
 				F8B1DC33202ECB7D00EAC350 /* PThreadMutexAttribute.swift in Sources */,
-				F8419F1D2084614F0001179A /* StaticFuncs.swift in Sources */,
 				F8B1DC28202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3D202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
 				F8B1DC38202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
@@ -650,6 +679,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D5AEB6217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
+				F8D5AEB1217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC0E202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,7 +698,6 @@
 				F8B1DC24202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
 				F8B1DC34202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
-				F8419F1E2084614F0001179A /* StaticFuncs.swift in Sources */,
 				F8B1DC29202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3E202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
 				F8B1DC39202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
@@ -679,6 +709,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D5AEB7217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
+				F8D5AEB2217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC0F202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,7 +728,6 @@
 				F8B1DC25202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
 				F8B1DC35202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
-				F8419F1F2084614F0001179A /* StaticFuncs.swift in Sources */,
 				F8B1DC2A202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3F202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
 				F8B1DC3A202ECB9200EAC350 /* PThreadCondition.swift in Sources */,
@@ -708,6 +739,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D5AEB8217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
+				F8D5AEB3217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC10202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,7 +758,6 @@
 				F8B1DC26202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
 				F8B1DC36202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
-				F8419F202084614F0001179A /* StaticFuncs.swift in Sources */,
 				F8B1DC2B202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC40202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
 				F8B1DC3B202ECB9200EAC350 /* PThreadCondition.swift in Sources */,

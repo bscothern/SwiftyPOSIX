@@ -33,7 +33,7 @@
 /// For each thread of a process, Errno.value shall not be affected by function calls or assignments to Errno.value by other threads.
 ///
 /// - Note: `<errno.h>`
-public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugStringConvertible {
+public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible, CustomDebugStringConvertible {
     //MARK: POSIX error definitions
     case E2BIG
     case EACCES
@@ -652,12 +652,10 @@ public enum Errno: Int32, Error, Codable, CustomStringConvertible, CustomDebugSt
     }
 
     public init?(rawValue: Int32) {
-        //TODO: remove this when swift properly supports enum iteration
-        for errno in iterateEnum(Errno.self) where errno.rawValue == rawValue {
-            self = errno
-            return
+        guard let errno = Errno.allCases.first(where: { $0.rawValue == rawValue }) else {
+            return nil
         }
-        return nil
+        self = errno
     }
 }
 
