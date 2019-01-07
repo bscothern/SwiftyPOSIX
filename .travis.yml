@@ -35,14 +35,14 @@ env:
           SDK="$MACOS_SDK"
           RUN_TESTS="YES"
         - NAME="tvOS"
-          DESTINATION="OS=$TVOS_VERSION,name=Apple TV 1080p"
+          DESTINATION="OS=$TVOS_VERSION,name=Apple TV 4K"
           SCHEME="$TVOS_FRAMEWORK_SCHEME"
           SDK="$TVOS_SDK"
           RUN_TESTS="YES"
         - NAME="watchOS"
           DESTINATION="OS=$WATCHOS_VERSOIN,name=Apple TV 1080p"
-          SCHEME="$TVOS_FRAMEWORK_SCHEME"
-          SDK="$TVOS_SDK"
+          SCHEME="$WATCHOS_FRAMEWORK_SCHEME"
+          SDK="$WATCHOS_SDK"
 
 script:
     - xcodebuild -version
