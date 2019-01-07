@@ -1,2 +1,54 @@
 langauge: swift
-os: osx
+osx_image: xcode10.1
+xcode_project: $PROJECTNAME.xcodeproj
+env:
+    global:
+        - PROJECT="$PROJECTNAME.xcodeproj"
+        - FRAMEWORK_NAME="$PROJECTNAME.framework"
+        # OS Versions
+        - IOS_VERSION=12.0
+        - MACOS_VERSION=10.14
+        - TVOS_VERSION=12.0
+        - WATCHOS_VERSOIN=5.0
+        # Schemes
+        - IOS_FRAMEWORK_SCHEME="$PROJECTNAME iOS"
+        - MACOS_FRAMEWORK_SCHEME="$PROJECTNAME macOS"
+        - TVOS_FRAMEWORK_SCHEME="$PROJECTNAME tvOS"
+        - WATCHOS_FRAMEWORK_SCHEME="$PROJECTNAME watchOS"
+        - TEST_FRAMEWORK_SCHEME="$PROJECTNAMETests"
+        # SDKs
+        - IOS_SDK=iphonesimulator
+        - MACOS_SDK=macosx
+        - TVOS_SDK=appletvsimulator
+        - WATCHOS_SDK=watchsimulator
+
+    matrix:
+        # iOS
+        - DESTINATION="OS=$IOS_VERSION,name=iPhone X"
+          SCHEME="$IOS_FRAMEWORK_SCHEME"
+          SDK="$IOS_SDK"
+          RUN_TESTS="YES"
+        # macOS
+        - DESTINATION="arch=x86_64"
+          SCHEME="$MACOS_FRAMEWORK_SCHEME"
+          SDK="$MACOS_SDK"
+          RUN_TESTS="YES"
+        # tvOS
+        - DESTINATION="OS=$TVOS_VERSION,name=Apple TV 1080p"
+          SCHEME="$TVOS_FRAMEWORK_SCHEME"
+          SDK="$TVOS_SDK"
+          RUN_TESTS="YES"
+        # watchOS
+        - DESTINATION="OS=$WATCHOS_VERSOIN,name=Apple TV 1080p"
+          SCHEME="$TVOS_FRAMEWORK_SCHEME"
+          SDK="$TVOS_SDK"
+
+script:
+    - xcodebuild -version
+
+    - \
+        if [ $RUN_TESTS == "YES" ]; then
+            xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test
+        else
+            xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build
+        fi
