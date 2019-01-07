@@ -1,8 +1,9 @@
 language: objective-c
 osx_image: xcode10.1
-xcode_project: $PROJECTNAME.xcodeproj
+xcode_project: SwiftyPOSIX.xcodeproj
 env:
     global:
+        - PROJECTNAME="SwiftyPOSIX"
         - PROJECT="$PROJECTNAME.xcodeproj"
         - FRAMEWORK_NAME="$PROJECTNAME.framework"
         # OS Versions
