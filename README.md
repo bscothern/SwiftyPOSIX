@@ -1,6 +1,9 @@
 # SwiftyPOSIX
 
-[![Travis CI][https://travis-ci.org/bscothern/SwiftyPOSIX.svg]][https://travis-ci.org/bscothern/SwiftyPOSIX]
+[travis-ci-image]: https://travis-ci.org/bscothern/SwiftyPOSIX.svg
+[travis-ci-url]: https://travis-ci.org/bscothern/SwiftyPOSIX
+
+[![Build Status][travis-travis-ci-image]][travis-ci-url-url]
 
 A Swift wrapper around the C POSIX Standard.
 
