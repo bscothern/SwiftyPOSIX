@@ -12,28 +12,28 @@ import XCTest
 class ErrnoTests: XCTestCase {
     func testErrno() {
         let errnoMap = createErrnoMap()
-        
+
         // Manually check that we get back nil when cleared
         errno = 0
         XCTAssert(Errno() == nil)
-        
+
         for pair in errnoMap {
             // Check conversion and creation
             XCTAssert(pair.key.rawValue == pair.value)
             XCTAssert(pair.key == Errno(rawValue: pair.value), "\(pair.key) -- \(String(describing: Errno(rawValue: pair.value)))")
-            
+
             // Check Errno() from errno being set directly
             errno = pair.value
             XCTAssert(pair.key == Errno())
-            
+
             // Change errno so it is different from what it was for the last test
             errno = 0
-            
+
             // Check Errno() from Errno.value being set
             Errno.value = pair.key
             XCTAssert(pair.key == Errno())
         }
-        
+
         // Check that we can assign nil to set it as 0
         Errno.value = nil
         XCTAssert(Errno() == nil)
@@ -124,7 +124,7 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.EWOULDBLOCK: EWOULDBLOCK,
         Errno.EXDEV: EXDEV,
         ]
-    
+
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
     errnoMap.merge([
         Errno.ENOTBLK: ENOTBLK,
@@ -156,6 +156,6 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ELAST: ELAST
         ], uniquingKeysWith: { _, _ in fatalError() })
     #endif
-    
+
     return errnoMap
 }

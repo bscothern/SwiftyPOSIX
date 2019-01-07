@@ -73,6 +73,9 @@
 		F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
 		F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
 		F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */; };
+		F8CBB86021E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */; };
+		F8CBB86121E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */; };
+		F8CBB86221E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */; };
 		F8D5AEB1217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
 		F8D5AEB2217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
 		F8D5AEB3217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
@@ -140,6 +143,7 @@
 		F8B1DC37202ECB9200EAC350 /* PThreadCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadCondition.swift; sourceTree = "<group>"; };
 		F8B1DC3C202ECB9F00EAC350 /* PThreadConditionAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadConditionAttribute.swift; sourceTree = "<group>"; };
 		F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadReadWriteLock.swift; sourceTree = "<group>"; };
+		F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnistdFunctionConstantsPathconfNameTests.swift; sourceTree = "<group>"; };
 		F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrnoTests.swift; sourceTree = "<group>"; };
 		F8D5AEB5217ADAD8006B19D2 /* PThreadSpecificTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadSpecificTests.swift; sourceTree = "<group>"; };
 		F8D5AEB9217ADB79006B19D2 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 		F8D5AEBF217ADC35006B19D2 /* Unistd */ = {
 			isa = PBXGroup;
 			children = (
+				F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */,
 			);
 			path = Unistd;
 			sourceTree = "<group>";
@@ -556,11 +561,12 @@
 					};
 					F8B1DBCB202EC11100EAC350 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					F8B1DBD3202EC11200EAC350 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					F8B1DBE7202EC11D00EAC350 = {
@@ -680,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D5AEB6217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
+				F8CBB86021E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB1217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC0E202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
 			);
@@ -710,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D5AEB7217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
+				F8CBB86121E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB2217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC0F202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
 			);
@@ -740,6 +748,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D5AEB8217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
+				F8CBB86221E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB3217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC10202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
 			);
@@ -1007,7 +1016,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1035,7 +1044,7 @@
 				PRODUCT_NAME = SwiftyPOSIX;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1052,7 +1061,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1069,7 +1078,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

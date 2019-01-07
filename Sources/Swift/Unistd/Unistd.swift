@@ -55,7 +55,7 @@ public enum Unistd {
             return Int(valuePointer: SP_POSIX2_VERSION())
         }()
 
-        /// The `<unistd.h>` header shall define the following symbolic constant only if the implementation supports the XSI option; see XSI Conformance.
+        /// The `<unistd.h>` header shall define the following symbolic constant only if the implementation supports the XSI option see XSI Conformance.
         ///
         /// An integer value indicating version of the X/Open Portability Guide to which the implementation conforms.
         /// If defined the value shall be `700`.
@@ -822,7 +822,7 @@ public enum Unistd {
     /// If any of the following symbolic constants are not defined in the `<unistd.h>` header, the value shall vary depending on the file to which it is applied.
     /// If defined, they shall have values suitable for use in #if preprocessing directives.
     ///
-    /// If any of the following symbolic constants are defined to have value `-1` in the `<unistd.h>` header, the implementation shall not provide the option on any file; if any are defined to have a value other than `-1` in the `<unistd.h>` header, the implementation shall provide the option on all applicable files.
+    /// If any of the following symbolic constants are defined to have value `-1` in the `<unistd.h>` header, the implementation shall not provide the option on any file if any are defined to have a value other than `-1` in the `<unistd.h>` header, the implementation shall provide the option on all applicable files.
     public enum ExecutionTime {
 
         /// All of the following values, whether defined as symbolic constants in `<unistd.h>` or not, may be queried with respect to a specific file using the `pathconf()` or `fpathconf()` functions.
@@ -874,7 +874,7 @@ public enum Unistd {
         /// The values shall be suitable for use in #if preprocessing directives.
         ///
         /// The constants `F_OK`, `R_OK`, `W_OK`, and `X_OK` and the expressions `R_OK|W_OK`, `R_OK|X_OK`, and `R_OK|W_OK|X_OK` shall all have distinct values.
-        public enum Access: Int32 {
+        public enum AccessMode: Int32, CaseIterable {
             /// Test for existence of file.
             ///
             /// - Note: `F_OK`
@@ -909,13 +909,14 @@ public enum Unistd {
             }
         }
 
+        //TODO: Convert ConfstrName to a struct
         /// The `<unistd.h>` header shall define the following symbolic constants for the `confstr()` function.
-        public enum Confstr {
+        public enum ConfstrName {
             /// This is the value for the PATH environment variable that finds all of the standard utilities that are provided in a manner accessible via the exec family of functions.
             ///
             /// - Note: `_CS_PATH`
-            public static let path: Int? = {
-               return Int(valuePointer: SP_CS_PATH())
+            public static var path: Int? = {
+                return Int(valuePointer: SP_CS_PATH())
             }()
 
             /// The POSIX v7 defines for `consfstr()`.
@@ -1035,7 +1036,7 @@ public enum Unistd {
                     ///
                     /// - Note: `_CS_POSIX_V7_LPBIG_OFFBIG_LIBS`
                     public static let libs: Int? = {
-                       return Int(valuePointer: SP_CS_POSIX_V7_LPBIG_OFFBIG_LIBS())
+                        return Int(valuePointer: SP_CS_POSIX_V7_LPBIG_OFFBIG_LIBS())
                     }()
                 }
 
@@ -1049,7 +1050,7 @@ public enum Unistd {
                     ///
                     /// - Note: `_CS_POSIX_V7_THREADS_CFLAGS`
                     public static let cFlags: Int? = {
-                       return Int(valuePointer: SP_CS_POSIX_V7_THREADS_CFLAGS())
+                        return Int(valuePointer: SP_CS_POSIX_V7_THREADS_CFLAGS())
                     }()
 
                     /// If `sysconf(_SC_POSIX_THREADS)` returns `-1`, the meaning of this value is unspecified.
@@ -1058,7 +1059,7 @@ public enum Unistd {
                     ///
                     /// - Note: `_CS_POSIX_V7_THREADS_LDFLAGS`
                     public static let ldFlags: Int? = {
-                       return Int(valuePointer: SP_CS_POSIX_V7_THREADS_LDFLAGS())
+                        return Int(valuePointer: SP_CS_POSIX_V7_THREADS_LDFLAGS())
                     }()
                 }
 
@@ -1188,7 +1189,7 @@ public enum Unistd {
                 ///
                 /// - Note: `_CS_POSIX_V6_WIDTH_RESTRICTED_ENVS`
                 public static let widthRestrictedEnvs: Int? = {
-                   return Int(valuePointer: SP_CS_POSIX_V6_WIDTH_RESTRICTED_ENVS())
+                    return Int(valuePointer: SP_CS_POSIX_V6_WIDTH_RESTRICTED_ENVS())
                 }()
 
                 /// A constant reserved for compatibility with `Unistd.h` issue 6.
@@ -1199,5 +1200,856 @@ public enum Unistd {
                 }()
             }
         }
+
+        /// The `<unistd.h>` header shall define the following symbolic constants as possible values for the function argument to the `lockf()` function.
+        public enum LockfFunction: Int32, CaseIterable {
+
+            /// Lock a section for exclusive use.
+            ///
+            /// - Note: `F_LOCK`
+            case lock
+
+            /// Test section for locks by other processes.
+            ///
+            /// - Note: `F_TEST`
+            case test
+
+            /// Test and lock a section for exclusive use.
+            ///
+            /// - Note: `F_TLOCK`
+            case testLock
+
+            /// Unlock locked sections.
+            ///
+            /// - Note: `F_ULOCK`
+            case unlock
+
+            public var rawValue: Int32 {
+                switch self {
+                case .lock:
+                    return F_LOCK
+                case .test:
+                    return F_TEST
+                case .testLock:
+                    return F_TLOCK
+                case .unlock:
+                    return F_ULOCK
+                }
+            }
+        }
+
+        /// The `<unistd.h>` header shall define the following symbolic constants for `pathconf()`.
+        public struct PathconfName: RawRepresentable, Hashable, CaseIterable {
+            public typealias RawValue = Int
+            public typealias AllCases = [PathconfName]
+
+            public let rawValue: RawValue
+
+            private init?(valuePointer: UnsafePointer<Int32>?) {
+                guard let value = Int(valuePointer: valuePointer) else {
+                    return nil
+                }
+                self.rawValue = value
+            }
+
+            public init?(rawValue: Int) {
+                guard let pathconfName = PathconfName.allCases.first(where: { $0.rawValue == rawValue }) else {
+                    return nil
+                }
+                self = pathconfName
+            }
+
+            public static let allCases: AllCases = {
+                return [
+                    symlinks,
+                    allocSizeMin,
+                    asyncIO,
+                    chownRestricted,
+                    fileSizeBits,
+                    linkMax,
+                    maxCanon,
+                    maxInput,
+                    nameMax,
+                    noTrunc,
+                    pathMax,
+                    pipeBuf,
+                    prioIO,
+                    recIncrXferSize,
+                    recMaxXferSize,
+                    recMinXferSize,
+                    recXferAlign,
+                    symlinkMax,
+                    syncIO,
+                    timestampResolution,
+                    vDisable
+                ].lazy.compactMap { $0 }
+            }()
+
+            public static var symlinks: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_2_SYMLINKS())
+            }
+
+            public static var allocSizeMin: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_ALLOC_SIZE_MIN())
+            }
+
+            public static var asyncIO: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_ASYNC_IO())
+            }
+
+            public static var chownRestricted: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_CHOWN_RESTRICTED())
+            }
+
+            public static var fileSizeBits: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_FILESIZEBITS())
+            }
+
+            public static var linkMax: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_LINK_MAX())
+            }
+
+            public static var maxCanon: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_MAX_CANON())
+            }
+
+            public static var maxInput: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_MAX_INPUT())
+            }
+
+            public static var nameMax: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_NAME_MAX())
+            }
+
+            public static var noTrunc: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_NO_TRUNC())
+            }
+
+            public static var pathMax: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_PATH_MAX())
+            }
+
+            public static var pipeBuf: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_PIPE_BUF())
+            }
+
+            public static var prioIO: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_PRIO_IO())
+            }
+
+            public static var recIncrXferSize: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_REC_INCR_XFER_SIZE())
+            }
+
+            public static var recMaxXferSize: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_REC_MAX_XFER_SIZE())
+            }
+
+            public static var recMinXferSize: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_REC_MIN_XFER_SIZE())
+            }
+
+            public static var recXferAlign: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_REC_XFER_ALIGN())
+            }
+
+            public static var symlinkMax: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_SYMLINK_MAX())
+            }
+
+            public static var syncIO: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_SYNC_IO())
+            }
+
+            public static var timestampResolution: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_TIMESTAMP_RESOLUTION())
+            }
+
+            public static var vDisable: PathconfName? {
+                return PathconfName(valuePointer: SP_PC_VDISABLE())
+            }
+        }
+
+        public struct SysconfName: RawRepresentable, Hashable, CaseIterable {
+            public typealias RawValue = Int
+            public typealias AllCases = [SysconfName]
+
+            public let rawValue: RawValue
+
+            private init?(valuePointer: UnsafePointer<Int32>?) {
+                guard let value = Int(valuePointer: valuePointer) else {
+                    return nil
+                }
+                self.rawValue = value
+            }
+
+            public init?(rawValue: Int) {
+                guard let sysconfName = SysconfName.allCases.first(where: { $0.rawValue == rawValue }) else {
+                    return nil
+                }
+                self = sysconfName
+            }
+
+            public static let allCases: AllCases = {
+                return [
+                    v2CBind,
+                    v2CDev,
+                    v2CharTerm,
+                    v2FortDev,
+                    v2FortRun,
+                    v2LocalDef,
+                    v2PBS,
+                    v2PBSAccounting,
+                    v2PBSCheckpoing,
+                    v2PBSLocate,
+                    v2PBSMessage,
+                    v2PBSTrack,
+                    v2SWDev,
+                    v2UPE,
+                    v2Version,
+                    advisoryInfo,
+                    aioListIOMax,
+                    aioMax,
+                    aioPrioDeltaMax,
+                    argMax,
+                    asynchronousIO,
+                    atExitMax,
+                    barriers,
+                    bcBaseMax,
+                    bcDimMax,
+                    bcScaleMax,
+                    bcStringMax,
+                    childMax,
+                    clkTck,
+                    clockSelection,
+                    collWeightsMax,
+                    cpuTime,
+                    delayTimerMax,
+                    exprNestMax,
+                    fsync,
+                    getgrRSizeMax,
+                    getpwRSizeMax,
+                    hostNameMax,
+                    iovMax,
+                    ipv6,
+                    jobControl,
+                    lineMax,
+                    loginNameMax,
+                    mappedFiles,
+                    memlock,
+                    memlockRange,
+                    memoryProtection,
+                    messagePassing,
+                    monotonicClock,
+                    mqOpenMax,
+                    mqPrioMax,
+                    nGropusMax,
+                    openMax,
+                    page_size,
+                    {
+                        // The two constants _SC_PAGESIZE and _SC_PAGE_SIZE may be defined to have the same value.
+                        // Because of this we want to ensure that only one or the other is returned in order to avoid duplicate rawValues.
+                        guard page_size != pageSize else {
+                            return nil
+                        }
+                        return pageSize
+                    }(),
+                    prioritizedIO,
+                    priorityScheduling,
+                    rawSockets,
+                    reDupMax,
+                    readerWriterLocks,
+                    realtimeSignals,
+                    regexp,
+                    rtSigMax,
+                    savedIDs,
+                    semNSemsMax,
+                    semValueMax,
+                    semaphores,
+                    sharedMemoryObjects,
+                    shell,
+                    sigqueueMax,
+                    spawn,
+                    spinLocks,
+                    sporadicServer,
+                    ssREPLMax,
+                    streamMax,
+                    symLoopMax,
+                    synchronizedIO,
+                    threadAttrStackAddr,
+                    threadAttrStackSize,
+                    threadCPUTime,
+                    threadDestructorIterations,
+                    threadKeysMax,
+                    threadPrioInherit,
+                    threadPrioProtect,
+                    threadPriorityScheduling,
+                    threadProcessShared,
+                    threadRobustPrioInherit,
+                    threadRobustPrioProtect,
+                    threadSafeFunctions,
+                    threadSporadicServer,
+                    threadStackMin,
+                    threadThreadsMax,
+                    threads,
+                    timeouts,
+                    timerMax,
+                    timers,
+                    trace,
+                    traceEventFilter,
+                    traceEventNameMax,
+                    traceInherit,
+                    traceLog,
+                    traceNameMax,
+                    traceSysMax,
+                    traceUserEventMax,
+                    ttyNameMax,
+                    typedMemoryObjects,
+                    tzNameMax,
+                    v7ILP32Off32,
+                    v7ILP32OffBig,
+                    v7LP64Off64,
+                    v7LPBigOffBig,
+                    v6ILP32Off32,
+                    v6ILP32OffBig,
+                    v6LP64Off64,
+                    v6LPBigOffBig,
+                    version,
+                    xopenCrypt,
+                    xopenEnhI18N,
+                    xopenRealtime,
+                    xopenRealtimeThreads,
+                    xopenShm,
+                    xopenStreams,
+                    xopenUnix,
+                    xopenUUCP,
+                    xopenVersion
+                ].lazy.compactMap { $0 }
+            }()
+
+            public static var v2CBind: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_C_BIND())
+            }
+
+            public static var v2CDev: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_C_DEV())
+            }
+
+            public static var v2CharTerm: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_CHAR_TERM())
+            }
+
+            public static var v2FortDev: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_FORT_DEV())
+            }
+
+            public static var v2FortRun: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_FORT_RUN())
+            }
+
+            public static var v2LocalDef: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_LOCALEDEF())
+            }
+
+            public static var v2PBS: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_PBS())
+            }
+
+            public static var v2PBSAccounting: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_PBS_ACCOUNTING())
+            }
+
+            public static var v2PBSCheckpoing: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_PBS_CHECKPOINT())
+            }
+
+            public static var v2PBSLocate: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_PBS_LOCATE())
+            }
+
+            public static var v2PBSMessage: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_PBS_MESSAGE())
+            }
+
+            public static var v2PBSTrack: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_PBS_TRACK())
+            }
+
+            public static var v2SWDev: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_SW_DEV())
+            }
+
+            public static var v2UPE: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_UPE())
+            }
+
+            public static var v2Version: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_2_VERSION())
+            }
+
+            public static var advisoryInfo: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_ADVISORY_INFO())
+            }
+
+            public static var aioListIOMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_AIO_LISTIO_MAX())
+            }
+
+            public static var aioMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_AIO_MAX())
+            }
+
+            public static var aioPrioDeltaMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_AIO_PRIO_DELTA_MAX())
+            }
+
+            public static var argMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_ARG_MAX())
+            }
+
+            public static var asynchronousIO: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_ASYNCHRONOUS_IO())
+            }
+
+            public static var atExitMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_ATEXIT_MAX())
+            }
+
+            public static var barriers: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_BARRIERS())
+            }
+
+            public static var bcBaseMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_BC_BASE_MAX())
+            }
+
+            public static var bcDimMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_BC_DIM_MAX())
+            }
+
+            public static var bcScaleMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_BC_SCALE_MAX())
+            }
+
+            public static var bcStringMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_BC_STRING_MAX())
+            }
+
+            public static var childMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_CHILD_MAX())
+            }
+
+            public static var clkTck: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_CLK_TCK())
+            }
+
+            public static var clockSelection: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_CLOCK_SELECTION())
+            }
+
+            public static var collWeightsMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_COLL_WEIGHTS_MAX())
+            }
+
+            public static var cpuTime: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_CPUTIME())
+            }
+
+            public static var delayTimerMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_DELAYTIMER_MAX())
+            }
+
+            public static var exprNestMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_EXPR_NEST_MAX())
+            }
+
+            public static var fsync: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_FSYNC())
+            }
+
+            public static var getgrRSizeMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_GETGR_R_SIZE_MAX())
+            }
+
+            public static var getpwRSizeMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_GETPW_R_SIZE_MAX())
+            }
+
+            public static var hostNameMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_HOST_NAME_MAX())
+            }
+
+            public static var iovMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_IOV_MAX())
+            }
+
+            public static var ipv6: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_IPV6())
+            }
+
+            public static var jobControl: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_JOB_CONTROL())
+            }
+
+            public static var lineMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_LINE_MAX())
+            }
+
+            public static var loginNameMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_LOGIN_NAME_MAX())
+            }
+
+            public static var mappedFiles: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_MAPPED_FILES())
+            }
+
+            public static var memlock: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_MEMLOCK())
+            }
+
+            public static var memlockRange: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_MEMLOCK_RANGE())
+            }
+
+            public static var memoryProtection: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_MEMORY_PROTECTION())
+            }
+
+            public static var messagePassing: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_MESSAGE_PASSING())
+            }
+
+            public static var monotonicClock: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_MONOTONIC_CLOCK())
+            }
+
+            public static var mqOpenMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_MQ_OPEN_MAX())
+            }
+
+            public static var mqPrioMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_MQ_PRIO_MAX())
+            }
+
+            public static var nGropusMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_NGROUPS_MAX())
+            }
+
+            public static var openMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_OPEN_MAX())
+            }
+
+            public static var page_size: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_PAGE_SIZE())
+            }
+
+            public static var pageSize: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_PAGESIZE())
+            }
+
+            public static var prioritizedIO: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_PRIORITIZED_IO())
+            }
+
+            public static var priorityScheduling: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_PRIORITY_SCHEDULING())
+            }
+
+            public static var rawSockets: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_RAW_SOCKETS())
+            }
+
+            public static var reDupMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_RE_DUP_MAX())
+            }
+
+            public static var readerWriterLocks: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_READER_WRITER_LOCKS())
+            }
+
+            public static var realtimeSignals: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_REALTIME_SIGNALS())
+            }
+
+            public static var regexp: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_REGEXP())
+            }
+
+            public static var rtSigMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_RTSIG_MAX())
+            }
+
+            public static var savedIDs: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SAVED_IDS())
+            }
+
+            public static var semNSemsMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SEM_NSEMS_MAX())
+            }
+
+            public static var semValueMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SEM_VALUE_MAX())
+            }
+
+            public static var semaphores: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SEMAPHORES())
+            }
+
+            public static var sharedMemoryObjects: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SHARED_MEMORY_OBJECTS())
+            }
+
+            public static var shell: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SHELL())
+            }
+
+            public static var sigqueueMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SIGQUEUE_MAX())
+            }
+
+            public static var spawn: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SPAWN())
+            }
+
+            public static var spinLocks: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SPIN_LOCKS())
+            }
+
+            public static var sporadicServer: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SPORADIC_SERVER())
+            }
+
+            public static var ssREPLMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SS_REPL_MAX())
+            }
+
+            public static var streamMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_STREAM_MAX())
+            }
+
+            public static var symLoopMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SYMLOOP_MAX())
+            }
+
+            public static var synchronizedIO: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_SYNCHRONIZED_IO())
+            }
+
+            public static var threadAttrStackAddr: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_ATTR_STACKADDR())
+            }
+
+            public static var threadAttrStackSize: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_ATTR_STACKSIZE())
+            }
+
+            public static var threadCPUTime: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_CPUTIME())
+            }
+
+            public static var threadDestructorIterations: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_DESTRUCTOR_ITERATIONS())
+            }
+
+            public static var threadKeysMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_KEYS_MAX())
+            }
+
+            public static var threadPrioInherit: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_PRIO_INHERIT())
+            }
+
+            public static var threadPrioProtect: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_PRIO_PROTECT())
+            }
+
+            public static var threadPriorityScheduling: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_PRIORITY_SCHEDULING())
+            }
+
+            public static var threadProcessShared: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_PROCESS_SHARED())
+            }
+
+            public static var threadRobustPrioInherit: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_ROBUST_PRIO_INHERIT())
+            }
+
+            public static var threadRobustPrioProtect: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_ROBUST_PRIO_PROTECT())
+            }
+
+            public static var threadSafeFunctions: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_SAFE_FUNCTIONS())
+            }
+
+            public static var threadSporadicServer: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_SPORADIC_SERVER())
+            }
+
+            public static var threadStackMin: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_STACK_MIN())
+            }
+
+            public static var threadThreadsMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREAD_THREADS_MAX())
+            }
+
+            public static var threads: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_THREADS())
+            }
+
+            public static var timeouts: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TIMEOUTS())
+            }
+
+            public static var timerMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TIMER_MAX())
+            }
+
+            public static var timers: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TIMERS())
+            }
+
+            public static var trace: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TRACE())
+            }
+
+            public static var traceEventFilter: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TRACE_EVENT_FILTER())
+            }
+
+            public static var traceEventNameMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TRACE_EVENT_NAME_MAX())
+            }
+
+            public static var traceInherit: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TRACE_INHERIT())
+            }
+
+            public static var traceLog: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TRACE_LOG())
+            }
+
+            public static var traceNameMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TRACE_NAME_MAX())
+            }
+
+            public static var traceSysMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TRACE_SYS_MAX())
+            }
+
+            public static var traceUserEventMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TRACE_USER_EVENT_MAX())
+            }
+
+            public static var ttyNameMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TTY_NAME_MAX())
+            }
+
+            public static var typedMemoryObjects: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TYPED_MEMORY_OBJECTS())
+            }
+
+            public static var tzNameMax: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_TZNAME_MAX())
+            }
+
+            public static var v7ILP32Off32: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_V7_ILP32_OFF32())
+            }
+
+            public static var v7ILP32OffBig: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_V7_ILP32_OFFBIG())
+            }
+
+            public static var v7LP64Off64: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_V7_LP64_OFF64())
+            }
+
+            public static var v7LPBigOffBig: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_V7_LPBIG_OFFBIG())
+            }
+
+            public static var v6ILP32Off32: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_V6_ILP32_OFF32())
+            }
+
+            public static var v6ILP32OffBig: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_V6_ILP32_OFFBIG())
+            }
+
+            public static var v6LP64Off64: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_V6_LP64_OFF64())
+            }
+
+            public static var v6LPBigOffBig: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_V6_LPBIG_OFFBIG())
+            }
+
+            public static var version: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_VERSION())
+            }
+
+            public static var xopenCrypt: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_CRYPT())
+            }
+
+            public static var xopenEnhI18N: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_ENH_I18N())
+            }
+
+            public static var xopenRealtime: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_REALTIME())
+            }
+
+            public static var xopenRealtimeThreads: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_REALTIME_THREADS())
+            }
+
+            public static var xopenShm: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_SHM())
+            }
+
+            public static var xopenStreams: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_STREAMS())
+            }
+
+            public static var xopenUnix: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_UNIX())
+            }
+
+            public static var xopenUUCP: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_UUCP())
+            }
+
+            public static var xopenVersion: SysconfName? {
+                return SysconfName(valuePointer: SP_SC_XOPEN_VERSION())
+            }
+        }
+    }
+
+    public enum StandardFileStreams: Int32, CaseIterable {
+        case `in`
+        case out
+        case error
+
+        public var rawValue: RawValue {
+            switch self {
+            case .in:
+                return STDIN_FILENO
+            case .out:
+                return STDOUT_FILENO
+            case .error:
+                return STDERR_FILENO
+            }
+        }
+    }
+
+    public var disable: Character? {
+        guard let valuePointer = SP_POSIX_VDISABLE() else {
+            return nil
+        }
+        return Character(Unicode.Scalar.init(valuePointer.pointee))
     }
 }
