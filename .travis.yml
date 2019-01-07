@@ -23,46 +23,33 @@ env:
         - WATCHOS_SDK=watchsimulator
 
     matrix:
-        # iOS
-        - DESTINATION="OS=$IOS_VERSION,name=iPhone X"
+        - NAME="iOS"
+          DESTINATION="OS=$IOS_VERSION,name=iPhone X"
           SCHEME="$IOS_FRAMEWORK_SCHEME"
           SDK="$IOS_SDK"
           RUN_TESTS="YES"
-        # macOS
-        - DESTINATION="arch=x86_64"
+        - NAME="macOS"
+          DESTINATION="arch=x86_64"
           SCHEME="$MACOS_FRAMEWORK_SCHEME"
           SDK="$MACOS_SDK"
           RUN_TESTS="YES"
-        # tvOS
-        - DESTINATION="OS=$TVOS_VERSION,name=Apple TV 1080p"
+        - NAME="tvOS"
+          DESTINATION="OS=$TVOS_VERSION,name=Apple TV 1080p"
           SCHEME="$TVOS_FRAMEWORK_SCHEME"
           SDK="$TVOS_SDK"
           RUN_TESTS="YES"
-        # watchOS
-        - DESTINATION="OS=$WATCHOS_VERSOIN,name=Apple TV 1080p"
+        - NAME="watchOS"
+          DESTINATION="OS=$WATCHOS_VERSOIN,name=Apple TV 1080p"
           SCHEME="$TVOS_FRAMEWORK_SCHEME"
           SDK="$TVOS_SDK"
 
 script:
     - xcodebuild -version
 
+    - echo "Building: $NAME"
+
     - if [ $RUN_TESTS == "YES" ]; then
-        xcodebuild \
-            -project "$PROJECT" \
-            -scheme "$SCHEME" \
-            -sdk "$SDK" \
-            -destination "$DESTINATION" \
-            -configuration Debug \
-            ONLY_ACTIVE_ARCH=NO \
-            ENABLE_TESTABILITY=YES \
-            test
+        xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test;
       else
-        xcodebuild \
-            -project "$PROJECT" \
-            -scheme "$SCHEME" \
-            -sdk "$SDK" \
-            -destination "$DESTINATION" \
-            -configuration Debug \
-            ONLY_ACTIVE_ARCH=NO \
-            build
+        xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build
       fi
