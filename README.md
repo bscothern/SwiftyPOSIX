@@ -1,5 +1,7 @@
 # SwiftyPOSIX
 
+![Travis CI Status](https://travis-ci.org/bscothern/SwiftyPOSIX.svg?branch=master)
+
 A Swift wrapper around the C POSIX Standard.
 
 A primary purpose of this library is to mke the POSIX functions feel like first class Swift objects.
