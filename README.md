@@ -1,8 +1,5 @@
 # SwiftyPOSIX
 
-[travis-ci-image]: https://travis-ci.org/bscothern/SwiftyPOSIX.svg
-[travis-ci-url]: https://travis-ci.org/bscothern/SwiftyPOSIX
-
 [![Build Status][travis-travis-ci-image]][travis-ci-url-url]
 
 A Swift wrapper around the C POSIX Standard.
@@ -103,3 +100,7 @@ To see the entire set of standards open `POSIX.1-2017/index.html`.
 * 1 -- Convenience TODOs are present and need more implementaiton before being finished.
 * 2 -- Naming cleanup is needed.
 * 3 -- Compile time expressions need to be marked when supported. [See](https://forums.swift.org/t/compile-time-constant-expressions-for-swift/12879)
+
+
+[travis-ci-image]: https://travis-ci.org/bscothern/SwiftyPOSIX.svg
+[travis-ci-url]: https://travis-ci.org/bscothern/SwiftyPOSIX
