@@ -1,4 +1,4 @@
-langauge: objective-c
+language: objective-c
 osx_image: xcode10.1
 xcode_project: $PROJECTNAME.xcodeproj
 env:
