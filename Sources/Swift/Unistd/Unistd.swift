@@ -1445,8 +1445,7 @@ public enum Unistd {
                     mqPrioMax,
                     nGropusMax,
                     openMax,
-                    page_size,
-                    {
+                    page_size, {
                         // The two constants _SC_PAGESIZE and _SC_PAGE_SIZE may be defined to have the same value.
                         // Because of this we want to ensure that only one or the other is returned in order to avoid duplicate rawValues.
                         guard page_size != pageSize else {

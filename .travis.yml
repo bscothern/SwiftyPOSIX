@@ -24,6 +24,7 @@ env:
         - WATCHOS_SDK=watchsimulator
 
     matrix:
+        - NAME="lint"
         - NAME="iOS"
           DESTINATION="OS=$IOS_VERSION,name=iPhone X"
           SCHEME="$IOS_FRAMEWORK_SCHEME"
@@ -45,6 +46,11 @@ env:
           SDK="$WATCHOS_SDK"
 
 script:
+    - if [ $NAME == "lint" ]; then
+        swiftlint --strict;
+        exit 0;
+      fi
+
     - xcodebuild -version
 
     - if [ $RUN_TESTS == "YES" ]; then
