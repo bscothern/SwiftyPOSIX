@@ -18,12 +18,19 @@ extension SwiftyPOSIXTests {
     ]
 }
 
+extension UnistdFunctionConstantsPathconfNameTests {
+    static let __allTests = [
+        ("testPathconfNameCount", testPathconfNameCount),
+    ]
+}
+
 #if !os(macOS)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
         testCase(ErrnoTests.__allTests),
         testCase(PThreadSpecificTests.__allTests),
         testCase(SwiftyPOSIXTests.__allTests),
+        testCase(UnistdFunctionConstantsPathconfNameTests.__allTests),
     ]
 }
 #endif
