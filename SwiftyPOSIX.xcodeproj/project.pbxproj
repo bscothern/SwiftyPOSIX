@@ -145,6 +145,7 @@
 		F8B1DC41202ECBB100EAC350 /* PThreadReadWriteLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadReadWriteLock.swift; sourceTree = "<group>"; };
 		F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnistdFunctionConstantsPathconfNameTests.swift; sourceTree = "<group>"; };
 		F8CBB86321E3199500DB022F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		F8CBB8E821E5C5C100DB022F /* .travis-ci.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ".travis-ci.sh"; sourceTree = "<group>"; };
 		F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrnoTests.swift; sourceTree = "<group>"; };
 		F8D5AEB5217ADAD8006B19D2 /* PThreadSpecificTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadSpecificTests.swift; sourceTree = "<group>"; };
 		F8D5AEB9217ADB79006B19D2 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				F8CBB86321E3199500DB022F /* .travis.yml */,
+				F8CBB8E821E5C5C100DB022F /* .travis-ci.sh */,
 				F8B1DC1A202EC43E00EAC350 /* README.md */,
 				F8B1DC19202EC43400EAC350 /* Package.swift */,
 				F8B1DB93202EC07100EAC350 /* Sources */,
