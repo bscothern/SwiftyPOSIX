@@ -47,11 +47,17 @@ env:
           SDK="$WATCHOS_SDK"
 
 script:
+    - IS_XCODE_BUILD=false
     - if [ $NAME == "lint" ]; then
         swiftlint --strict;
-        exit 0;
       elif [ $NAME == "SwiftPM" ]; then
         swift test;
+      else
+        IS_XCODE_BUILD=true;
+      fi
+
+    - if [ ! ${IS_XCODE_BUILD} ]; then
+        exit 0;
       fi
 
     - xcodebuild -version
