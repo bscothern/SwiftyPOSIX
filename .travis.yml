@@ -1,4 +1,7 @@
 language: objective-c
+os:
+    - linux
+    - osx
 osx_image: xcode10.1
 xcode_project: SwiftyPOSIX.xcodeproj
 env:
@@ -55,5 +58,16 @@ env:
           SCHEME="$WATCHOS_FRAMEWORK_SCHEME"
           SDK="$WATCHOS_SDK"
 
+        exclude:
+            - os: linux
+              USE_XCODE_BUILD="YES"
+            - os: linux
+              RUN_TESTS="NO"
+
 script:
     - ./.travis-ci.sh
+
+before_install:
+    - if [[ $TRAVIS_OS_NAME == "linux" ]]; then
+        ./.travis-ci-before-install.sh;
+      fi
