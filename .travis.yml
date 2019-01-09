@@ -25,6 +25,7 @@ env:
 
     matrix:
         - NAME="lint"
+        - NAME="SwiftPM"
         - NAME="iOS"
           DESTINATION="OS=$IOS_VERSION,name=iPhone X"
           SCHEME="$IOS_FRAMEWORK_SCHEME"
@@ -49,6 +50,8 @@ script:
     - if [ $NAME == "lint" ]; then
         swiftlint --strict;
         exit 0;
+      elif [ $NAME == "SwiftPM" ]; then
+        swift test;
       fi
 
     - xcodebuild -version
