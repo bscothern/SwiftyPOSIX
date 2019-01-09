@@ -56,23 +56,25 @@ env:
           SDK="$WATCHOS_SDK"
 
 script:
-    - if [[ "${NAME}" == "lint" ]]; then
-        swiftlint --strict;
-      elif [[ "${NAME}" == "SwiftPM" ]]; then
-        if [ "${RUN_TESTS}" == "YES" ]; then
-            swift test;
-        else
-            swift build;
-        fi
-      fi
+    - ./.travis-ci.sh
 
-    - if [[ ${USE_XCODE_BUILD} != "YES" ]]; then
-        exit 0;
-      fi
+#    - if [[ "${NAME}" == "lint" ]]; then
+#        swiftlint --strict;
+#      elif [[ "${NAME}" == "SwiftPM" ]]; then
+#        if [ "${RUN_TESTS}" == "YES" ]; then
+#            swift test;
+#        else
+#            swift build;
+#        fi
+#     fi
 
-    - xcodebuild -version
-    - if [ "${RUN_TESTS}" == "YES" ]; then
-        xcodebuild -project "${PROJECT}" -scheme "${SCHEME}" -sdk "${SDK}" -destination "${DESTINATION}" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test;
-      else
-        xcodebuild -project "${PROJECT}" -scheme "${SCHEME}" -sdk "${SDK}" -destination "${DESTINATION}" -configuration Debug ONLY_ACTIVE_ARCH=NO build;
-      fi
+#   - if [[ ${USE_XCODE_BUILD} != "YES" ]]; then
+#        exit 0;
+#      fi
+
+#    - xcodebuild -version
+#    - if [ "${RUN_TESTS}" == "YES" ]; then
+#        xcodebuild -project "${PROJECT}" -scheme "${SCHEME}" -sdk "${SDK}" -destination "${DESTINATION}" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test;
+#      else
+#        xcodebuild -project "${PROJECT}" -scheme "${SCHEME}" -sdk "${SDK}" -destination "${DESTINATION}" -configuration Debug ONLY_ACTIVE_ARCH=NO build;
+#      fi
