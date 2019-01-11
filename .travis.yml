@@ -5,6 +5,7 @@ os:
     - linux
     - osx
 osx_image: xcode10.1
+dist: xenial
 
 env:
     - OS=macOS
