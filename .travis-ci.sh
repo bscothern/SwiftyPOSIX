@@ -1,9 +1,4 @@
-#!/bin/bash
-
-if [[ ${OS} == "Linux" ]]; then
-    echo "Done"
-    exit 0
-fi
+#!/bin/bash -x
 
 PROJECT_NAME="SwiftyPOSIX"
 PROJECT="${PROJECT_NAME}.xcodeproj"
