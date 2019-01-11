@@ -49,4 +49,7 @@ elif [[ ${NAME} == "SwiftPM" ]]; then
     run_swift
 elif [[ ${USE_XCODE_BUILD} = "True" ]]; then
     run_xcodebuild
+else
+    echo "Invalid build scheme in matrix"
+    exit 1
 fi
