@@ -11,9 +11,10 @@ function run_swiftlint () {
     ${SWIFTLINT} --strict
 }
 
-SWIFT=$(which swift)
 if [[ $TRAVIS_OS_NAME != "linux" ]]; then
-    SWIFT="sudo ${SWIFT}"
+    SWIFT=swift/usr/bin/swift
+else
+    SWIFT=$(which swift)
 fi
 function run_swift() {
     if [[ ${RUN_TESTS} == "True" ]]; then
