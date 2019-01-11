@@ -1,68 +1,85 @@
 language: objective-c
-#os:
-#    - linux
-#    - osx
-osx_image: xcode10.1
 xcode_project: SwiftyPOSIX.xcodeproj
+
+os:
+    - linux
+    - osx
+osx_image: xcode10.1
+
 env:
     global:
-        - PROJECTNAME="SwiftyPOSIX"
-        - PROJECT="$PROJECTNAME.xcodeproj"
-        - FRAMEWORK_NAME="$PROJECTNAME.framework"
+        - PROJECT_NAME="SwiftyPOSIX"
+        - PROJECT="$PROJECT_NAME.xcodeproj"
         # OS Versions
         - IOS_VERSION=12.0
         - MACOS_VERSION=10.14
         - TVOS_VERSION=12.0
-        - WATCHOS_VERSOIN=5.0
+        - WATCHOS_VERSION=5.0
         # Schemes
-        - IOS_FRAMEWORK_SCHEME="$PROJECTNAME iOS"
-        - MACOS_FRAMEWORK_SCHEME="$PROJECTNAME macOS"
-        - TVOS_FRAMEWORK_SCHEME="$PROJECTNAME tvOS"
-        - WATCHOS_FRAMEWORK_SCHEME="$PROJECTNAME watchOS"
-        - TEST_FRAMEWORK_SCHEME="$PROJECTNAMETests"
+        - IOS_FRAMEWORK_SCHEME="$PROJECT_NAME iOS"
+        - MACOS_FRAMEWORK_SCHEME="$PROJECT_NAME macOS"
+        - TVOS_FRAMEWORK_SCHEME="$PROJECT_NAME tvOS"
+        - WATCHOS_FRAMEWORK_SCHEME="$PROJECT_NAME watchOS"
+        - TEST_FRAMEWORK_SCHEME="$PROJECT_NAMETests"
         # SDKs
         - IOS_SDK=iphonesimulator
         - MACOS_SDK=macosx
         - TVOS_SDK=appletvsimulator
         - WATCHOS_SDK=watchsimulator
 
-    matrix:
-        - NAME="lint"
-          RUN_TESTS="NO"
-          USE_XCODE_BUILD="NO"
-        - NAME="SwiftPM"
-          RUN_TESTS="YES"
-          USE_XCODE_BUILD="NO"
-        - NAME="iOS"
-          RUN_TESTS="YES"
-          USE_XCODE_BUILD="YES"
-          DESTINATION="OS=$IOS_VERSION,name=iPhone X"
-          SCHEME="$IOS_FRAMEWORK_SCHEME"
-          SDK="$IOS_SDK"
-        - NAME="macOS"
-          RUN_TESTS="YES"
-          USE_XCODE_BUILD="YES"
-          DESTINATION="arch=x86_64"
-          SCHEME="$MACOS_FRAMEWORK_SCHEME"
-          SDK="$MACOS_SDK"
-        - NAME="tvOS"
-          RUN_TESTS="YES"
-          USE_XCODE_BUILD="YES"
-          DESTINATION="OS=$TVOS_VERSION,name=Apple TV 4K"
-          SCHEME="$TVOS_FRAMEWORK_SCHEME"
-          SDK="$TVOS_SDK"
-        - NAME="watchOS"
-          RUN_TESTS="NO"
-          USE_XCODE_BUILD="YES"
-          DESTINATION="OS=$WATCHOS_VERSOIN,name=Apple Watch Series 4 - 44mm"
-          SCHEME="$WATCHOS_FRAMEWORK_SCHEME"
-          SDK="$WATCHOS_SDK"
+    - OS=macOS
+      NAME="Swiftlint"
+      RUN_TESTS=False
+      USE_XCODE_BUILD=False
 
+    - OS=macOS
+      NAME="SwiftPM"
+      RUN_TESTS=True
+      USE_XCODE_BUILD=NO
+
+    - OS=Linux
+      NAME="SwiftPM"
+      RUN_TESTS=True
+      USE_XCODE_BUILD=NO
+
+    - OS=macOS
+      NAME="iOS"
+      RUN_TESTS=True
+      USE_XCODE_BUILD=True
+      DESTINATION="OS=$IOS_VERSION,name=iPhone X"
+      SCHEME="$IOS_FRAMEWORK_SCHEME"
+      SDK="iphonesimulator"
+
+    - OS=macOS
+      NAME="macOS"
+      RUN_TESTS="YES"
+      USE_XCODE_BUILD=True
+      DESTINATION="arch=x86_64"
+      SCHEME="$MACOS_FRAMEWORK_SCHEME"
+      SDK="macosx"
+
+    - OS=macOS
+      NAME="tvOS"
+      RUN_TESTS=True
+      USE_XCODE_BUILD=True
+      DESTINATION="OS=$TVOS_VERSION,name=Apple TV 4K"
+      SCHEME="$TVOS_FRAMEWORK_SCHEME"
+      SDK="appletvsimulator"
+
+    - OS=macOS
+      NAME="watchOS"
+      RUN_TESTS=False
+      USE_XCODE_BUILD=True
+      DESTINATION="OS=$WATCHOS_VERSION,name=Apple Watch Series 4 - 44mm"
+      SCHEME="$WATCHOS_FRAMEWORK_SCHEME"
+      SDK="watchsimulator"
+
+    matrix:
         exclude:
-            - os: linux
-              USE_XCODE_BUILD="YES"
-            - os: linux
-              RUN_TESTS="NO"
+        - os: linux
+          env: OS=macOS
+        - os: osx
+          env: OS=Linux
 
 script:
     - ./.travis-ci.sh
