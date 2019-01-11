@@ -1,8 +1,8 @@
-#!/bin/bash -x
+#!/bin/bash
 
 if [[ $TRAVIS_OS_NAME == "linux" ]]; then
-export PATH=/usr/share/swift:$PATH
-echo $PATH
+    export PATH=/usr/share/swift:$PATH
+    echo $PATH
 fi
 
 PROJECT_NAME="SwiftyPOSIX"

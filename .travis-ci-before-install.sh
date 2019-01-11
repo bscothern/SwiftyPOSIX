@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 if [[ $TRAVIS_OS_NAME != "linux" ]]; then
     exit 0
