@@ -1,66 +1,65 @@
 language: objective-c
-xcode_project: SwiftyPOSIX.xcodeproj
 
 os:
-    - linux
-    - osx
-osx_image: xcode10.1
+  - linux
+  - osx
 dist: xenial
-
-env:
-    - OS=macOS
-      NAME="Swiftlint"
-      RUN_TESTS=False
-      USE_XCODE_BUILD=False
-
-    - OS=macOS
-      NAME="SwiftPM"
-      RUN_TESTS=True
-      USE_XCODE_BUILD=False
-
-    - OS=Linux
-      NAME="SwiftPM"
-      RUN_TESTS=True
-      USE_XCODE_BUILD=False
-
-    - OS=macOS
-      NAME="iOS"
-      RUN_TESTS=True
-      USE_XCODE_BUILD=True
-      DESTINATION="OS=12.0,name=iPhone X"
-      SDK="iphonesimulator"
-
-    - OS=macOS
-      NAME="macOS"
-      RUN_TESTS="YES"
-      USE_XCODE_BUILD=True
-      DESTINATION="arch=x86_64"
-      SDK="macosx"
-
-    - OS=macOS
-      NAME="tvOS"
-      RUN_TESTS=True
-      USE_XCODE_BUILD=True
-      DESTINATION="OS=12.0,name=Apple TV 4K"
-      SDK="appletvsimulator"
-
-    - OS=macOS
-      NAME="watchOS"
-      RUN_TESTS=False
-      USE_XCODE_BUILD=True
-      DESTINATION="OS=5.0,name=Apple Watch Series 4 - 44mm"
-      SDK="watchsimulator"
+osx_image: xcode10.1
 
 matrix:
-    include:
-        - os: linux
-          env: OS=Linux NAME="SwiftPM" RUN_TESTS=True USE_XCODE_BUILD=False
-    exclude:
-        - os: osx
-          env: OS=Linux NAME="SwiftPM" RUN_TESTS=True USE_XCODE_BUILD=False
+  include:
+    - os: osx
+      env:
+        - NAME="Swiftlint"
+          RUN_TESTS=False
+          USE_XCODE_BUILD=False
+
+    - os: osx
+      env:
+        - NAME="SwiftPM"
+          RUN_TESTS=True
+          USE_XCODE_BUILD=False
+
+    - os: linux
+      env:
+        - NAME="SwiftPM"
+          RUN_TESTS=True
+          USE_XCODE_BUILD=False
+
+    - os: osx
+      env:
+        - NAME="iOS"
+          RUN_TESTS=True
+          USE_XCODE_BUILD=True
+          DESTINATION="OS=12.0,name=iPhone X"
+          SDK="iphonesimulator"
+
+    - os: osx
+      env:
+        - NAME="macOS"
+          RUN_TESTS="YES"
+          USE_XCODE_BUILD=True
+          DESTINATION="arch=x86_64"
+          SDK="macosx"
+
+    - os: osx
+      env:
+        - NAME="tvOS"
+          RUN_TESTS=True
+          USE_XCODE_BUILD=True
+          DESTINATION="OS=12.0,name=Apple TV 4K"
+          SDK="appletvsimulator"
+
+    - os: osx
+      env:
+        - NAME="watchOS"
+          RUN_TESTS=False
+          USE_XCODE_BUILD=True
+          DESTINATION="OS=5.0,name=Apple Watch Series 4 - 44mm"
+          SDK="watchsimulator"
 
 script:
-    - ./.travis-ci.sh
+  - ./.travis-ci.sh
 
 #before_install:
 #    - if [[ $TRAVIS_OS_NAME == "linux" ]]; then
