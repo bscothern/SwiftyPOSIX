@@ -8,23 +8,27 @@ SCHEME="${PROJECT_NAME} ${NAME}"
 ###################################################################
 # Setup
 ###################################################################
-SWIFTLINT=$(which swiftlint || exit 1)
+SWIFTLINT=$(which swiftlint)
 function run_swiftlint () {
     ${SWIFTLINT} --strict
 }
 
-SWIFT=$(which swift || exit 1)
+if [[ $TRAVIS_OS_NAME == "linux" ]]; then
+    SWIFT=/usr/share/swift
+else
+    SWIFT=$(which swift)
+fi
 function run_swift() {
-    if [ ${RUN_TESTS} == "True" ]; then
+    if [[ ${RUN_TESTS} == "True" ]]; then
         ${SWIFT} test;
     else
         ${SWIFT} build;
     fi
 }
 
-XCODEBUILD=$(which xcodebuild || exit 1)
+XCODEBUILD=$(which xcodebuild)
 function run_xcodebuild_args () {
-    if [ ${RUN_TESTS} == "True" ]; then
+    if [[ ${RUN_TESTS} == "True" ]]; then
         echo "ENABLE_TESTABILITY=YES test"
     else
         echo "build"
