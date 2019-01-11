@@ -12,13 +12,13 @@ import XCTest
 class CPIOTests: XCTestCase {
     func testCPIO() {
         let cpioMap = createCPIOMap()
-        
+
         for pair in cpioMap {
             XCTAssert(pair.key.rawValue == pair.value)
             XCTAssert(pair.key == CPIO(rawValue: pair.value), "\(pair.key) -- \(String(describing: CPIO(rawValue: pair.value)))")
         }
     }
-    
+
     func testMagic() {
         XCTAssert(CPIO.magic == MAGIC)
     }

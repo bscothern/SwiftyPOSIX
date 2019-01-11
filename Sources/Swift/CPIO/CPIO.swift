@@ -14,99 +14,99 @@ import Foundation
 ///
 /// - Note: <cpio.h>
 public enum CPIO: Int32, CaseIterable {
-    
+
     /// A `String` with the value "070707"
     ///
     /// - Note: `MAGIC`
     static let magic: String = MAGIC
-    
+
     /// - Note: Octal value: 0000400
     /// - Note: `C_IRUSR`
     case readByOwner
-    
+
     /// - Note: Octal value: 0000200
     /// - Note: `C_IWUSR`
     case writeByOwner
-    
+
     /// - Note: Octal value: 0000100
     /// - Note: `C_IXUSR`
     case executeByOwner
-    
+
     /// - Note: Octal value: 0000040
     /// - Note: `C_IRGRP`
     case readByGroup
-    
+
     /// - Note: Octal value: 0000020
     /// - Note: `C_IWGRP`
     case writeByGroup
-    
+
     /// - Note: Octal value: 0000010
     /// - Note: `C_IXGRP`
     case executeByGroup
-    
+
     /// - Note: Octal value: 0000004
     /// - Note: `C_IROTH`
     case readByOthers
-    
+
     /// - Note: Octal value: 0000002
     /// - Note: `C_IWOTH`
     case writeByOthers
-    
+
     /// - Note: Octal value: 0000001
     /// - Note: `C_IXOTH`
     case executeByOthers
-    
+
     /// - Note: Octal value: 0004000
     /// - Note: `C_ISUID`
     case setUserID
-    
+
     /// - Note: Octal value: 0002000
     /// - Note: `C_ISGID`
     case setGroupID
-    
+
     /// - Note: Octal value: 0001000
     /// - Note: `C_ISVTX`
     case onDirectoriesRestrictDeletion
-    
+
     /// - Note: Octal value: 0040000
     /// - Note: `C_ISDIR`
     case directory
-    
+
     /// - Note: Octal value: 0010000
     /// - Note: `C_ISFIFO`
     case FIFO
-    
+
     /// - Note: Octal value: 0100000
     /// - Note: `C_ISREG`
     case regularFile
-    
+
     /// - Note: Octal value: 0060000
     /// - Note: `C_ISBLK`
     case blockSpecial
-    
+
     /// - Note: Octal value: 0020000
     /// - Note: `C_ISCHR`
     case characterSpecial
-    
+
     /// - Note: Octal value: 0110000
     /// - Note: `C_ISCTG`
     case reserved
-    
+
     /// - Note: Octal value: 0120000
     /// - Note: `C_ISLNK`
     case symbolicLink
-    
+
     /// - Note: Octal value: 0140000
     /// - Note: `C_ISSOCK`
     case socket
-    
+
     public init?(rawValue: RawValue) {
         guard let value = CPIO.allCases.first(where: { $0.rawValue == rawValue }) else {
             return nil
         }
         self = value
     }
-    
+
     public var rawValue: Int32 {
         switch self {
         case .readByOwner:
