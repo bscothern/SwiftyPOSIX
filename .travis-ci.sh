@@ -1,6 +1,9 @@
 #!/bin/bash -x
 
+if [[ $TRAVIS_OS_NAME == "linux" ]]; then
+export PATH=/usr/share/swift:$PATH
 echo $PATH
+fi
 
 PROJECT_NAME="SwiftyPOSIX"
 PROJECT="${PROJECT_NAME}.xcodeproj"
@@ -13,11 +16,7 @@ function run_swiftlint () {
     ${SWIFTLINT} --strict
 }
 
-if [[ $TRAVIS_OS_NAME == "linux" ]]; then
-    SWIFT=/usr/share/swift
-else
-    SWIFT=$(which swift)
-fi
+SWIFT=$(which swift)
 function run_swift() {
     if [[ ${RUN_TESTS} == "True" ]]; then
         ${SWIFT} test;
