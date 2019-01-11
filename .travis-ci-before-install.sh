@@ -13,5 +13,4 @@ wget -q -O - https://swift.org/keys/all-keys.asc | sudo gpg --import -
 
 # Install Swift
 wget https://swift.org/builds/swift-${SWIFT_VERSION}-release/${OS_VERSION_SHORT}/swift-${SWIFT_VERSION}-RELEASE/swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL}.tar.gz
-sudo tar xzf swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL}.tar.gz
-sudo mv swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL} /usr/share/swift
+sudo tar xzf swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL}.tar.gz -C /

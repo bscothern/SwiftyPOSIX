@@ -1,10 +1,5 @@
 #!/bin/bash -x
 
-if [[ $TRAVIS_OS_NAME == "linux" ]]; then
-    export PATH=/usr/share/swift:$PATH
-    ls /usr/share/swift
-fi
-
 PROJECT_NAME="SwiftyPOSIX"
 PROJECT="${PROJECT_NAME}.xcodeproj"
 SCHEME="${PROJECT_NAME} ${NAME}"
