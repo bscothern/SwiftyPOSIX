@@ -7,26 +7,6 @@ os:
 osx_image: xcode10.1
 
 env:
-    global:
-        - PROJECT_NAME="SwiftyPOSIX"
-        - PROJECT="$PROJECT_NAME.xcodeproj"
-        # OS Versions
-        - IOS_VERSION=12.0
-        - MACOS_VERSION=10.14
-        - TVOS_VERSION=12.0
-        - WATCHOS_VERSION=5.0
-        # Schemes
-        - IOS_FRAMEWORK_SCHEME="$PROJECT_NAME iOS"
-        - MACOS_FRAMEWORK_SCHEME="$PROJECT_NAME macOS"
-        - TVOS_FRAMEWORK_SCHEME="$PROJECT_NAME tvOS"
-        - WATCHOS_FRAMEWORK_SCHEME="$PROJECT_NAME watchOS"
-        - TEST_FRAMEWORK_SCHEME="$PROJECT_NAMETests"
-        # SDKs
-        - IOS_SDK=iphonesimulator
-        - MACOS_SDK=macosx
-        - TVOS_SDK=appletvsimulator
-        - WATCHOS_SDK=watchsimulator
-
     - OS=macOS
       NAME="Swiftlint"
       RUN_TESTS=False
@@ -35,19 +15,18 @@ env:
     - OS=macOS
       NAME="SwiftPM"
       RUN_TESTS=True
-      USE_XCODE_BUILD=NO
+      USE_XCODE_BUILD=False
 
     - OS=Linux
       NAME="SwiftPM"
       RUN_TESTS=True
-      USE_XCODE_BUILD=NO
+      USE_XCODE_BUILD=False
 
     - OS=macOS
       NAME="iOS"
       RUN_TESTS=True
       USE_XCODE_BUILD=True
-      DESTINATION="OS=$IOS_VERSION,name=iPhone X"
-      SCHEME="$IOS_FRAMEWORK_SCHEME"
+      DESTINATION="OS=12.0,name=iPhone X"
       SDK="iphonesimulator"
 
     - OS=macOS
@@ -55,27 +34,24 @@ env:
       RUN_TESTS="YES"
       USE_XCODE_BUILD=True
       DESTINATION="arch=x86_64"
-      SCHEME="$MACOS_FRAMEWORK_SCHEME"
       SDK="macosx"
 
     - OS=macOS
       NAME="tvOS"
       RUN_TESTS=True
       USE_XCODE_BUILD=True
-      DESTINATION="OS=$TVOS_VERSION,name=Apple TV 4K"
-      SCHEME="$TVOS_FRAMEWORK_SCHEME"
+      DESTINATION="OS=12.0,name=Apple TV 4K"
       SDK="appletvsimulator"
 
     - OS=macOS
       NAME="watchOS"
       RUN_TESTS=False
       USE_XCODE_BUILD=True
-      DESTINATION="OS=$WATCHOS_VERSION,name=Apple Watch Series 4 - 44mm"
-      SCHEME="$WATCHOS_FRAMEWORK_SCHEME"
+      DESTINATION="OS=5.0,name=Apple Watch Series 4 - 44mm"
       SDK="watchsimulator"
 
-    matrix:
-        exclude:
+matrix:
+    exclude:
         - os: linux
           env: OS=macOS
         - os: osx

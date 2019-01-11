@@ -5,6 +5,9 @@ if [[ ${OS} == "Linux" ]]; then
     exit 0
 fi
 
+PROJECT_NAME="SwiftyPOSIX"
+PROJECT="${PROJECT_NAME}.xcodeproj"
+SCHEME="${PROJECT_NAME} ${NAME}"
 ###################################################################
 # Setup
 ###################################################################
@@ -15,7 +18,7 @@ function run_swiftlint () {
 
 SWIFT=$(which swift || exit 1)
 function run_swift() {
-    if [ ${RUN_TESTS} == "YES" ]; then
+    if [ ${RUN_TESTS} == "True" ]; then
         ${SWIFT} test;
     else
         ${SWIFT} build;
@@ -24,7 +27,7 @@ function run_swift() {
 
 XCODEBUILD=$(which xcodebuild || exit 1)
 function run_xcodebuild_args () {
-    if [ ${RUN_TESTS} == "YES" ]; then
+    if [ ${RUN_TESTS} == "True" ]; then
         echo "ENABLE_TESTABILITY=YES test"
     else
         echo "build"
@@ -45,10 +48,10 @@ function run_xcodebuild () {
 ###################################################################
 # Main Execution
 ###################################################################
-if [[ ${NAME} == "lint" ]]; then
+if [[ ${NAME} == "Swiftlint" ]]; then
     run_swiftlint
 elif [[ ${NAME} == "SwiftPM" ]]; then
     run_swift
-elif [[ ${USE_XCODE_BUILD} = "YES" ]]; then
+elif [[ ${USE_XCODE_BUILD} = "True" ]]; then
     run_xcodebuild
 fi
