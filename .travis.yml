@@ -58,7 +58,5 @@ matrix:
 script:
   - ./.travis-ci.sh
 
-#before_install:
-#    - if [[ $TRAVIS_OS_NAME == "linux" ]]; then
-#        ./.travis-ci-before-install.sh;
-#      fi
+before_install:
+  - ./.travis-ci-before-install.sh
