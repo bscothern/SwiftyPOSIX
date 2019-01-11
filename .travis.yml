@@ -1,29 +1,30 @@
 language: objective-c
 
-dist: xenial
-osx_image: xcode10.1
-
 matrix:
   include:
     - os: osx
+      osx_image: xcode10.1
       env:
         - NAME="Swiftlint"
           RUN_TESTS=False
           USE_XCODE_BUILD=False
 
     - os: osx
+      osx_image: xcode10.1
       env:
         - NAME="SwiftPM"
           RUN_TESTS=True
           USE_XCODE_BUILD=False
 
     - os: linux
+      dist: xenial
       env:
         - NAME="SwiftPM"
           RUN_TESTS=True
           USE_XCODE_BUILD=False
 
     - os: osx
+      osx_image: xcode10.1
       env:
         - NAME="iOS"
           RUN_TESTS=True
@@ -32,6 +33,7 @@ matrix:
           SDK="iphonesimulator"
 
     - os: osx
+      osx_image: xcode10.1
       env:
         - NAME="macOS"
           RUN_TESTS="YES"
@@ -40,6 +42,7 @@ matrix:
           SDK="macosx"
 
     - os: osx
+      osx_image: xcode10.1
       env:
         - NAME="tvOS"
           RUN_TESTS=True
@@ -48,6 +51,7 @@ matrix:
           SDK="appletvsimulator"
 
     - os: osx
+      osx_image: xcode10.1
       env:
         - NAME="watchOS"
           RUN_TESTS=False
