@@ -54,7 +54,12 @@ env:
 matrix:
     exclude:
         - os: linux
-          env: OS=macOS
+          env:
+            - OS=macOS
+              NAME="Swiftlint"
+              RUN_TESTS=False
+              USE_XCODE_BUILD=False
+
         - os: osx
           env: OS=Linux
 
