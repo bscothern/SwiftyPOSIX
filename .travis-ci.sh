@@ -2,6 +2,7 @@
 
 if [[ $TRAVIS_OS_NAME == "linux" ]]; then
     export PATH=/usr/share/swift:$PATH
+    ls /usr/share/swift
 fi
 
 PROJECT_NAME="SwiftyPOSIX"
