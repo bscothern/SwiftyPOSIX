@@ -52,11 +52,12 @@ env:
       SDK="watchsimulator"
 
 matrix:
-    exclude:
+    include:
         - os: linux
-          env: OS=macOS *
+          env: OS=Linux NAME="SwiftPM" RUN_TESTS=True USE_XCODE_BUILD=False
+    exclude:
         - os: osx
-          env: OS=Linux *
+          env: OS=Linux NAME="SwiftPM" RUN_TESTS=True USE_XCODE_BUILD=False
 
 script:
     - ./.travis-ci.sh
