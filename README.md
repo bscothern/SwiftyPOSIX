@@ -88,7 +88,7 @@ To see the entire set of standards open `POSIX.1-2017/index.html`.
 - [ ] time.h
 - [ ] trace.h
 - [ ] ulimit.h
-- [ ] unistd.h * <sup>2 3</sup>
+- [x] unistd.h <sup>2 3</sup>
 - [ ] utime.h
 - [ ] utmpx.h
 - [ ] wchar.h

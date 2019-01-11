@@ -1,5 +1,12 @@
 import XCTest
 
+extension CPIOTests {
+    static let __allTests = [
+        ("testCPIO", testCPIO),
+        ("testMagic", testMagic),
+    ]
+}
+
 extension ErrnoTests {
     static let __allTests = [
         ("testErrno", testErrno),
@@ -27,6 +34,7 @@ extension UnistdFunctionConstantsPathconfNameTests {
 #if !os(macOS)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
+        testCase(CPIOTests.__allTests),
         testCase(ErrnoTests.__allTests),
         testCase(PThreadSpecificTests.__allTests),
         testCase(SwiftyPOSIXTests.__allTests),

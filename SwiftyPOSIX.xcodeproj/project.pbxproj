@@ -76,6 +76,13 @@
 		F8CBB86021E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */; };
 		F8CBB86121E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */; };
 		F8CBB86221E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */; };
+		F8CBB8F721E84D8E00DB022F /* CPIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB8F621E84D8E00DB022F /* CPIO.swift */; };
+		F8CBB8F821E84D8E00DB022F /* CPIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB8F621E84D8E00DB022F /* CPIO.swift */; };
+		F8CBB8F921E84D8E00DB022F /* CPIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB8F621E84D8E00DB022F /* CPIO.swift */; };
+		F8CBB8FA21E84D8E00DB022F /* CPIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB8F621E84D8E00DB022F /* CPIO.swift */; };
+		F8CBB8FE21E851E600DB022F /* CPIOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB8FD21E851E600DB022F /* CPIOTests.swift */; };
+		F8CBB8FF21E851E600DB022F /* CPIOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB8FD21E851E600DB022F /* CPIOTests.swift */; };
+		F8CBB90021E851E600DB022F /* CPIOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBB8FD21E851E600DB022F /* CPIOTests.swift */; };
 		F8D5AEB1217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
 		F8D5AEB2217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
 		F8D5AEB3217ADA82006B19D2 /* ErrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */; };
@@ -146,6 +153,8 @@
 		F8CBB85F21E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnistdFunctionConstantsPathconfNameTests.swift; sourceTree = "<group>"; };
 		F8CBB86321E3199500DB022F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		F8CBB8E821E5C5C100DB022F /* .travis-ci.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ".travis-ci.sh"; sourceTree = "<group>"; };
+		F8CBB8F621E84D8E00DB022F /* CPIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPIO.swift; sourceTree = "<group>"; };
+		F8CBB8FD21E851E600DB022F /* CPIOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPIOTests.swift; sourceTree = "<group>"; };
 		F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrnoTests.swift; sourceTree = "<group>"; };
 		F8D5AEB5217ADAD8006B19D2 /* PThreadSpecificTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadSpecificTests.swift; sourceTree = "<group>"; };
 		F8D5AEB9217ADB79006B19D2 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
@@ -295,6 +304,7 @@
 		F8B1DC0C202EC1C500EAC350 /* SwiftyPOSIXTests */ = {
 			isa = PBXGroup;
 			children = (
+				F8CBB8FC21E851C900DB022F /* CPIO */,
 				F8D5AEBF217ADC35006B19D2 /* Unistd */,
 				F8D5AEBE217ADC2E006B19D2 /* PThread */,
 				F8D5AEBD217ADBC2006B19D2 /* Errno */,
@@ -309,6 +319,7 @@
 			children = (
 				F88914D7206A013200892FE8 /* SwifyPOSIX.swift */,
 				F8F41C3321423708000935F0 /* Internal */,
+				F8CBB8FB21E851BC00DB022F /* CPIO */,
 				F88914CD2069F22400892FE8 /* Errno */,
 				F8B1DC20202EC9E000EAC350 /* PThread */,
 				F84E33222094304400D7A162 /* Unistd */,
@@ -329,6 +340,22 @@
 				F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */,
 			);
 			path = PThread;
+			sourceTree = "<group>";
+		};
+		F8CBB8FB21E851BC00DB022F /* CPIO */ = {
+			isa = PBXGroup;
+			children = (
+				F8CBB8F621E84D8E00DB022F /* CPIO.swift */,
+			);
+			path = CPIO;
+			sourceTree = "<group>";
+		};
+		F8CBB8FC21E851C900DB022F /* CPIO */ = {
+			isa = PBXGroup;
+			children = (
+				F8CBB8FD21E851E600DB022F /* CPIOTests.swift */,
+			);
+			path = CPIO;
 			sourceTree = "<group>";
 		};
 		F8D5AEBD217ADBC2006B19D2 /* Errno */ = {
@@ -673,6 +700,7 @@
 				F88914CF2069F27300892FE8 /* Errno.swift in Sources */,
 				F8A4BF26213DF2C600AA8A05 /* SP_unistd.c in Sources */,
 				F8958DC7203A622700A99A02 /* PThreadSpecificKey.swift in Sources */,
+				F8CBB8F721E84D8E00DB022F /* CPIO.swift in Sources */,
 				F8F41C3621423725000935F0 /* Int.swift in Sources */,
 				F84E33242094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC23202EC9F300EAC350 /* PThread.swift in Sources */,
@@ -693,6 +721,7 @@
 				F8CBB86021E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB1217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC0E202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
+				F8CBB8FE21E851E600DB022F /* CPIOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +733,7 @@
 				F88914D02069F27300892FE8 /* Errno.swift in Sources */,
 				F8958DC8203A622700A99A02 /* PThreadSpecificKey.swift in Sources */,
 				F8A4BF2A213DF43B00AA8A05 /* SP_unistd.c in Sources */,
+				F8CBB8F821E84D8E00DB022F /* CPIO.swift in Sources */,
 				F8F41C3721423725000935F0 /* Int.swift in Sources */,
 				F84E33252094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC24202EC9F300EAC350 /* PThread.swift in Sources */,
@@ -724,6 +754,7 @@
 				F8CBB86121E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB2217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC0F202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
+				F8CBB8FF21E851E600DB022F /* CPIOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +766,7 @@
 				F88914D12069F27300892FE8 /* Errno.swift in Sources */,
 				F8958DC9203A622700A99A02 /* PThreadSpecificKey.swift in Sources */,
 				F8A4BF2B213DF43B00AA8A05 /* SP_unistd.c in Sources */,
+				F8CBB8F921E84D8E00DB022F /* CPIO.swift in Sources */,
 				F8F41C3821423725000935F0 /* Int.swift in Sources */,
 				F84E33262094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC25202EC9F300EAC350 /* PThread.swift in Sources */,
@@ -755,6 +787,7 @@
 				F8CBB86221E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB3217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
 				F8B1DC10202EC1C500EAC350 /* SwiftyPOSIXTests.swift in Sources */,
+				F8CBB90021E851E600DB022F /* CPIOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +799,7 @@
 				F88914D22069F27300892FE8 /* Errno.swift in Sources */,
 				F8958DCA203A622700A99A02 /* PThreadSpecificKey.swift in Sources */,
 				F8A4BF2C213DF43C00AA8A05 /* SP_unistd.c in Sources */,
+				F8CBB8FA21E84D8E00DB022F /* CPIO.swift in Sources */,
 				F8F41C3921423725000935F0 /* Int.swift in Sources */,
 				F84E33272094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC26202EC9F300EAC350 /* PThread.swift in Sources */,

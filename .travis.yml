@@ -1,7 +1,7 @@
 language: objective-c
-os:
-    - linux
-    - osx
+#os:
+#    - linux
+#    - osx
 osx_image: xcode10.1
 xcode_project: SwiftyPOSIX.xcodeproj
 env:
@@ -67,7 +67,7 @@ env:
 script:
     - ./.travis-ci.sh
 
-before_install:
-    - if [[ $TRAVIS_OS_NAME == "linux" ]]; then
-        ./.travis-ci-before-install.sh;
-      fi
+#before_install:
+#    - if [[ $TRAVIS_OS_NAME == "linux" ]]; then
+#        ./.travis-ci-before-install.sh;
+#      fi
