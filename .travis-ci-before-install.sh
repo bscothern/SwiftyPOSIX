@@ -17,6 +17,5 @@ sudo tar xzf swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL}.tar.gz
 sudo mv swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL} /usr/share/swift
 
 # Setup env
-echo "export PATH=/usr/share/swift/usr/bin:$PATH" >> ~/.bashrc
+echo "export PATH=/usr/share/swift:$PATH" >> ~/.bashrc
 source  ~/.bashrc
-

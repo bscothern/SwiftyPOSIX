@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+echo $PATH
+
 PROJECT_NAME="SwiftyPOSIX"
 PROJECT="${PROJECT_NAME}.xcodeproj"
 SCHEME="${PROJECT_NAME} ${NAME}"
