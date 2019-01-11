@@ -1,9 +1,8 @@
-language: objective-c
-
 matrix:
   include:
     - os: osx
       osx_image: xcode10.1
+      language: objective-c
       env:
         - NAME="Swiftlint"
           RUN_TESTS=False
@@ -11,6 +10,7 @@ matrix:
 
     - os: osx
       osx_image: xcode10.1
+      language: objective-c
       env:
         - NAME="SwiftPM"
           RUN_TESTS=True
@@ -18,6 +18,7 @@ matrix:
 
     - os: linux
       dist: xenial
+      language: c
       env:
         - NAME="SwiftPM"
           RUN_TESTS=True
@@ -25,6 +26,7 @@ matrix:
 
     - os: osx
       osx_image: xcode10.1
+      language: objective-c
       env:
         - NAME="iOS"
           RUN_TESTS=True
@@ -34,6 +36,7 @@ matrix:
 
     - os: osx
       osx_image: xcode10.1
+      language: objective-c
       env:
         - NAME="macOS"
           RUN_TESTS="YES"
@@ -43,6 +46,7 @@ matrix:
 
     - os: osx
       osx_image: xcode10.1
+      language: objective-c
       env:
         - NAME="tvOS"
           RUN_TESTS=True
@@ -52,6 +56,7 @@ matrix:
 
     - os: osx
       osx_image: xcode10.1
+      language: objective-c
       env:
         - NAME="watchOS"
           RUN_TESTS=False
