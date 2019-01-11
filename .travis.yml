@@ -19,6 +19,7 @@ matrix:
         - os: linux
           dist: xenial
           language: c
+          compiler: clang
           env:
               - NAME="SwiftPM"
                 RUN_TESTS=True
