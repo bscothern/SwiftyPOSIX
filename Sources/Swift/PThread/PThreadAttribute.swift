@@ -28,15 +28,15 @@
 
 public class PThreadAttribute {
     //MARK:- Types
-    public enum SchedulePolicy {
+    public enum SchedulePolicy: PosixValueRepresentable {
         internal var posixValue: Int32 {
             switch self {
             case .firstInFirstOut:
-                return SCHED_FIFO
+                return Int32(SCHED_FIFO)
             case .roundRobin:
-                return SCHED_RR
+                return Int32(SCHED_RR)
             case .other:
-                return SCHED_OTHER
+                return Int32(SCHED_OTHER)
             }
         }
 
@@ -46,11 +46,11 @@ public class PThreadAttribute {
 
         internal init?(posixValue: Int32) {
             switch posixValue {
-            case SCHED_FIFO:
+            case Int32(SCHED_FIFO):
                 self = .firstInFirstOut
-            case SCHED_RR:
+            case Int32(SCHED_RR):
                 self = .roundRobin
-            case SCHED_OTHER:
+            case Int32(SCHED_OTHER):
                 self = .other
             default:
                 return nil
@@ -58,13 +58,13 @@ public class PThreadAttribute {
         }
     }
 
-    public enum Scope {
+    public enum Scope: PosixValueRepresentable {
         internal var posixValue: Int32 {
             switch self {
             case .system:
-                return PTHREAD_SCOPE_SYSTEM
+                return Int32(PTHREAD_SCOPE_SYSTEM)
             case .process:
-                return PTHREAD_SCOPE_PROCESS
+                return Int32(PTHREAD_SCOPE_PROCESS)
             }
         }
 
@@ -73,9 +73,9 @@ public class PThreadAttribute {
 
         internal init?(posixValue: Int32) {
             switch posixValue {
-            case PTHREAD_SCOPE_SYSTEM:
+            case Int32(PTHREAD_SCOPE_SYSTEM):
                 self = .system
-            case PTHREAD_SCOPE_PROCESS:
+            case Int32(PTHREAD_SCOPE_PROCESS):
                 self = .process
             default:
                 return nil

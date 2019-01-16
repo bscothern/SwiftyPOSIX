@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F803D39C21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */; };
+		F803D39D21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */; };
+		F803D39E21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */; };
+		F803D39F21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */; };
 		F80EA90E2085E591002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80EA9102085E592002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80EA9122085E592002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -120,6 +124,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosixValueRepresentable.swift; sourceTree = "<group>"; };
 		F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyPOSIX_C.h; sourceTree = "<group>"; };
 		F80EA90B2085E168002D0E36 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		F84E33232094306F00D7A162 /* Unistd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unistd.swift; sourceTree = "<group>"; };
@@ -218,6 +223,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F803D39A21EECDF1001E2DE6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F80EA9082085E11A002D0E36 /* C */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +400,7 @@
 		F8F41C3321423708000935F0 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				F803D39A21EECDF1001E2DE6 /* Protocols */,
 				F8F41C3421423712000935F0 /* Extensions */,
 			);
 			path = Internal;
@@ -707,6 +721,7 @@
 				F84E33242094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC23202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC42202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F803D39C21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */,
 				F8B1DC33202ECB7D00EAC350 /* PThreadMutexAttribute.swift in Sources */,
 				F8B1DC28202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3D202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
@@ -740,6 +755,7 @@
 				F84E33252094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC24202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F803D39D21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */,
 				F8B1DC34202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
 				F8B1DC29202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3E202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
@@ -773,6 +789,7 @@
 				F84E33262094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC25202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F803D39E21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */,
 				F8B1DC35202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
 				F8B1DC2A202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3F202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
@@ -806,6 +823,7 @@
 				F84E33272094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC26202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F803D39F21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */,
 				F8B1DC36202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
 				F8B1DC2B202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC40202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,

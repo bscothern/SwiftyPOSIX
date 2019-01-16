@@ -36,6 +36,7 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
         return Int(PTHREAD_DESTRUCTOR_ITERATIONS)
     }
     
+    // Used to give consistant access into `pointer`
     internal var pthread: pthread_t? {
         return pointer.pointee
     }
@@ -79,7 +80,7 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
         precondition(self.function == nil, "PThreads cannot execute multiple times.")
         self.function = function
 
-        pthread_create(pointer, attribute?.pointer, { context in
+        pthread_create(pointer, attribute?.pointer, { (context: UnsafeMutableRawPointer) in
             let context = UnsafeMutablePointer<PThreadContext>(OpaquePointer(context))
             context.pointee.runner?.execute()
             return nil
