@@ -181,10 +181,10 @@ public class PThreadAttribute {
         get {
             var value: Int32 = 0
             pthread_attr_getdetachstate(pointer, &value)
-            return value == PTHREAD_CREATE_DETACHED
+            return value == Int32(PTHREAD_CREATE_DETACHED)
         }
         set {
-            pthread_attr_setdetachstate(pointer, newValue ? PTHREAD_CREATE_DETACHED : PTHREAD_CREATE_JOINABLE)
+            pthread_attr_setdetachstate(pointer, newValue ? Int32(PTHREAD_CREATE_DETACHED) : Int32(PTHREAD_CREATE_JOINABLE))
         }
     }
 
@@ -192,10 +192,10 @@ public class PThreadAttribute {
         get {
             var value: Int32 = 0
             pthread_attr_getinheritsched(pointer, &value)
-            return value == PTHREAD_INHERIT_SCHED
+            return value == Int32(PTHREAD_INHERIT_SCHED)
         }
         set {
-            pthread_attr_setinheritsched(pointer, newValue ? PTHREAD_INHERIT_SCHED: PTHREAD_EXPLICIT_SCHED)
+            pthread_attr_setinheritsched(pointer, newValue ? Int32(PTHREAD_INHERIT_SCHED): Int32(PTHREAD_EXPLICIT_SCHED))
         }
     }
 
