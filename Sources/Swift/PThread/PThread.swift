@@ -80,13 +80,13 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
         precondition(self.function == nil, "PThreads cannot execute multiple times.")
         self.function = function
 
-        pthread_create(pointer, attribute?.pointer, { context in
+        pthread_create(pointer, attribute?.pointer, { rawContext in
             #if os(Linux)
-            guard let context = context else {
+            guard let rawContext = rawContext else {
                 fatalError()
             }
             #endif
-            let context = UnsafeMutablePointer<PThreadContext>(OpaquePointer(context))
+            let context = UnsafeMutablePointer<PThreadContext>(OpaquePointer(rawContext))
             context.pointee.runner?.execute()
             return nil
         }, self.context)

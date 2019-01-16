@@ -94,8 +94,13 @@ public class PThreadSpecificKey<ValueType>: PThreadSpecificKeyDestructorRaiser {
     /// - Parameter destructor: The `Destructor` that should be called when a `PThread` is exiting if the value associated with the key is non-`nil`.
     public init?(destructor: Destructor? = nil) {
         self.destructor = destructor
-        let errorCode = pthread_key_create(pointer) { (context: UnsafeMutableRawPointer) in
-            let context = UnsafeMutablePointer<PThreadSpecificKeyContext>(OpaquePointer(context))
+        let errorCode = pthread_key_create(pointer) { rawContext in
+            #if os(Linux)
+            guard let rawContext = rawContext else {
+                fatalError()
+            }
+            #endif
+            let context = UnsafeMutablePointer<PThreadSpecificKeyContext>(OpaquePointer(rawContext))
             context.pointee.keyDestructorRaiser?.raiseDestruction(of: context)
         }
 
