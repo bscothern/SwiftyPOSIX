@@ -61,7 +61,9 @@
 #if _POSIX_MESSAGE_PASSING >= 0
 //#include <mqueue.h>
 #endif
+#ifndef __linux__
 #include <ndbm.h>
+#endif
 #include <net/if.h>
 #include <netdb.h>
 #include <netinet/in.h>
