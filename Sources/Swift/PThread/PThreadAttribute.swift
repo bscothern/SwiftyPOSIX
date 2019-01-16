@@ -203,12 +203,20 @@ public class PThreadAttribute {
         get {
             var value = sched_param()
             pthread_attr_getschedparam(pointer, &value)
-            return value.sched_priority
+            #if os(Linux)
+            return scheduleParameterState.__sched_priority
+            #else
+            return scheduleParameterState.sched_priority
+            #endif
         }
         set {
             var scheduleParameterState = sched_param()
             memset(&scheduleParameterState, 0, MemoryLayout<sched_param>.size)
+            #if os(Linux)
+            scheduleParameterState.__sched_priority = newValue
+            #else
             scheduleParameterState.sched_priority = newValue
+            #endif
             pthread_attr_setschedparam(pointer, &scheduleParameterState)
         }
     }
