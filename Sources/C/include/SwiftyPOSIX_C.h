@@ -59,7 +59,7 @@
 #include <math.h>
 #include <monetary.h>
 #if _POSIX_MESSAGE_PASSING >= 0
-#include <mqueue.h>
+//#include <mqueue.h>
 #endif
 #include <ndbm.h>
 #include <net/if.h>
