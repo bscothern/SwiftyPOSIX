@@ -35,11 +35,15 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
     public static var destructorIterations: Int {
         return Int(PTHREAD_DESTRUCTOR_ITERATIONS)
     }
+    
+    internal var pthread: pthread_t? {
+        return pointer.pointee
+    }
 
     #if !os(Linux)
-    internal var pointer = UnsafeMutablePointer<pthread_t?>.allocate(capacity: 1)
+    private var pointer = UnsafeMutablePointer<pthread_t?>.allocate(capacity: 1)
     #else
-    internal var pointer = UnsafeMutablePointer<pthread_t>.allocate(capacity: 1)
+    private var pointer = UnsafeMutablePointer<pthread_t>.allocate(capacity: 1)
     #endif
     private var attribute: PThreadAttribute?
     private var function: Function!
@@ -83,11 +87,11 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
     }
 
     public func cancel() {
-        pthread_cancel(pointer.pointee!)
+        pthread_cancel(pthread!)
     }
 
     public func detach() {
-        pthread_detach(pointer.pointee!)
+        pthread_detach(pthread!)
     }
 
     //MARK: FilePrivate
@@ -102,8 +106,8 @@ public func == <T>(lhs: PThread<T>, rhs: PThread<T>) -> Bool {
     if lhs === rhs {
         return true
     }
-    guard let lhs = lhs.pointer.pointee,
-        let rhs = rhs.pointer.pointee
+    guard let lhs = lhs.pthread,
+        let rhs = rhs.pthread
         else {
             return false
     }
