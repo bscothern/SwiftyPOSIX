@@ -36,7 +36,11 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
         return Int(PTHREAD_DESTRUCTOR_ITERATIONS)
     }
 
+    #if !os(Linux)
     internal var pointer = UnsafeMutablePointer<pthread_t?>.allocate(capacity: 1)
+    #else
+    internal var pointer = UnsafeMutablePointer<pthread_t>.allocate(capacity: 1)
+    #endif
     private var attribute: PThreadAttribute?
     private var function: Function!
     private var result: T?
