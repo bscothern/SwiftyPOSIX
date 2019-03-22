@@ -10,7 +10,7 @@ import Foundation
 
 internal protocol PosixValueRepresentable {
     associatedtype PosixValue
-    
+
     var posixValue: PosixValue { get }
     init?(posixValue: PosixValue)
 }

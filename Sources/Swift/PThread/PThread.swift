@@ -35,7 +35,7 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
     public static var destructorIterations: Int {
         return Int(PTHREAD_DESTRUCTOR_ITERATIONS)
     }
-    
+
     // Used to give consistant access into `pointer`
     internal var pthread: pthread_t? {
         return pointer.pointee
