@@ -204,9 +204,9 @@ public class PThreadAttribute {
             var value = sched_param()
             pthread_attr_getschedparam(pointer, &value)
             #if os(Linux)
-            return scheduleParameterState.__sched_priority
+            return value.__sched_priority
             #else
-            return scheduleParameterState.sched_priority
+            return value.sched_priority
             #endif
         }
         set {
