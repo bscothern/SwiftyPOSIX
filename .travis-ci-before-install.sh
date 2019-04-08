@@ -4,7 +4,7 @@ if [[ $TRAVIS_OS_NAME != "linux" ]]; then
     exit 0
 fi
 
-SWIFT_VERSION="4.2.1"
+SWIFT_VERSION="5.0"
 OS_VERSION_SHORT="ubuntu1604"
 OS_VERSION_FULL="ubuntu16.04"
 
