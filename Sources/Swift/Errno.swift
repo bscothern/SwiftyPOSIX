@@ -98,7 +98,13 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
     case ENOTSUP
     case ENOTTY
     case ENXIO
+    #if ENOTSUP_IS_EOPNOTSUPP
+    static var EOPNOTSUPP: Errno {
+        return .ENOTSUP
+    }
+    #else
     case EOPNOTSUPP
+    #endif
     case EOVERFLOW
     case EOWNERDEAD
     case EPERM
@@ -114,7 +120,13 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
     case ETIME
     case ETIMEDOUT
     case ETXTBSY
+    #if EAGAIN_IS_EWOULDBLOCK
+    public static var EWOULDBLOCK: Errno {
+        return .EAGAIN
+    }
+    #else
     case EWOULDBLOCK
+    #endif
     case EXDEV
 
     //MARK: System definitions
@@ -425,10 +437,6 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
             return "No such policy registered."
         case .EQFULL:
             return "Interface output queue is full."
-        #if APPLE_OLD_ELAST
-        case .ELAST:
-            return "Must be equal largest errno."
-        #endif
         #endif
         }
     }

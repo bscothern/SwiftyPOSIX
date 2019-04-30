@@ -29,6 +29,36 @@
 //
 
 import PackageDescription
+#if os(Linux)
+import Glibc
+#else
+import Darwin.C
+#endif
+
+enum DefineOption: String {
+    case EAGAIN_IS_EWOULDBLOCK
+    case ENOTSUP_IS_EOPNOTSUPP
+    
+    private func valueFor<E: Equatable>(_ a: E, _ b: E) -> String {
+        return (a == b ? "" : "NO_") + self.rawValue
+    }
+    
+    func value() -> String {
+        switch self {
+        case .EAGAIN_IS_EWOULDBLOCK:
+            return valueFor(EAGAIN, EWOULDBLOCK)
+        case .ENOTSUP_IS_EOPNOTSUPP:
+            return valueFor(ENOTSUP, EOPNOTSUPP)
+        @unknown default:
+            return ""
+        }
+    }
+}
+
+let swiftSettings: [SwiftSetting] = [
+    .define(DefineOption.EAGAIN_IS_EWOULDBLOCK.value(), .when(platforms: [.linux])),
+    .define(DefineOption.ENOTSUP_IS_EOPNOTSUPP.value(), .when(platforms: [.linux])),
+]
 
 let package = Package(
     name: "SwiftyPOSIX",
@@ -47,10 +77,12 @@ let package = Package(
         .target(
             name: "SwiftyPOSIX",
             dependencies: ["SwiftyPOSIX_C"],
-            path: "Sources/Swift"),
+            path: "Sources/Swift",
+            swiftSettings: swiftSettings),
         .testTarget(
             name: "SwiftyPOSIXTests",
-            dependencies: ["SwiftyPOSIX"]),
+            dependencies: ["SwiftyPOSIX"],
+            swiftSettings: swiftSettings),
     ],
-    swiftLanguageVersions: [.v4_2, .v5]
+    swiftLanguageVersions: [.v5]
 )

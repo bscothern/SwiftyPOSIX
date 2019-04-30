@@ -44,6 +44,18 @@ class ErrnoTests: XCTestCase {
         XCTAssert(errnoMap.keys.contains(Errno.ELAST))
     }
     #endif
+    
+    #if EAGAIN_IS_EWOULDBLOCK
+    func testEAGAIN_IS_EWOULDBLOCK() {
+        XCTAssert(Errno.EAGAIN == Errno.EWOULDBLOCK)
+    }
+    #endif
+    
+    #if ENOTSUP_IS_EOPNOTSUPP
+    func testENOTSUP_IS_EOPNOTSUPP() {
+        XCTAssert(Errno.ENOTSUP == Errno.EOPNOTSUPP)
+    }
+    #endif
 }
 
 //MARK:- Private Helper Funcs
@@ -111,7 +123,12 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ENOTSUP: ENOTSUP,
         Errno.ENOTTY: ENOTTY,
         Errno.ENXIO: ENXIO,
-        Errno.EOPNOTSUPP: EOPNOTSUPP,
+    ]
+    #if ENOTSUP_IS_EOPNOTSUPP
+    #else
+    errnoMap[Errno.EOPNOTSUPP] = EOPNOTSUPP
+    #endif
+    errnoMap.merge([
         Errno.EOVERFLOW: EOVERFLOW,
         Errno.EOWNERDEAD: EOWNERDEAD,
         Errno.EPERM: EPERM,
@@ -126,10 +143,15 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ESTALE: ESTALE,
         Errno.ETIME: ETIME,
         Errno.ETIMEDOUT: ETIMEDOUT,
-        Errno.ETXTBSY: ETXTBSY,
-        Errno.EWOULDBLOCK: EWOULDBLOCK,
+        Errno.ETXTBSY: ETXTBSY
+    ], uniquingKeysWith: { _, _ in fatalError() })
+    #if EAGAIN_IS_EWOULDBLOCK
+    #else
+    errnoMap[Errno.EWOULDBLOCK] = EWOULDBLOCK
+    #endif
+    errnoMap.merge([
         Errno.EXDEV: EXDEV,
-    ]
+    ], uniquingKeysWith: { _, _ in fatalError() })
 
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
     errnoMap.merge([
@@ -159,14 +181,7 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ENOATTR: ENOATTR,
         Errno.ENOPOLICY: ENOPOLICY,
         Errno.EQFULL: EQFULL,
-    ]) { firstValue, secondValue -> Int32 in
-        XCTAssert(firstValue == secondValue)
-        return firstValue
-    }
-    #if APPLE_OLD_ELAST
-    errnoMap[Errno.ELAST] = ELAST
-    array.append(Errno.ELAST)
-    #endif
+    ], uniquingKeysWith: { _, _ in fatalError() })
     #endif
 
     return errnoMap
