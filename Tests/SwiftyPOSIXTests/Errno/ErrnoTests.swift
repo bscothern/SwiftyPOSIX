@@ -11,7 +11,7 @@ import XCTest
 
 class ErrnoTests: XCTestCase {
     let errnoMap = createErrnoMap()
-    
+
     func testErrno() {
         // Manually check that we get back nil when cleared
         errno = 0
@@ -38,7 +38,7 @@ class ErrnoTests: XCTestCase {
         Errno.value = nil
         XCTAssert(Errno() == nil)
     }
-    
+
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
     func testELAST() {
         XCTAssert(errnoMap.keys.contains(Errno.ELAST))
@@ -159,7 +159,10 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ENOATTR: ENOATTR,
         Errno.ENOPOLICY: ENOPOLICY,
         Errno.EQFULL: EQFULL,
-    ], uniquingKeysWith: { _, _ in fatalError() })
+    ]) { firstValue, secondValue -> Int32 in
+        XCTAssert(firstValue == secondValue)
+        return firstValue
+    }
     #if APPLE_OLD_ELAST
     errnoMap[Errno.ELAST] = ELAST
     array.append(Errno.ELAST)

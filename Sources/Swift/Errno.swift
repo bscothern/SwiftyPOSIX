@@ -145,7 +145,7 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
     case ENOATTR
     case ENOPOLICY
     case EQFULL
-    
+
     public static var ELAST: Errno {
         return Errno(rawValue: cValueELAST())!
     }
