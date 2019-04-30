@@ -155,13 +155,13 @@ public class PThreadAttribute {
         }
     }
 
-    @available(*, unavailable, message: "This property is obsolete, non-portable, and unsafe. Instead PthreadAttribute.stack should be used. It has only been \"supported\" for clarity.")
     /// Used to specify the addres at which the stack of the newly created thread should be located.
     ///
     /// - Important: This doesn't provide a way to know specify if the address is at the top or bottom of the stack depending on how it grows.
     ///
     /// - Note: `int pthread_attr_getstackaddr(const pthread_attr_t *restrict attr, void **restrict stackaddr)`
     /// - Note: `int pthread_attr_setstackaddr(pthread_attr_t *attr, void *stackaddr)`
+    @available(*, unavailable, message: "This property is obsolete, non-portable, and unsafe. Instead PthreadAttribute.stack should be used. It has only been \"supported\" for clarity.")
     public var stackAddress: UnsafeMutableRawPointer? {
         get {
             var value: UnsafeMutableRawPointer?

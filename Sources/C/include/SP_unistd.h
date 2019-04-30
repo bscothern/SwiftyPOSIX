@@ -10,7 +10,7 @@
 #define SP_unistd_h
 
 // This file contains functions that act as shims for all the #dfines in <unistd.h>.
-// Because the don't have to be defined and Swift is unable to detect them these functions are used to ensure all values are defined with an appropriate value.
+// Because they don't have to be defined and Swift is unable to detect them these functions are used to ensure all values are defined with an appropriate value.
 
 //MARK:- Version Test Macros
 

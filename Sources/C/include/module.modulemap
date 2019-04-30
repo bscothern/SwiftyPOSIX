@@ -31,6 +31,7 @@ module SwiftyPOSIX_C {
     export *
 
     explicit module Shims {
+        header "SP_assert.h"
         header "SP_unistd.h"
         export *
     }

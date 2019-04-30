@@ -145,7 +145,10 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
     case ENOATTR
     case ENOPOLICY
     case EQFULL
-    case ELAST
+    
+    public static var ELAST: Errno {
+        return Errno(rawValue: cValueELAST())!
+    }
     #endif
 
     //MARK:- Properties
@@ -192,8 +195,7 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
              .EBADMACHO,
              .ENOATTR,
              .ENOPOLICY,
-             .EQFULL,
-             .ELAST:
+             .EQFULL:
             return true
         #endif
         default:
@@ -423,8 +425,10 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
             return "No such policy registered."
         case .EQFULL:
             return "Interface output queue is full."
+        #if APPLE_OLD_ELAST
         case .ELAST:
             return "Must be equal largest errno."
+        #endif
         #endif
         }
     }
@@ -880,8 +884,13 @@ private func cValue(ofErrno errno: Errno) -> Int32 {
         return ENOPOLICY
     case .EQFULL:
         return EQFULL
-    case .ELAST:
-        return ELAST
     #endif
     }
 }
+
+#if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
+private func cValueELAST() -> Int32 {
+    return ELAST
+}
+
+#endif

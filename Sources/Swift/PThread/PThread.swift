@@ -41,10 +41,10 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
         return pointer.pointee
     }
 
-    #if !os(Linux)
-    private var pointer = UnsafeMutablePointer<pthread_t?>.allocate(capacity: 1)
-    #else
+    #if os(Linux)
     private var pointer = UnsafeMutablePointer<pthread_t>.allocate(capacity: 1)
+    #else
+    private var pointer = UnsafeMutablePointer<pthread_t?>.allocate(capacity: 1)
     #endif
     private var attribute: PThreadAttribute?
     private var function: Function!

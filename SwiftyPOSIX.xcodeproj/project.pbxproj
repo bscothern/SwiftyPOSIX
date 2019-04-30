@@ -6,6 +6,20 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		F8217EFD2277FB1500A436BA /* Swiftlint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F8217EFE2277FB1600A436BA /* Build configuration list for PBXAggregateTarget "Swiftlint" */;
+			buildPhases = (
+				F8217F012277FB1B00A436BA /* Swiftlint */,
+			);
+			dependencies = (
+			);
+			name = Swiftlint;
+			productName = Swiftlint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		F803D39C21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */; };
 		F803D39D21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */; };
@@ -15,6 +29,18 @@
 		F80EA9102085E592002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80EA9122085E592002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80EA9142085E593002D0E36 /* SwiftyPOSIX_C.h in Headers */ = {isa = PBXBuildFile; fileRef = F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8217EEF2277E13100A436BA /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8217EEE2277E13100A436BA /* Assert.swift */; };
+		F8217EF02277E13100A436BA /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8217EEE2277E13100A436BA /* Assert.swift */; };
+		F8217EF12277E13100A436BA /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8217EEE2277E13100A436BA /* Assert.swift */; };
+		F8217EF22277E13100A436BA /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8217EEE2277E13100A436BA /* Assert.swift */; };
+		F8217EF52277E20800A436BA /* SP_assert.h in Headers */ = {isa = PBXBuildFile; fileRef = F8217EF32277E20800A436BA /* SP_assert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8217EF62277E20800A436BA /* SP_assert.h in Headers */ = {isa = PBXBuildFile; fileRef = F8217EF32277E20800A436BA /* SP_assert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8217EF72277E20800A436BA /* SP_assert.h in Headers */ = {isa = PBXBuildFile; fileRef = F8217EF32277E20800A436BA /* SP_assert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8217EF82277E20800A436BA /* SP_assert.h in Headers */ = {isa = PBXBuildFile; fileRef = F8217EF32277E20800A436BA /* SP_assert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8217EF92277E20800A436BA /* SP_assert.c in Sources */ = {isa = PBXBuildFile; fileRef = F8217EF42277E20800A436BA /* SP_assert.c */; };
+		F8217EFA2277E20800A436BA /* SP_assert.c in Sources */ = {isa = PBXBuildFile; fileRef = F8217EF42277E20800A436BA /* SP_assert.c */; };
+		F8217EFB2277E20800A436BA /* SP_assert.c in Sources */ = {isa = PBXBuildFile; fileRef = F8217EF42277E20800A436BA /* SP_assert.c */; };
+		F8217EFC2277E20800A436BA /* SP_assert.c in Sources */ = {isa = PBXBuildFile; fileRef = F8217EF42277E20800A436BA /* SP_assert.c */; };
 		F84E33242094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
 		F84E33252094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
 		F84E33262094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
@@ -127,6 +153,9 @@
 		F803D39B21EECE0E001E2DE6 /* PosixValueRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosixValueRepresentable.swift; sourceTree = "<group>"; };
 		F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyPOSIX_C.h; sourceTree = "<group>"; };
 		F80EA90B2085E168002D0E36 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		F8217EEE2277E13100A436BA /* Assert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
+		F8217EF32277E20800A436BA /* SP_assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SP_assert.h; sourceTree = "<group>"; };
+		F8217EF42277E20800A436BA /* SP_assert.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SP_assert.c; sourceTree = "<group>"; };
 		F84E33232094306F00D7A162 /* Unistd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unistd.swift; sourceTree = "<group>"; };
 		F88914CE2069F27300892FE8 /* Errno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errno.swift; sourceTree = "<group>"; };
 		F88914D7206A013200892FE8 /* SwifyPOSIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifyPOSIX.swift; sourceTree = "<group>"; };
@@ -236,6 +265,7 @@
 			children = (
 				F80EA9092085E140002D0E36 /* include */,
 				F8A4BF24213DF2C600AA8A05 /* SP_unistd.c */,
+				F8217EF42277E20800A436BA /* SP_assert.c */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -245,25 +275,10 @@
 			children = (
 				F80EA90B2085E168002D0E36 /* module.modulemap */,
 				F80EA90A2085E154002D0E36 /* SwiftyPOSIX_C.h */,
+				F8217EF32277E20800A436BA /* SP_assert.h */,
 				F8A4BF23213DF2C600AA8A05 /* SP_unistd.h */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		F84E33222094304400D7A162 /* Unistd */ = {
-			isa = PBXGroup;
-			children = (
-				F84E33232094306F00D7A162 /* Unistd.swift */,
-			);
-			path = Unistd;
-			sourceTree = "<group>";
-		};
-		F88914CD2069F22400892FE8 /* Errno */ = {
-			isa = PBXGroup;
-			children = (
-				F88914CE2069F27300892FE8 /* Errno.swift */,
-			);
-			path = Errno;
 			sourceTree = "<group>";
 		};
 		F8B1DB87202EC07100EAC350 = {
@@ -334,10 +349,11 @@
 			children = (
 				F88914D7206A013200892FE8 /* SwifyPOSIX.swift */,
 				F8F41C3321423708000935F0 /* Internal */,
-				F8CBB8FB21E851BC00DB022F /* CPIO */,
-				F88914CD2069F22400892FE8 /* Errno */,
+				F8217EEE2277E13100A436BA /* Assert.swift */,
+				F8CBB8F621E84D8E00DB022F /* CPIO.swift */,
+				F88914CE2069F27300892FE8 /* Errno.swift */,
 				F8B1DC20202EC9E000EAC350 /* PThread */,
-				F84E33222094304400D7A162 /* Unistd */,
+				F84E33232094306F00D7A162 /* Unistd.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -355,14 +371,6 @@
 				F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */,
 			);
 			path = PThread;
-			sourceTree = "<group>";
-		};
-		F8CBB8FB21E851BC00DB022F /* CPIO */ = {
-			isa = PBXGroup;
-			children = (
-				F8CBB8F621E84D8E00DB022F /* CPIO.swift */,
-			);
-			path = CPIO;
 			sourceTree = "<group>";
 		};
 		F8CBB8FC21E851C900DB022F /* CPIO */ = {
@@ -422,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A4BF25213DF2C600AA8A05 /* SP_unistd.h in Headers */,
+				F8217EF52277E20800A436BA /* SP_assert.h in Headers */,
 				F80EA90E2085E591002D0E36 /* SwiftyPOSIX_C.h in Headers */,
 				F8B1DC12202EC26B00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
@@ -432,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A4BF27213DF31400AA8A05 /* SP_unistd.h in Headers */,
+				F8217EF62277E20800A436BA /* SP_assert.h in Headers */,
 				F80EA9102085E592002D0E36 /* SwiftyPOSIX_C.h in Headers */,
 				F8B1DC13202EC26C00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
@@ -442,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A4BF28213DF31500AA8A05 /* SP_unistd.h in Headers */,
+				F8217EF72277E20800A436BA /* SP_assert.h in Headers */,
 				F80EA9122085E592002D0E36 /* SwiftyPOSIX_C.h in Headers */,
 				F8B1DC14202EC26D00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
@@ -452,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A4BF29213DF31700AA8A05 /* SP_unistd.h in Headers */,
+				F8217EF82277E20800A436BA /* SP_assert.h in Headers */,
 				F80EA9142085E593002D0E36 /* SwiftyPOSIX_C.h in Headers */,
 				F8B1DC15202EC26E00EAC350 /* SwiftyPOSIX.h in Headers */,
 			);
@@ -596,40 +608,44 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Braden Scothern";
 				TargetAttributes = {
+					F8217EFD2277FB1500A436BA = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					F8B1DBAF202EC10500EAC350 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F8B1DBB7202EC10600EAC350 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F8B1DBCB202EC11100EAC350 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F8B1DBD3202EC11200EAC350 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F8B1DBE7202EC11D00EAC350 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F8B1DBEF202EC11D00EAC350 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F8B1DC03202EC12900EAC350 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -653,6 +669,7 @@
 				F8B1DBE7202EC11D00EAC350 /* SwiftyPOSIX tvOS */,
 				F8B1DBEF202EC11D00EAC350 /* SwiftyPOSIX tvOSTests */,
 				F8B1DC03202EC12900EAC350 /* SwiftyPOSIX watchOS */,
+				F8217EFD2277FB1500A436BA /* Swiftlint */,
 			);
 		};
 /* End PBXProject section */
@@ -709,6 +726,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F8217F012277FB1B00A436BA /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8B1DBAB202EC10500EAC350 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -723,7 +761,9 @@
 				F84E33242094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC23202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC42202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F8217EEF2277E13100A436BA /* Assert.swift in Sources */,
 				F803D39C21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */,
+				F8217EF92277E20800A436BA /* SP_assert.c in Sources */,
 				F8B1DC33202ECB7D00EAC350 /* PThreadMutexAttribute.swift in Sources */,
 				F8B1DC28202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3D202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
@@ -757,7 +797,9 @@
 				F84E33252094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC24202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC43202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F8217EF02277E13100A436BA /* Assert.swift in Sources */,
 				F803D39D21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */,
+				F8217EFA2277E20800A436BA /* SP_assert.c in Sources */,
 				F8B1DC34202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
 				F8B1DC29202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3E202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
@@ -791,7 +833,9 @@
 				F84E33262094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC25202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC44202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F8217EF12277E13100A436BA /* Assert.swift in Sources */,
 				F803D39E21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */,
+				F8217EFB2277E20800A436BA /* SP_assert.c in Sources */,
 				F8B1DC35202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
 				F8B1DC2A202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC3F202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
@@ -825,7 +869,9 @@
 				F84E33272094306F00D7A162 /* Unistd.swift in Sources */,
 				F8B1DC26202EC9F300EAC350 /* PThread.swift in Sources */,
 				F8B1DC45202ECBB100EAC350 /* PThreadReadWriteLock.swift in Sources */,
+				F8217EF22277E13100A436BA /* Assert.swift in Sources */,
 				F803D39F21EECE0E001E2DE6 /* PosixValueRepresentable.swift in Sources */,
+				F8217EFC2277E20800A436BA /* SP_assert.c in Sources */,
 				F8B1DC36202ECB7E00EAC350 /* PThreadMutexAttribute.swift in Sources */,
 				F8B1DC2B202ECB3900EAC350 /* PThreadAttribute.swift in Sources */,
 				F8B1DC40202ECB9F00EAC350 /* PThreadConditionAttribute.swift in Sources */,
@@ -855,6 +901,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		F8217EFF2277FB1600A436BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F8217F002277FB1600A436BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F8B1DBA3202EC07100EAC350 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -977,13 +1039,15 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Sources/module.modulemap;
 				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
@@ -991,6 +1055,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1003,13 +1068,15 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Sources/module.modulemap;
 				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
@@ -1017,6 +1084,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1027,11 +1095,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1041,11 +1112,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1056,9 +1130,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1066,13 +1141,14 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MODULEMAP_FILE = Sources/module.modulemap;
 				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
 				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1085,9 +1161,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1095,13 +1172,14 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MODULEMAP_FILE = Sources/module.modulemap;
 				OTHER_CFLAGS = "-DXCODE_FRAMEWORK=1";
 				OTHER_SWIFT_FLAGS = "-DXCODE_FRAMEWORK";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1113,13 +1191,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1130,13 +1210,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1147,8 +1229,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1161,12 +1244,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -1175,8 +1259,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1189,11 +1274,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -1201,15 +1287,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -1217,15 +1305,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -1235,8 +1325,9 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1249,12 +1340,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Debug;
 		};
@@ -1264,8 +1356,9 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1278,17 +1371,27 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Braden-Scothern.SwiftyPOSIX";
 				PRODUCT_MODULE_NAME = SwiftyPOSIX;
 				PRODUCT_NAME = SwiftyPOSIX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F8217EFE2277FB1600A436BA /* Build configuration list for PBXAggregateTarget "Swiftlint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8217EFF2277FB1600A436BA /* Debug */,
+				F8217F002277FB1600A436BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F8B1DB8B202EC07100EAC350 /* Build configuration list for PBXProject "SwiftyPOSIX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -10,9 +10,9 @@ import XCTest
 @testable import SwiftyPOSIX
 
 class ErrnoTests: XCTestCase {
+    let errnoMap = createErrnoMap()
+    
     func testErrno() {
-        let errnoMap = createErrnoMap()
-
         // Manually check that we get back nil when cleared
         errno = 0
         XCTAssert(Errno() == nil)
@@ -38,6 +38,12 @@ class ErrnoTests: XCTestCase {
         Errno.value = nil
         XCTAssert(Errno() == nil)
     }
+    
+    #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
+    func testELAST() {
+        XCTAssert(errnoMap.keys.contains(Errno.ELAST))
+    }
+    #endif
 }
 
 //MARK:- Private Helper Funcs
@@ -123,7 +129,7 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ETXTBSY: ETXTBSY,
         Errno.EWOULDBLOCK: EWOULDBLOCK,
         Errno.EXDEV: EXDEV,
-        ]
+    ]
 
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
     errnoMap.merge([
@@ -153,8 +159,11 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ENOATTR: ENOATTR,
         Errno.ENOPOLICY: ENOPOLICY,
         Errno.EQFULL: EQFULL,
-        Errno.ELAST: ELAST
-        ], uniquingKeysWith: { _, _ in fatalError() })
+    ], uniquingKeysWith: { _, _ in fatalError() })
+    #if APPLE_OLD_ELAST
+    errnoMap[Errno.ELAST] = ELAST
+    array.append(Errno.ELAST)
+    #endif
     #endif
 
     return errnoMap
