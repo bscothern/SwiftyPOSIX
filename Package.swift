@@ -38,11 +38,11 @@ import Darwin.C
 enum DefineOption: String {
     case EAGAIN_IS_EWOULDBLOCK
     case ENOTSUP_IS_EOPNOTSUPP
-    
+
     private func valueFor<E: Equatable>(_ a: E, _ b: E) -> String {
         return (a == b ? "" : "NO_") + self.rawValue
     }
-    
+
     func value() -> String {
         switch self {
         case .EAGAIN_IS_EWOULDBLOCK:

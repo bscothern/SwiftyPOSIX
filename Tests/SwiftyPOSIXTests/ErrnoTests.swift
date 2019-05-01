@@ -44,13 +44,13 @@ class ErrnoTests: XCTestCase {
         XCTAssert(errnoMap.keys.contains(Errno.ELAST))
     }
     #endif
-    
+
     #if EAGAIN_IS_EWOULDBLOCK
     func testEAGAIN_IS_EWOULDBLOCK() {
         XCTAssert(Errno.EAGAIN == Errno.EWOULDBLOCK)
     }
     #endif
-    
+
     #if ENOTSUP_IS_EOPNOTSUPP
     func testENOTSUP_IS_EOPNOTSUPP() {
         XCTAssert(Errno.ENOTSUP == Errno.EOPNOTSUPP)
