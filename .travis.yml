@@ -16,14 +16,14 @@ matrix:
                 RUN_TESTS=True
                 USE_XCODE_BUILD=False
 
-        - os: linux
-          dist: xenial
-          language: c
-          compiler: clang
-          env:
-              - NAME="SwiftPM"
-                RUN_TESTS=True
-                USE_XCODE_BUILD=False
+        #- os: linux
+        #  dist: xenial
+        #  language: c
+        #  compiler: clang
+        #  env:
+        #      - NAME="SwiftPM"
+        #        RUN_TESTS=True
+        #        USE_XCODE_BUILD=False
 
         - os: osx
           osx_image: xcode10.2
