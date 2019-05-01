@@ -39,23 +39,23 @@ class ErrnoTests: XCTestCase {
         XCTAssert(Errno() == nil)
     }
 
-    #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
     func testELAST() {
+        #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
         XCTAssert(errnoMap.keys.contains(Errno.ELAST))
+        #endif
     }
-    #endif
 
-    #if EAGAIN_IS_EWOULDBLOCK
     func testEAGAIN_IS_EWOULDBLOCK() {
+        #if EAGAIN_IS_EWOULDBLOCK
         XCTAssert(Errno.EAGAIN == Errno.EWOULDBLOCK)
+        #endif
     }
-    #endif
 
-    #if ENOTSUP_IS_EOPNOTSUPP
     func testENOTSUP_IS_EOPNOTSUPP() {
+        #if ENOTSUP_IS_EOPNOTSUPP
         XCTAssert(Errno.ENOTSUP == Errno.EOPNOTSUPP)
+        #endif
     }
-    #endif
 }
 
 //MARK:- Private Helper Funcs

@@ -16,7 +16,9 @@ extension ErrnoTests {
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__ErrnoTests = [
+        ("testEAGAIN_IS_EWOULDBLOCK", testEAGAIN_IS_EWOULDBLOCK),
         ("testELAST", testELAST),
+        ("testENOTSUP_IS_EOPNOTSUPP", testENOTSUP_IS_EOPNOTSUPP),
         ("testErrno", testErrno),
     ]
 }
