@@ -6,8 +6,8 @@
 //  Copyright © 2018 Braden Scothern. All rights reserved.
 //
 
-import XCTest
 @testable import SwiftyPOSIX
+import XCTest
 
 class ErrnoTests: XCTestCase {
     let errnoMap = createErrnoMap()
@@ -58,7 +58,7 @@ class ErrnoTests: XCTestCase {
     }
 }
 
-//MARK:- Private Helper Funcs
+// MARK: - Private Helper Funcs
 private func createErrnoMap() -> [Errno: Int32] {
     var errnoMap: [Errno: Int32] = [
         Errno.E2BIG: E2BIG,
@@ -144,14 +144,14 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ETIME: ETIME,
         Errno.ETIMEDOUT: ETIMEDOUT,
         Errno.ETXTBSY: ETXTBSY
-    ], uniquingKeysWith: { _, _ in fatalError() })
+    ]) { _, _ in fatalError("Keys must be unique so this must never be called") }
     #if EAGAIN_IS_EWOULDBLOCK
     #else
     errnoMap[Errno.EWOULDBLOCK] = EWOULDBLOCK
     #endif
     errnoMap.merge([
         Errno.EXDEV: EXDEV,
-    ], uniquingKeysWith: { _, _ in fatalError() })
+    ]) { _, _ in fatalError("Keys must be unique so this must never be called") }
 
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
     errnoMap.merge([
@@ -181,7 +181,7 @@ private func createErrnoMap() -> [Errno: Int32] {
         Errno.ENOATTR: ENOATTR,
         Errno.ENOPOLICY: ENOPOLICY,
         Errno.EQFULL: EQFULL,
-    ], uniquingKeysWith: { _, _ in fatalError() })
+    ]) { _, _ in fatalError("Keys must be unique so this must never be called") }
     #endif
 
     return errnoMap

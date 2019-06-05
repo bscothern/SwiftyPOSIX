@@ -20,13 +20,13 @@ import SwiftyPOSIX.SwiftyPOSIX_C.Shims
 ///
 /// - Note: `<unistd.h>`
 public enum Unistd {
-    //MARK:- Types
-    //MARK: Public
+    // MARK: - Types
+    // MARK: Public
 
     /// Version Test Values
     public enum Version {
-        //MARK:- Properties
-        //MARK: Public Static
+        // MARK: - Properties
+        // MARK: Public Static
 
         /// Integer value indicating version of this standard (C-language binding) to which the implementation conforms.
         /// For implementations conforming to POSIX.1-2017, the value shall be `200809L`.
@@ -74,7 +74,6 @@ public enum Unistd {
     /// If it is defined with a value greater than zero, the option shall always be supported when the application is executed.
     /// If it is defined with the value zero, the option shall be supported for compilation and might or might not be supported at runtime.
     public enum Options {
-
         /// The constants defined in `<unistd.h>` that are prepended with `_POSIX_` in C.
         public enum Posix {
             /// The implementation supports the Advisory Information option.
@@ -824,7 +823,6 @@ public enum Unistd {
     ///
     /// If any of the following symbolic constants are defined to have value `-1` in the `<unistd.h>` header, the implementation shall not provide the option on any file if any are defined to have a value other than `-1` in the `<unistd.h>` header, the implementation shall provide the option on all applicable files.
     public enum ExecutionTime {
-
         /// All of the following values, whether defined as symbolic constants in `<unistd.h>` or not, may be queried with respect to a specific file using the `pathconf()` or `fpathconf()` functions.
         public enum PathConf {
             /// Asynchronous input or output operations may be performed for the associated file.
@@ -868,7 +866,6 @@ public enum Unistd {
     }
 
     public enum FunctionConstants {
-
         /// The `<unistd.h>` header shall define the following symbolic constants for use with the `access()` function.
         ///
         /// The values shall be suitable for use in #if preprocessing directives.
@@ -923,7 +920,6 @@ public enum Unistd {
             ///
             /// These values in C land all start with `_CS_POSIX_V7_`
             public enum POSIXv7 {
-
                 /// These `consfstr()` defines for POSIX v7 are the `ILP32_OFF32` values.
                 ///
                 /// These all start with `_CS_POSIX_V7_ILP32_OFF32_`.
@@ -1203,7 +1199,6 @@ public enum Unistd {
 
         /// The `<unistd.h>` header shall define the following symbolic constants as possible values for the function argument to the `lockf()` function.
         public enum LockfFunction: Int32, CaseIterable {
-
             /// Lock a section for exclusive use.
             ///
             /// - Note: `F_LOCK`
@@ -2049,6 +2044,6 @@ public enum Unistd {
         guard let valuePointer = SP_POSIX_VDISABLE() else {
             return nil
         }
-        return Character(Unicode.Scalar.init(valuePointer.pointee))
+        return Character(Unicode.Scalar(valuePointer.pointee))
     }
 }

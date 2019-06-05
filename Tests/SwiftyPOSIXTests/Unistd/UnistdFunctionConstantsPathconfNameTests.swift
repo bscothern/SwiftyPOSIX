@@ -6,8 +6,8 @@
 //  Copyright © 2019 Braden Scothern. All rights reserved.
 //
 
-import XCTest
 @testable import SwiftyPOSIX
+import XCTest
 
 class UnistdFunctionConstantsPathconfNameTests: XCTestCase {
     func testPathconfNameCount() {

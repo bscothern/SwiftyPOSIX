@@ -27,7 +27,7 @@
 //
 
 public class PThreadAttribute {
-    //MARK:- Types
+    // MARK: - Types
     public enum SchedulePolicy: PosixValueRepresentable {
         internal var posixValue: Int32 {
             switch self {
@@ -83,8 +83,8 @@ public class PThreadAttribute {
         }
     }
 
-    //MARK:- Properties
-    //MARK: Public Static
+    // MARK: - Properties
+    // MARK: Public Static
 
     /// The smallest supported stack size for a `PThread`.
     ///
@@ -93,7 +93,7 @@ public class PThreadAttribute {
         return Int(PTHREAD_STACK_MIN)
     }
 
-    //MARK: Public
+    // MARK: Public
 
     /// The area of storage to be used for the created `PThread`'s stack.
     ///
@@ -237,7 +237,7 @@ public class PThreadAttribute {
 
     internal var pointer = UnsafeMutablePointer<pthread_attr_t>.allocate(capacity: 1)
 
-    //MARK:- Init
+    // MARK: - Init
     public init?() {
         let errorCode = pthread_attr_init(pointer)
 

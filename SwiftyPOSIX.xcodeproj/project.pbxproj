@@ -45,6 +45,9 @@
 		F84E33252094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
 		F84E33262094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
 		F84E33272094306F00D7A162 /* Unistd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E33232094306F00D7A162 /* Unistd.swift */; };
+		F86D616422793571008E616D /* AssertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D616322793571008E616D /* AssertTests.swift */; };
+		F86D616522793571008E616D /* AssertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D616322793571008E616D /* AssertTests.swift */; };
+		F86D616622793571008E616D /* AssertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D616322793571008E616D /* AssertTests.swift */; };
 		F88914CF2069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
 		F88914D02069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
 		F88914D12069F27300892FE8 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88914CE2069F27300892FE8 /* Errno.swift */; };
@@ -154,6 +157,7 @@
 		F8217EF32277E20800A436BA /* SP_assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SP_assert.h; sourceTree = "<group>"; };
 		F8217EF42277E20800A436BA /* SP_assert.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SP_assert.c; sourceTree = "<group>"; };
 		F84E33232094306F00D7A162 /* Unistd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unistd.swift; sourceTree = "<group>"; };
+		F86D616322793571008E616D /* AssertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertTests.swift; sourceTree = "<group>"; };
 		F88914CE2069F27300892FE8 /* Errno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errno.swift; sourceTree = "<group>"; };
 		F88914D7206A013200892FE8 /* SwifyPOSIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifyPOSIX.swift; sourceTree = "<group>"; };
 		F8958DC6203A622700A99A02 /* PThreadSpecificKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PThreadSpecificKey.swift; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				F8D5AEB9217ADB79006B19D2 /* XCTestManifests.swift */,
+				F86D616322793571008E616D /* AssertTests.swift */,
 				F8CBB8FD21E851E600DB022F /* CPIOTests.swift */,
 				F8D5AEB0217ADA82006B19D2 /* ErrnoTests.swift */,
 				F8D5AEBE217ADC2E006B19D2 /* PThread */,
@@ -758,6 +763,7 @@
 				F8D5AEB6217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
 				F8CBB86021E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB1217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
+				F86D616422793571008E616D /* AssertTests.swift in Sources */,
 				F8CBB8FE21E851E600DB022F /* CPIOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -793,6 +799,7 @@
 				F8D5AEB7217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
 				F8CBB86121E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB2217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
+				F86D616522793571008E616D /* AssertTests.swift in Sources */,
 				F8CBB8FF21E851E600DB022F /* CPIOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -828,6 +835,7 @@
 				F8D5AEB8217ADAD9006B19D2 /* PThreadSpecificTests.swift in Sources */,
 				F8CBB86221E1DF8200DB022F /* UnistdFunctionConstantsPathconfNameTests.swift in Sources */,
 				F8D5AEB3217ADA82006B19D2 /* ErrnoTests.swift in Sources */,
+				F86D616622793571008E616D /* AssertTests.swift in Sources */,
 				F8CBB90021E851E600DB022F /* CPIOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

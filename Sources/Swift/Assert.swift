@@ -14,77 +14,17 @@ import SwiftyPOSIX.SwiftyPOSIX_C.Shims
 
 public enum Assert {
     @inlinable
-    public func assert(_ expression: Bool) {
-        SP_assert(expression)
+    public static func assert<N: Numeric>(_ numeric: N?) {
+        SP_assert(numeric != nil && numeric!.magnitude != 0)
+    }
+    
+    @inlinable
+    public static func assert(_ expression: Bool?) {
+        SP_assert(expression != nil && expression!)
     }
 
     @inlinable
-    public func assert(_ expression: CSignedChar) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CUnsignedChar) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CChar16) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CChar32) {
-        SP_assert(expression != Unicode.Scalar(0))
-    }
-
-    @inlinable
-    public func assert(_ expression: CInt) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CUnsignedInt) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CLong) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CUnsignedLong) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CShort) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CLongLong) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CUnsignedLongLong) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CFloat) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CDouble) {
-        SP_assert(expression != 0)
-    }
-
-    @inlinable
-    public func assert(_ expression: CLongDouble) {
-        SP_assert(expression != 0)
+    public static func assert(_ expression: Any?) {
+        SP_assert(expression != nil)
     }
 }

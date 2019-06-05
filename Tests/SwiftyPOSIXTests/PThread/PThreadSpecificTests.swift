@@ -6,8 +6,8 @@
 //  Copyright © 2018 Braden Scothern. All rights reserved.
 //
 
-import XCTest
 @testable import SwiftyPOSIX
+import XCTest
 
 class PThreadSpecificTests: XCTestCase {
     func testPThreadSpecificMax() {

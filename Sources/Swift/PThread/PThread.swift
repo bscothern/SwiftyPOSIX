@@ -27,11 +27,11 @@
 //
 
 public class PThread<T>: Equatable, PThreadRunnerProtocol {
-    //MARK:- Types
+    // MARK: - Types
     public typealias Function = () -> T
 
-    //MARK:- Properties
-    //MARK: Public Static
+    // MARK: - Properties
+    // MARK: Public Static
     public static var destructorIterations: Int {
         return Int(PTHREAD_DESTRUCTOR_ITERATIONS)
     }
@@ -55,7 +55,7 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
         return value
     }()
 
-    //MARK:- Init
+    // MARK: - Init
     init(attribute: PThreadAttribute? = nil) {
         self.attribute = PThreadAttribute(copy: attribute)
     }
@@ -70,21 +70,19 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
         context.deallocate()
     }
 
-    //MARK:- Funcs
-    //MARK:- Public Static
+    // MARK: - Funcs
+    // MARK: - Public Static
     public static func exit(value: Any) {
     }
 
-    //MARK:- Public
+    // MARK: - Public
     public func run(_ function: @escaping Function) {
         precondition(self.function == nil, "PThreads cannot execute multiple times.")
         self.function = function
 
         pthread_create(pointer, attribute?.pointer, { rawContext in
             #if os(Linux)
-            guard let rawContext = rawContext else {
-                fatalError()
-            }
+            let rawContext = rawContext!
             #endif
             let context = UnsafeMutablePointer<PThreadContext>(OpaquePointer(rawContext))
             context.pointee.runner?.execute()
@@ -100,14 +98,14 @@ public class PThread<T>: Equatable, PThreadRunnerProtocol {
         pthread_detach(pthread!)
     }
 
-    //MARK: FilePrivate
+    // MARK: FilePrivate
     fileprivate func execute() {
         result = function()
     }
 }
 
-//MARK:- Operators
-//MARK: Public
+// MARK: - Operators
+// MARK: Public
 public func == <T>(lhs: PThread<T>, rhs: PThread<T>) -> Bool {
     if lhs === rhs {
         return true
@@ -120,8 +118,8 @@ public func == <T>(lhs: PThread<T>, rhs: PThread<T>) -> Bool {
     return pthread_equal(lhs, rhs) != 0
 }
 
-//MARK:- Types
-//MARK: Private
+// MARK: - Types
+// MARK: Private
 private struct PThreadContext {
     weak var runner: PThreadRunnerProtocol?
 }

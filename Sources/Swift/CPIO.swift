@@ -14,7 +14,6 @@ import Foundation
 ///
 /// - Note: <cpio.h>
 public enum CPIO: Int32, CaseIterable {
-
     /// A `String` with the value "070707"
     ///
     /// - Note: `MAGIC`

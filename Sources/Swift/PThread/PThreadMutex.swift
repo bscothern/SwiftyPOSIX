@@ -27,7 +27,6 @@
 //
 
 public class PThreadMutex {
-
     public func lock() {
     }
 

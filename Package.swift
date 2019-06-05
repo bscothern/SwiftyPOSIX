@@ -39,18 +39,16 @@ enum DefineOption: String {
     case EAGAIN_IS_EWOULDBLOCK
     case ENOTSUP_IS_EOPNOTSUPP
 
-    private func valueFor<E: Equatable>(_ a: E, _ b: E) -> String {
+    private func valueForDefines<E: Equatable>(_ a: E, _ b: E) -> String {
         return (a == b ? "" : "NO_") + self.rawValue
     }
 
     func value() -> String {
         switch self {
         case .EAGAIN_IS_EWOULDBLOCK:
-            return valueFor(EAGAIN, EWOULDBLOCK)
+            return valueForDefines(EAGAIN, EWOULDBLOCK)
         case .ENOTSUP_IS_EOPNOTSUPP:
-            return valueFor(ENOTSUP, EOPNOTSUPP)
-        @unknown default:
-            return ""
+            return valueForDefines(ENOTSUP, EOPNOTSUPP)
         }
     }
 }
@@ -65,7 +63,8 @@ let package = Package(
     products: [
         .library(
             name: "SwiftyPOSIX",
-            targets: ["SwiftyPOSIX_C", "SwiftyPOSIX"]),
+            targets: ["SwiftyPOSIX_C", "SwiftyPOSIX"]
+        ),
     ],
     dependencies: [
     ],
@@ -73,16 +72,19 @@ let package = Package(
         .target(
             name: "SwiftyPOSIX_C",
             dependencies: [],
-            path: "Sources/C"),
+            path: "Sources/C"
+        ),
         .target(
             name: "SwiftyPOSIX",
             dependencies: ["SwiftyPOSIX_C"],
             path: "Sources/Swift",
-            swiftSettings: swiftSettings),
+            swiftSettings: swiftSettings
+        ),
         .testTarget(
             name: "SwiftyPOSIXTests",
             dependencies: ["SwiftyPOSIX"],
-            swiftSettings: swiftSettings),
+            swiftSettings: swiftSettings
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )

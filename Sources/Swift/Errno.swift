@@ -33,8 +33,8 @@
 /// For each thread of a process, Errno.value shall not be affected by function calls or assignments to Errno.value by other threads.
 ///
 /// - Note: `<errno.h>`
-public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible, CustomDebugStringConvertible {
-    //MARK: POSIX error definitions
+public enum Errno: Int32, CaseIterable, Error, Codable {
+    // MARK: POSIX error definitions
     case E2BIG
     case EACCES
     case EADDRINUSE
@@ -129,7 +129,7 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
     #endif
     case EXDEV
 
-    //MARK: System definitions
+    // MARK: System definitions
     #if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
     case ENOTBLK
     case ESOCKTNOSUPPORT
@@ -163,8 +163,8 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
     }
     #endif
 
-    //MARK:- Properties
-    //MARK: Public Static
+    // MARK: - Properties
+    // MARK: Public Static
     public static var value: Errno? {
         set {
             errno = newValue?.rawValue ?? 0
@@ -174,7 +174,7 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
         }
     }
 
-    //MARK: Public
+    // MARK: Public
     public var rawValue: Int32 {
         return cValue(ofErrno: self)
     }
@@ -215,6 +215,22 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
         }
     }
 
+    // MARK: - Init
+
+    /// Attempts to create an `Errno` based on the current value of the `errno` property.
+    public init?() {
+        self.init(rawValue: errno)
+    }
+
+    public init?(rawValue: Int32) {
+        guard let errno = Errno.allCases.first(where: { $0.rawValue == rawValue }) else {
+            return nil
+        }
+        self = errno
+    }
+}
+
+extension Errno: CustomStringConvertible {
     //TODO: Convert Errno to debug string via strerror()
 
     /// A textual representation of this instance, suitable for debugging.
@@ -440,7 +456,9 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
         #endif
         }
     }
+}
 
+extension Errno: CustomDebugStringConvertible {
     public var debugDescription: String {
         switch self {
         case .E2BIG:
@@ -654,20 +672,6 @@ public enum Errno: Int32, CaseIterable, Error, Codable, CustomStringConvertible,
                 fatalError("Unable to determine debugDescription from POSIX standard.")
             }
         }
-    }
-
-    //MARK:- Init
-
-    /// Attempts to create an `Errno` based on the current value of the `errno` property.
-    public init?() {
-        self.init(rawValue: errno)
-    }
-
-    public init?(rawValue: Int32) {
-        guard let errno = Errno.allCases.first(where: { $0.rawValue == rawValue }) else {
-            return nil
-        }
-        self = errno
     }
 }
 
