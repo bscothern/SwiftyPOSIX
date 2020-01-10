@@ -71,7 +71,7 @@ public class PThreadAttribute {
     /// The smallest supported stack size for a `PThread`.
     ///
     /// - Note: `PTHREAD_STACK_MIN`
-    public static var stackSizeMinimum: Int { Int(PTHREAD_STACK_MIN) }
+    @inlinable public static var stackSizeMinimum: Int { Int(PTHREAD_STACK_MIN) }
 
     // MARK: Public
 
@@ -95,7 +95,7 @@ public class PThreadAttribute {
     ///
     /// - Note: `int pthread_attr_getstack(const pthread_attr_t *restrict attr, void **restrict stackaddr, size_t *restrict stacksize)`
     /// - Note: `int pthread_attr_setstack(pthread_attr_t *attr, void *stackaddr, size_t stacksize)`
-    public var stack: UnsafeMutableRawBufferPointer {
+    @inlinable public var stack: UnsafeMutableRawBufferPointer {
         get {
             var value: (pointer: UnsafeMutableRawPointer?, size: Int) = (nil, 0)
             pthread_attr_getstack(pointer, &value.pointer, &value.size)
@@ -113,7 +113,7 @@ public class PThreadAttribute {
         }
     }
 
-    public var stackSize: Int {
+    @inlinable public var stackSize: Int {
         get {
             var value: Int = 0
             pthread_attr_getstacksize(pointer, &value)
@@ -124,7 +124,7 @@ public class PThreadAttribute {
         }
     }
 
-    public var guardSize: Int {
+    @inlinable public var guardSize: Int {
         get {
             var value: Int = 0
             pthread_attr_getguardsize(pointer, &value)
@@ -142,7 +142,7 @@ public class PThreadAttribute {
     /// - Note: `int pthread_attr_getstackaddr(const pthread_attr_t *restrict attr, void **restrict stackaddr)`
     /// - Note: `int pthread_attr_setstackaddr(pthread_attr_t *attr, void *stackaddr)`
     @available(*, unavailable, message: "This property is obsolete, non-portable, and unsafe. Instead PthreadAttribute.stack should be used. It has only been \"supported\" for clarity.")
-    public var stackAddress: UnsafeMutableRawPointer? {
+    @inlinable public var stackAddress: UnsafeMutableRawPointer? {
         get {
             var value: UnsafeMutableRawPointer?
             pthread_attr_getstackaddr(pointer, &value)
@@ -157,7 +157,7 @@ public class PThreadAttribute {
         }
     }
 
-    public var detatched: Bool {
+    @inlinable public var detatched: Bool {
         get {
             var value: Int32 = 0
             pthread_attr_getdetachstate(pointer, &value)
@@ -168,7 +168,7 @@ public class PThreadAttribute {
         }
     }
 
-    public var inheritSchedule: Bool {
+    @inlinable public var inheritSchedule: Bool {
         get {
             var value: Int32 = 0
             pthread_attr_getinheritsched(pointer, &value)
@@ -179,7 +179,7 @@ public class PThreadAttribute {
         }
     }
 
-    public var scheduleParameter: Int32 {
+    @inlinable public var scheduleParameter: Int32 {
         get {
             var value = sched_param()
             pthread_attr_getschedparam(pointer, &value)
@@ -193,7 +193,7 @@ public class PThreadAttribute {
         }
     }
 
-    public var schedulePolicy: SchedulePolicy {
+    @inlinable public var schedulePolicy: SchedulePolicy {
         get {
             var value: Int32 = 0
             pthread_attr_getschedpolicy(pointer, &value)
@@ -204,7 +204,7 @@ public class PThreadAttribute {
         }
     }
 
-    public var scope: Scope {
+    @inlinable public var scope: Scope {
         get {
             var value: Int32 = 0
             pthread_attr_getscope(pointer, &value)
@@ -215,9 +215,10 @@ public class PThreadAttribute {
         }
     }
 
-    internal var pointer = UnsafeMutablePointer<pthread_attr_t>.allocate(capacity: 1)
+    @usableFromInline internal var pointer = UnsafeMutablePointer<pthread_attr_t>.allocate(capacity: 1)
 
     // MARK: - Init
+    @inlinable
     public init?() {
         let errorCode = pthread_attr_init(pointer)
 
@@ -227,6 +228,7 @@ public class PThreadAttribute {
         }
     }
 
+    @usableFromInline
     internal convenience init?(copy other: PThreadAttribute?) {
         guard let other = other else {
             return nil
