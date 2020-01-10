@@ -17,7 +17,7 @@ To see the entire set of standards open `POSIX.1-2017/index.html`.
 - [ ] aio.h
 - [ ] arpa/inet.h
 - [x] assert
-- [ ] complex.h
+- [x] complex.h
 - [x] cpio.h
 - [ ] ctype.h
 - [ ] dirent.h

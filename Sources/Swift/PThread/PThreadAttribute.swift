@@ -3,33 +3,13 @@
 //  SwiftyPOSIX
 //
 //  Created by Braden Scothern on 2/9/18.
-//  Copyright © 2018 Braden Scothern. All rights reserved.
-//
-// The MIT License (MIT)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
+//  Copyright © 2018-2020 Braden Scothern. All rights reserved.
 //
 
 public class PThreadAttribute {
     // MARK: - Types
     public enum SchedulePolicy: PosixValueRepresentable {
-        internal var posixValue: Int32 {
+        @usableFromInline internal var posixValue: Int32 {
             switch self {
             case .firstInFirstOut:
                 return Int32(SCHED_FIFO)
@@ -44,6 +24,7 @@ public class PThreadAttribute {
         case roundRobin
         case other
 
+        @usableFromInline
         internal init?(posixValue: Int32) {
             switch posixValue {
             case Int32(SCHED_FIFO):
@@ -59,7 +40,7 @@ public class PThreadAttribute {
     }
 
     public enum Scope: PosixValueRepresentable {
-        internal var posixValue: Int32 {
+        @usableFromInline internal var posixValue: Int32 {
             switch self {
             case .system:
                 return Int32(PTHREAD_SCOPE_SYSTEM)
@@ -71,6 +52,7 @@ public class PThreadAttribute {
         case system
         case process
 
+        @usableFromInline
         internal init?(posixValue: Int32) {
             switch posixValue {
             case Int32(PTHREAD_SCOPE_SYSTEM):
@@ -89,9 +71,7 @@ public class PThreadAttribute {
     /// The smallest supported stack size for a `PThread`.
     ///
     /// - Note: `PTHREAD_STACK_MIN`
-    public static var stackSizeMinimum: Int {
-        return Int(PTHREAD_STACK_MIN)
-    }
+    public static var stackSizeMinimum: Int { Int(PTHREAD_STACK_MIN) }
 
     // MARK: Public
 

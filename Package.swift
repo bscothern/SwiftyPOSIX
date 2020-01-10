@@ -5,7 +5,7 @@
 //  SwiftyPOSIX
 //
 //  Created by Braden Scothern on 2/9/18.
-//  Copyright © 2017 Braden Scothern. All rights reserved.
+//  Copyright © 2018-2020 Braden Scothern. All rights reserved.
 //
 // The MIT License (MIT)
 //
@@ -86,5 +86,6 @@ let package = Package(
             swiftSettings: swiftSettings
         ),
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageVersions: [.v5],
+    cLanguageStandard: .c11
 )

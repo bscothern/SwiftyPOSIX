@@ -3,7 +3,7 @@
 //  SwiftyPOSIX
 //
 //  Created by Braden Scothern on 4/27/18.
-//  Copyright © 2018 Braden Scothern. All rights reserved.
+//  Copyright © 2018-2020 Braden Scothern. All rights reserved.
 //
 
 import Foundation

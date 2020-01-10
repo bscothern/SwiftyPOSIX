@@ -3,7 +3,7 @@
 //  SwiftyPOSIX iOS
 //
 //  Created by Braden Scothern on 9/3/18.
-//  Copyright © 2018 Braden Scothern. All rights reserved.
+//  Copyright © 2018-2020 Braden Scothern. All rights reserved.
 //
 
 #include "include/SP_unistd.h"

@@ -3,11 +3,10 @@
 //  SwiftyPOSIX
 //
 //  Created by Braden Scothern on 1/15/19.
-//  Copyright © 2019 Braden Scothern. All rights reserved.
+//  Copyright © 2018-2020 Braden Scothern. All rights reserved.
 //
 
-import Foundation
-
+@usableFromInline
 internal protocol PosixValueRepresentable {
     associatedtype PosixValue
 
