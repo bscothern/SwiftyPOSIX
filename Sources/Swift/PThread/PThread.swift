@@ -103,7 +103,7 @@ extension PThread: Equatable {
 extension PThread: PThreadRunnerProtocol{
     // MARK: Internal
     @usableFromInline
-    func execute() {
+    internal func execute() {
         result = function()
     }
 }

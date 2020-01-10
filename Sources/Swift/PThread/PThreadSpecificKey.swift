@@ -141,7 +141,7 @@ public class PThreadSpecificKey<ValueType> {
 extension PThreadSpecificKey: PThreadSpecificKeyDestructorRaiser {
     // MARK: PThreadSpecificKeyProtocol
        @usableFromInline
-       func raiseDestruction(of context: UnsafeMutablePointer<PThreadSpecificKeyContext>) {
+       internal func raiseDestruction(of context: UnsafeMutablePointer<PThreadSpecificKeyContext>) {
            if let value = context.pointee.value {
                destructor?(value as! ValueType)
            }
@@ -161,7 +161,7 @@ extension PThreadSpecificKey: PThreadSpecificKeyDestructorRaiser {
 ///
 /// Because the `PTHreadSpecificKey` keeps the type information, in order to properly cast it on gets or sets, we just keep `value` as type `Any?`.
 @usableFromInline
-struct PThreadSpecificKeyContext {
+internal struct PThreadSpecificKeyContext {
     /// The value currently associated with a `PThreadSpecificKey` that created the context.
     ///
     /// Because the `PThreadSpecificKey` is the only thing that can get or set this, it knows how to safely cast it to the proper type.
