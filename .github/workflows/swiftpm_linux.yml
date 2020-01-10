@@ -14,6 +14,7 @@ jobs:
         OS_VERSION_SHORT: ubuntu1804
         OS_VERSION_FULL: ubuntu18.04
       run:
+        sudo apt install wget
         wget -q -O - https://swift.org/keys/all-keys.asc | sudo gpg --import -
         wget https://swift.org/builds/swift-${SWIFT_VERSION}-release/${OS_VERSION_SHORT}/swift-${SWIFT_VERSION}-RELEASE/swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL}.tar.gz
         tar xzf swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL}.tar.gz -C . --strip-components=1
