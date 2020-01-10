@@ -19,7 +19,7 @@ jobs:
         tar xzf swift-${SWIFT_VERSION}-RELEASE-${OS_VERSION_FULL}.tar.gz -C . --strip-components=1;
     - name: Build
       run:
-        swift build -v
+        /usr/bin/swift build -v
     - name: Run tests
       run:
-        swift test -v
+        /usr/bin/swift test -v
